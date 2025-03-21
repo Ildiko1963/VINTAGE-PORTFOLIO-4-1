@@ -118,7 +118,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       </div>
 
       {/* Add keyframe animations */}
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes filmReel {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -128,7 +128,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
-      `}</style>
+      `}} />
     </section>
   );
 }

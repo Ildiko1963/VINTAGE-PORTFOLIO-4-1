@@ -29,6 +29,9 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
   const handleEnterSite = useCallback(() => {
     setIsVisible(false);
     
+    // Initialize audio context first (browser requires user interaction)
+    audioControls.initializeAudio();
+    
     // Start projector sound
     audioControls.toggleProjector();
     
