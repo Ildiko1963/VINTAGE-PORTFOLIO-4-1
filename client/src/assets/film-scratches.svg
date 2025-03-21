@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Major scratches -->
+  <g stroke="#000" stroke-width="1" opacity="0.3">
+    <path d="M220,0 C215,100 225,200 218,300 C210,400 223,500 215,600 C208,700 220,800 220,800" 
+          fill="none" stroke-dasharray="3,1"/>
+    <path d="M550,0 C545,80 560,160 540,240 C530,320 555,400 545,480 C535,560 550,640 540,720 C535,760 540,800 540,800" 
+          fill="none"/>
+    <path d="M880,0 C875,100 890,200 870,300 C860,400 890,500 870,600 C850,700 880,800 880,800" 
+          fill="none" stroke-dasharray="1,1"/>
+    <path d="M1020,0 C1015,100 1030,200 1010,300 C1000,400 1030,500 1010,600 C990,700 1020,800 1020,800" 
+          fill="none" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- White scratches -->
+  <g stroke="#fff" stroke-width="0.7" opacity="0.4">
+    <path d="M320,0 C325,100 315,200 330,300 C335,400 310,500 330,600 C350,700 320,800 320,800" 
+          fill="none" stroke-dasharray="2,1"/>
+    <path d="M650,0 C645,100 660,200 640,300 C630,400 660,500 640,600 C620,700 650,800 650,800" 
+          fill="none" stroke-dasharray="3,1"/>
+  </g>
+  
+  <!-- Horizontal scratches -->
+  <g stroke="#000" stroke-width="0.8" opacity="0.25">
+    <path d="M0,150 C200,145 400,155 600,145 C800,140 1000,155 1200,150" 
+          fill="none"/>
+    <path d="M0,450 C200,460 400,445 600,460 C800,465 1000,445 1200,450" 
+          fill="none" stroke-dasharray="4,2"/>
+    <path d="M0,650 C200,640 400,655 600,640 C800,635 1000,655 1200,650" 
+          fill="none" stroke-dasharray="2,1"/>
+  </g>
+  
+  <!-- White horizontal scratches -->
+  <g stroke="#fff" stroke-width="0.6" opacity="0.3">
+    <path d="M0,250 C200,255 400,245 600,255 C800,260 1000,245 1200,250" 
+          fill="none" stroke-dasharray="3,1"/>
+    <path d="M0,550 C200,540 400,555 600,540 C800,535 1000,555 1200,550" 
+          fill="none"/>
+  </g>
+  
+  <!-- Dust specks -->
+  <g fill="#000" opacity="0.4">
+    <circle cx="120" cy="130" r="1.5" />
+    <circle cx="300" cy="350" r="1.2" />
+    <circle cx="550" cy="200" r="1.8" />
+    <circle cx="750" cy="450" r="1.3" />
+    <circle cx="920" cy="250" r="1.6" />
+    <circle cx="1100" cy="550" r="1.4" />
+    <circle cx="450" cy="650" r="1.7" />
+    <circle cx="250" cy="750" r="1.2" />
+    <circle cx="650" cy="100" r="1.5" />
+    <circle cx="850" cy="300" r="1.3" />
+    <circle cx="150" cy="500" r="1.6" />
+    <circle cx="350" cy="600" r="1.4" />
+    <circle cx="950" cy="700" r="1.7" />
+  </g>
+  
+  <!-- Film edge damage -->
+  <g>
+    <!-- Left edge damage -->
+    <path d="M0,0 H15 L12,50 H0 Z" fill="#000" opacity="0.5" />
+    <path d="M0,120 H20 L25,180 H0 Z" fill="#000" opacity="0.4" />
+    <path d="M0,250 H10 L15,320 H0 Z" fill="#000" opacity="0.6" />
+    <path d="M0,400 H18 L14,470 H0 Z" fill="#000" opacity="0.5" />
+    <path d="M0,550 H12 L16,620 H0 Z" fill="#000" opacity="0.7" />
+    <path d="M0,680 H15 L10,750 H0 Z" fill="#000" opacity="0.6" />
+    
+    <!-- Right edge damage -->
+    <path d="M1200,50 H1185 L1188,100 H1200 Z" fill="#000" opacity="0.5" />
+    <path d="M1200,170 H1180 L1175,230 H1200 Z" fill="#000" opacity="0.4" />
+    <path d="M1200,300 H1190 L1185,370 H1200 Z" fill="#000" opacity="0.6" />
+    <path d="M1200,450 H1182 L1186,520 H1200 Z" fill="#000" opacity="0.5" />
+    <path d="M1200,600 H1188 L1184,670 H1200 Z" fill="#000" opacity="0.7" />
+    <path d="M1200,730 H1185 L1190,800 H1200 Z" fill="#000" opacity="0.6" />
+  </g>
+  
+  <!-- Burn spots and damage -->
+  <g>
+    <ellipse cx="200" cy="200" rx="40" ry="30" fill="#000" opacity="0.3" />
+    <ellipse cx="800" cy="450" rx="60" ry="45" fill="#000" opacity="0.25" />
+    <ellipse cx="400" cy="650" rx="50" ry="35" fill="#000" opacity="0.2" />
+    
+    <!-- Irregular shapes for film damage -->
+    <path d="M600,300 C610,290 625,295 630,310 C635,325 625,340 615,345 C600,350 590,340 585,330 C580,320 590,310 600,300Z" 
+          fill="#000" opacity="0.3"/>
+    <path d="M950,150 C965,140 980,145 985,160 C990,175 980,190 965,195 C950,200 935,190 930,175 C925,160 935,160 950,150Z" 
+          fill="#000" opacity="0.25"/>
+  </g>
+</svg>
