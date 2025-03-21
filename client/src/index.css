@@ -32,9 +32,10 @@
     height: 100%;
     background-image: url('/src/assets/grunge-overlay.svg');
     background-size: cover;
-    opacity: 0.2;
+    opacity: 0.4;
     pointer-events: none;
     z-index: 100;
+    animation: subtle-shift 30s infinite alternate ease-in-out;
   }
   
   /* Film texture overlay */
@@ -47,9 +48,21 @@
     height: 100%;
     background-image: url('/src/assets/film-texture.svg');
     background-size: cover;
-    opacity: 0.1;
+    opacity: 0.35;
     pointer-events: none;
     z-index: 101;
+    animation: subtle-movement 15s infinite alternate ease-in-out;
+  }
+  
+  @keyframes subtle-shift {
+    0% { transform: translateX(-5px) translateY(-3px); }
+    100% { transform: translateX(5px) translateY(3px); }
+  }
+  
+  @keyframes subtle-movement {
+    0% { transform: translateX(0) translateY(-5px); }
+    50% { transform: translateX(-3px) translateY(3px); }
+    100% { transform: translateX(3px) translateY(5px); }
   }
 }
 
