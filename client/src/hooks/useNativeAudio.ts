@@ -21,7 +21,7 @@ export function useNativeAudio(): AudioControls {
       
       // Create projector sound element
       const projectorElement = new Audio();
-      projectorElement.src = 'https://freesound.org/data/previews/243/243616_1565376-lq.mp3';
+      projectorElement.src = '/audio/projector-sound.mp3';
       projectorElement.loop = true;
       projectorElement.volume = state.volume;
       projectorElement.preload = 'auto';
@@ -30,14 +30,15 @@ export function useNativeAudio(): AudioControls {
       // Add error handling
       projectorElement.addEventListener('error', (e) => {
         console.error('Error loading projector sound:', e);
-        
-        // Try alternative source if first one fails
-        projectorElement.src = 'https://actions.google.com/sounds/v1/ambiences/movie_projector.ogg';
+      });
+      
+      projectorElement.addEventListener('canplaythrough', () => {
+        console.log('Projector sound loaded successfully');
       });
       
       // Create background music element
       const musicElement = new Audio();
-      musicElement.src = 'https://freesound.org/data/previews/528/528858_9022615-lq.mp3';
+      musicElement.src = '/audio/background-music.mp3';
       musicElement.loop = true;
       musicElement.volume = state.volume * 0.6; // Lower volume for background music
       musicElement.preload = 'auto';
@@ -46,14 +47,15 @@ export function useNativeAudio(): AudioControls {
       // Add error handling
       musicElement.addEventListener('error', (e) => {
         console.error('Error loading background music:', e);
-        
-        // Try alternative source if first one fails
-        musicElement.src = 'https://actions.google.com/sounds/v1/ambiences/quiet_room_tone.ogg';
+      });
+      
+      musicElement.addEventListener('canplaythrough', () => {
+        console.log('Background music loaded successfully');
       });
       
       // Create and play a test sound to verify audio is working
       const testSound = new Audio();
-      testSound.src = 'https://freesound.org/data/previews/560/560444_5754274-lq.mp3';
+      testSound.src = '/audio/test-sound.mp3';
       testSound.volume = state.volume;
       
       // Try to play a short sound to test if audio is working
