@@ -20,7 +20,7 @@ export function useNativeAudio(): AudioControls {
       console.log('Initializing audio with native HTML5 Audio elements...');
       
       // Create hard-coded audio elements for better browser compatibility
-      const projectorElement = new Audio('https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3');
+      const projectorElement = new Audio('https://assets.mixkit.co/active_storage/sfx/208/208-preview.mp3');
       projectorElement.loop = true;
       projectorElement.volume = state.volume;
       projectorElement.preload = 'auto';
