@@ -1,0 +1,185 @@
+import { useState, useEffect, useRef } from 'react';
+import { AudioState, AudioControls } from '@/lib/types';
+
+// Initialize default state
+const initialState: AudioState = {
+  isProjectorPlaying: false,
+  isMusicPlaying: false,
+  isMuted: false,
+  volume: 0.5,
+};
+
+export function useNativeAudio(): AudioControls {
+  const [state, setState] = useState<AudioState>(initialState);
+  const projectorSoundRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+  const [audioInitialized, setAudioInitialized] = useState(false);
+
+  const initializeAudio = () => {
+    if (!audioInitialized) {
+      console.log('Initializing audio with native HTML5 Audio elements...');
+      
+      // Create projector sound element
+      const projectorElement = new Audio();
+      projectorElement.src = 'https://freesound.org/data/previews/243/243616_1565376-lq.mp3';
+      projectorElement.loop = true;
+      projectorElement.volume = state.volume;
+      projectorElement.preload = 'auto';
+      projectorSoundRef.current = projectorElement;
+      
+      // Add error handling
+      projectorElement.addEventListener('error', (e) => {
+        console.error('Error loading projector sound:', e);
+        
+        // Try alternative source if first one fails
+        projectorElement.src = 'https://actions.google.com/sounds/v1/ambiences/movie_projector.ogg';
+      });
+      
+      // Create background music element
+      const musicElement = new Audio();
+      musicElement.src = 'https://freesound.org/data/previews/528/528858_9022615-lq.mp3';
+      musicElement.loop = true;
+      musicElement.volume = state.volume * 0.6; // Lower volume for background music
+      musicElement.preload = 'auto';
+      backgroundMusicRef.current = musicElement;
+      
+      // Add error handling
+      musicElement.addEventListener('error', (e) => {
+        console.error('Error loading background music:', e);
+        
+        // Try alternative source if first one fails
+        musicElement.src = 'https://actions.google.com/sounds/v1/ambiences/quiet_room_tone.ogg';
+      });
+      
+      // Create and play a test sound to verify audio is working
+      const testSound = new Audio();
+      testSound.src = 'https://freesound.org/data/previews/560/560444_5754274-lq.mp3';
+      testSound.volume = state.volume;
+      
+      // Try to play a short sound to test if audio is working
+      const playTest = () => {
+        testSound.play()
+          .then(() => {
+            console.log('Test sound playing successfully');
+            setTimeout(() => testSound.pause(), 1000);
+          })
+          .catch(err => {
+            console.error('Error playing test sound:', err);
+          });
+      };
+      
+      // Try to play after a short delay
+      setTimeout(playTest, 500);
+      
+      setAudioInitialized(true);
+    }
+  };
+
+  // Toggle projector sound
+  const toggleProjector = () => {
+    if (!projectorSoundRef.current) return;
+
+    const newState = !state.isProjectorPlaying;
+    
+    try {
+      if (newState) {
+        const playPromise = projectorSoundRef.current.play();
+        if (playPromise) {
+          playPromise.catch(err => {
+            console.error('Error playing projector sound:', err);
+            // Try once more with user interaction
+            document.addEventListener('click', () => {
+              projectorSoundRef.current?.play();
+            }, { once: true });
+          });
+        }
+      } else {
+        projectorSoundRef.current.pause();
+      }
+      
+      setState(prev => ({ ...prev, isProjectorPlaying: newState }));
+    } catch (error) {
+      console.error('Error toggling projector sound:', error);
+    }
+  };
+
+  // Toggle background music
+  const toggleMusic = () => {
+    if (!backgroundMusicRef.current) return;
+
+    const newState = !state.isMusicPlaying;
+    
+    try {
+      if (newState) {
+        const playPromise = backgroundMusicRef.current.play();
+        if (playPromise) {
+          playPromise.catch(err => {
+            console.error('Error playing background music:', err);
+            // Try once more with user interaction
+            document.addEventListener('click', () => {
+              backgroundMusicRef.current?.play();
+            }, { once: true });
+          });
+        }
+      } else {
+        backgroundMusicRef.current.pause();
+      }
+      
+      setState(prev => ({ ...prev, isMusicPlaying: newState }));
+    } catch (error) {
+      console.error('Error toggling background music:', error);
+    }
+  };
+
+  // Set volume for both sounds
+  const setVolume = (value: number) => {
+    if (projectorSoundRef.current) {
+      projectorSoundRef.current.volume = state.isMuted ? 0 : value;
+    }
+    
+    if (backgroundMusicRef.current) {
+      backgroundMusicRef.current.volume = state.isMuted ? 0 : value * 0.6;
+    }
+    
+    setState(prev => ({ ...prev, volume: value }));
+  };
+
+  // Toggle mute for both sounds
+  const toggleMute = () => {
+    const newMuteState = !state.isMuted;
+    
+    if (projectorSoundRef.current) {
+      projectorSoundRef.current.volume = newMuteState ? 0 : state.volume;
+    }
+    
+    if (backgroundMusicRef.current) {
+      backgroundMusicRef.current.volume = newMuteState ? 0 : state.volume * 0.6;
+    }
+    
+    setState(prev => ({ ...prev, isMuted: newMuteState }));
+  };
+
+  // Cleanup when component unmounts
+  useEffect(() => {
+    return () => {
+      if (projectorSoundRef.current) {
+        projectorSoundRef.current.pause();
+        projectorSoundRef.current.src = '';
+      }
+      
+      if (backgroundMusicRef.current) {
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.src = '';
+      }
+    };
+  }, []);
+
+  return {
+    toggleProjector,
+    toggleMusic,
+    setVolume,
+    toggleMute,
+    initializeAudio,
+    state,
+  };
+}

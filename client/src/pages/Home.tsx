@@ -8,15 +8,16 @@ import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AudioControls from '@/components/AudioControls';
-import AudioInitializer from '@/components/AudioInitializer';
-import { useAudio } from '@/hooks/useAudio';
+// Use native audio hook instead of Howler
+import { useNativeAudio } from '@/hooks/useNativeAudio';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import { Section } from '@/lib/types';
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
   const [audioError, setAudioError] = useState<string | null>(null);
-  const audioControls = useAudio();
+  // Use the native audio implementation instead of Howler
+  const audioControls = useNativeAudio();
   
   const sections: Section[] = [
     { id: 'home', title: 'Home' },
@@ -53,12 +54,6 @@ export default function Home() {
   
   return (
     <div className="bg-[#F2E8D5] font-lora text-[#463730] min-h-screen">
-      {/* Audio initializer component to ensure audio works on all browsers */}
-      <AudioInitializer 
-        audioControls={audioControls} 
-        onError={(error) => setAudioError(error)} 
-      />
-      
       {showIntro && (
         <IntroScreen 
           audioControls={audioControls} 
@@ -66,12 +61,15 @@ export default function Home() {
         />
       )}
       
-      {/* Display an error message if audio failed to initialize */}
-      {audioError && (
-        <div className="fixed bottom-20 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center z-50">
-          {audioError}
-        </div>
-      )}
+      {/* Add manual audio initialization button if needed */}
+      <div className="fixed bottom-5 right-5 z-50">
+        <button 
+          onClick={() => audioControls.initializeAudio()}
+          className="bg-[#D9BF77] text-[#463730] px-3 py-1 rounded-md text-sm hover:bg-[#C8B28E] transition-colors"
+        >
+          Initialize Audio
+        </button>
+      </div>
       
       <AudioControls audioControls={audioControls} />
       
