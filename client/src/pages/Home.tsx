@@ -8,12 +8,14 @@ import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AudioControls from '@/components/AudioControls';
+import AudioInitializer from '@/components/AudioInitializer';
 import { useAudio } from '@/hooks/useAudio';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import { Section } from '@/lib/types';
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
+  const [audioError, setAudioError] = useState<string | null>(null);
   const audioControls = useAudio();
   
   const sections: Section[] = [
@@ -51,11 +53,24 @@ export default function Home() {
   
   return (
     <div className="bg-[#F2E8D5] font-lora text-[#463730] min-h-screen">
+      {/* Audio initializer component to ensure audio works on all browsers */}
+      <AudioInitializer 
+        audioControls={audioControls} 
+        onError={(error) => setAudioError(error)} 
+      />
+      
       {showIntro && (
         <IntroScreen 
           audioControls={audioControls} 
           onComplete={() => setShowIntro(false)} 
         />
+      )}
+      
+      {/* Display an error message if audio failed to initialize */}
+      {audioError && (
+        <div className="fixed bottom-20 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center z-50">
+          {audioError}
+        </div>
       )}
       
       <AudioControls audioControls={audioControls} />

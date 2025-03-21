@@ -37,21 +37,57 @@ export function useAudio(): AudioControls {
   // Initialize sound objects after user interaction
   const initializeAudio = useCallback(() => {
     if (!audioInitialized) {
+      // Add console log for debugging
+      console.log('Initializing audio...');
+      
+      // Use a different movie projector sound
       projectorSoundRef.current = new Howl({
-        src: ['https://actions.google.com/sounds/v1/ambiences/movie_projector.ogg'],
+        src: [
+          'https://freesound.org/data/previews/243/243616_1565376-lq.mp3',
+          'https://actions.google.com/sounds/v1/ambiences/movie_projector.ogg'
+        ],
         loop: true,
         volume: state.volume,
         preload: true,
+        html5: true,
+        onload: () => {
+          console.log('Projector sound loaded successfully');
+        },
+        onloaderror: (id, error) => {
+          console.error('Error loading projector sound:', error);
+        }
       });
   
+      // Use a different background music sound
       backgroundMusicRef.current = new Howl({
-        src: ['https://actions.google.com/sounds/v1/ambiences/quiet_room_tone.ogg'],
+        src: [
+          'https://freesound.org/data/previews/528/528858_9022615-lq.mp3',
+          'https://actions.google.com/sounds/v1/ambiences/quiet_room_tone.ogg'
+        ],
         loop: true,
         volume: state.volume * 0.6, // Lower volume for background music
         preload: true,
+        html5: true,
+        onload: () => {
+          console.log('Background music loaded successfully');
+        },
+        onloaderror: (id, error) => {
+          console.error('Error loading background music:', error);
+        }
       });
       
       setAudioInitialized(true);
+      
+      // Add a test sound to verify that Howler is working
+      const testSound = new Howl({
+        src: ['https://freesound.org/data/previews/560/560444_5754274-lq.mp3'],
+        volume: state.volume,
+        html5: true,
+        onload: () => {
+          console.log('Test sound loaded successfully');
+          testSound.play();
+        }
+      });
     }
   }, [audioInitialized, state.volume]);
 

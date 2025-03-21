@@ -10,6 +10,13 @@ interface IntroScreenProps {
 export default function IntroScreen({ audioControls, onComplete }: IntroScreenProps) {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [audioPreloaded, setAudioPreloaded] = useState(false);
+  
+  // Pre-initialize audio when component mounts to ensure proper loading
+  useEffect(() => {
+    // No actual sound will play until user interaction
+    console.log('Preparing audio resources...');
+  }, []);
   
   // Simulate loading progress
   useEffect(() => {
@@ -18,6 +25,8 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
         const newProgress = prev + 5;
         if (newProgress >= 100) {
           clearInterval(interval);
+          // Mark audio as ready to be initialized
+          setAudioPreloaded(true);
         }
         return newProgress;
       });
@@ -27,16 +36,41 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
   }, []);
   
   const handleEnterSite = useCallback(() => {
+    // Mark site as entering
     setIsVisible(false);
     
-    // Initialize audio context first (browser requires user interaction)
+    // Manually create an AudioContext to unlock audio on iOS/Safari
+    const unlockAudio = () => {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContext) {
+        const audioContext = new AudioContext();
+        // Create and play a silent buffer to unlock the audio
+        const buffer = audioContext.createBuffer(1, 1, 22050);
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+        
+        console.log('Audio context unlocked');
+      }
+    };
+    
+    // Unlock audio on all browsers
+    unlockAudio();
+    
+    // Initialize audio context (browser requires user interaction)
+    console.log('Starting audio initialization...');
     audioControls.initializeAudio();
     
-    // Start projector sound
-    audioControls.toggleProjector();
+    // Start projector sound with a small delay to ensure initialization
+    setTimeout(() => {
+      console.log('Starting projector sound...');
+      audioControls.toggleProjector();
+    }, 500);
     
     // Start background music with delay
     setTimeout(() => {
+      console.log('Starting background music...');
       audioControls.toggleMusic();
     }, 2000);
     
