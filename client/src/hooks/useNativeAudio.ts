@@ -19,9 +19,8 @@ export function useNativeAudio(): AudioControls {
     if (!audioInitialized) {
       console.log('Initializing audio with native HTML5 Audio elements...');
       
-      // Create projector sound element
-      const projectorElement = new Audio();
-      projectorElement.src = '/audio/projector-sound.mp3';
+      // Create hard-coded audio elements for better browser compatibility
+      const projectorElement = new Audio('https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3');
       projectorElement.loop = true;
       projectorElement.volume = state.volume;
       projectorElement.preload = 'auto';
@@ -36,9 +35,8 @@ export function useNativeAudio(): AudioControls {
         console.log('Projector sound loaded successfully');
       });
       
-      // Create background music element
-      const musicElement = new Audio();
-      musicElement.src = '/audio/background-music.mp3';
+      // Create background music element with direct URL
+      const musicElement = new Audio('https://assets.mixkit.co/active_storage/sfx/2434/2434-preview.mp3');
       musicElement.loop = true;
       musicElement.volume = state.volume * 0.6; // Lower volume for background music
       musicElement.preload = 'auto';
@@ -54,8 +52,7 @@ export function useNativeAudio(): AudioControls {
       });
       
       // Create and play a test sound to verify audio is working
-      const testSound = new Audio();
-      testSound.src = '/audio/test-sound.mp3';
+      const testSound = new Audio('https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3');
       testSound.volume = state.volume;
       
       // Try to play a short sound to test if audio is working

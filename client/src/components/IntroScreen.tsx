@@ -39,11 +39,25 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     // Mark site as entering
     setIsVisible(false);
     
-    // Manually create an AudioContext to unlock audio on iOS/Safari
+    // Play a test sound to break audio restrictions
     const unlockAudio = () => {
+      // Create a silent audio element
+      const unlockElement = new Audio();
+      unlockElement.play().then(() => {
+        console.log('Audio playback unlocked successfully');
+      }).catch(err => {
+        console.log('Audio unlock attempted');
+      });
+      
+      // Also create AudioContext to unlock audio on iOS/Safari
       const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
       if (AudioContext) {
         const audioContext = new AudioContext();
+        // Resume the audio context (required by some browsers like Chrome)
+        if (audioContext.state === 'suspended') {
+          audioContext.resume();
+        }
+        
         // Create and play a silent buffer to unlock the audio
         const buffer = audioContext.createBuffer(1, 1, 22050);
         const source = audioContext.createBufferSource();
