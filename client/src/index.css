@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --color-vintage-brown: #8B7355;  /* Brown with a vintage feel */
-  --color-cream: #F2E8D5;          /* Cream background */
-  --color-deep-brown: #463730;     /* Deeper brown for text */
-  --color-gold: #D9BF77;           /* Gold/brass accents */
-  --color-gold-dim: #C8B28E;       /* Dimmed gold for secondary elements */
+  --color-vintage-brown: #5C4033;  /* Darker vintage brown */
+  --color-cream: #D4B886;         /* Warmer cream color */
+  --color-deep-brown: #3A2820;    /* Deeper brown for text */
+  --color-gold: #D4AF37;         /* Richer gold */
+  --color-gold-dim: #B8860B;     /* Darker gold for secondary */
+  --color-film-strip: #1A1110;   /* Almost black for film strip */
 }
 
 @layer base {
