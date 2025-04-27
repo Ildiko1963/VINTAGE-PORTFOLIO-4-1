@@ -21,6 +21,10 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     position: relative;
+    background-image: url('/sima_hatter.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
   
   /* Grunge overlay for entire site */
