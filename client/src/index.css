@@ -24,14 +24,11 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-  }
-
-  [data-page="home"] {
-    background-image: url('/filmszalag_hatter.png');
-  }
-
-  body:not([data-page="home"]) {
     background-image: url('/sima_hatter.png');
+  }
+
+  .home-page {
+    background-image: url('/filmszalag_hatter.png') !important;
   }
   
   /* Grunge overlay for entire site */

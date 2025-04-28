@@ -53,7 +53,7 @@ export default function Home() {
   }, []);
   
   return (
-    <div data-page="home" className="bg-[#F2E8D5] font-lora text-[#463730] min-h-screen">
+    <div className="home-page bg-[#F2E8D5] font-lora text-[#463730] min-h-screen">
       {showIntro && (
         <IntroScreen 
           audioControls={audioControls} 
