@@ -26,6 +26,12 @@ function App() {
   useEffect(() => {
     // Fix for TypeScript error with msOverflowStyle
     document.body.style.setProperty('scrollbar-width', 'none');
+    // Alapértelmezett háttérkép beállítása
+    document.body.style.backgroundImage = "url('/static/filmszalag_hatter.png')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    
     const style = document.createElement("style");
     style.textContent = `
       body::-webkit-scrollbar {
@@ -41,7 +47,6 @@ function App() {
   
   return (
     <QueryClientProvider client={queryClient}>
-      <Background />
       <Router />
       <Toaster />
     </QueryClientProvider>
