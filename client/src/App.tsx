@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
+import Background from "@/components/Background";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import { useEffect } from "react";
@@ -18,8 +19,8 @@ function Router() {
 function App() {
   // Prevent scrollbar on the app for a more cinematic feel
   useEffect(() => {
-    document.body.style.msOverflowStyle = "none";
-    document.body.style.scrollbarWidth = "none";
+    // Fix for TypeScript error with msOverflowStyle
+    document.body.style.setProperty('scrollbar-width', 'none');
     const style = document.createElement("style");
     style.textContent = `
       body::-webkit-scrollbar {
@@ -35,6 +36,7 @@ function App() {
   
   return (
     <QueryClientProvider client={queryClient}>
+      <Background />
       <Router />
       <Toaster />
     </QueryClientProvider>

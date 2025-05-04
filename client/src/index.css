@@ -23,39 +23,8 @@
     position: relative;
     min-height: 100vh;
     width: 100%;
-    background-image: url('../../../filmszalag_hatter.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: var(--color-cream);
     z-index: -1;
-  }
-
-  .default-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/sima_hatter.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -2;
-  }
-
-  .home-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/filmszalag_hatter.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -2;
-    opacity: 1;
   }
   
   /* Grunge overlay for entire site */
@@ -183,4 +152,46 @@
 
 .projector-flicker {
   animation: flicker 8s infinite;
+}
+
+/* Background styles for different pages */
+.film-overlay {
+  background-image: url('/images/filmszalag_hatter.png'), url('/src/assets/film-scratches.svg'), url('/src/assets/old-film-texture.svg');
+  background-size: cover;
+  opacity: 0.9;
+  animation: subtle-shift 30s infinite alternate ease-in-out;
+}
+
+.simple-bg-overlay {
+  background-image: url('/images/sima_hatter.png'), url('/src/assets/old-film-texture.svg');
+  background-size: cover;
+  opacity: 0.9;
+  animation: subtle-movement 20s infinite alternate ease-in-out;
+}
+
+/* Film perforations */
+.perforations-left,
+.perforations-right {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 15px,
+      #000 15px,
+      #000 25px
+    );
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.perforations-left {
+  left: 0;
+}
+
+.perforations-right {
+  right: 0;
 }
