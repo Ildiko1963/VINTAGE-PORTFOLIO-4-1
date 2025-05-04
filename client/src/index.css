@@ -25,6 +25,7 @@
     width: 100%;
     background-color: var(--color-cream);
     z-index: -1;
+    overflow-x: hidden;
   }
   
   /* Grunge overlay for entire site */
@@ -156,16 +157,16 @@
 
 /* Background styles for different pages */
 .film-overlay {
-  background-image: url('/images/filmszalag_hatter.png'), url('/src/assets/film-scratches.svg'), url('/src/assets/old-film-texture.svg');
+  background-image: url('/src/assets/film-scratches.svg'), url('/src/assets/old-film-texture.svg');
   background-size: cover;
-  opacity: 0.9;
+  opacity: 0.6;
   animation: subtle-shift 30s infinite alternate ease-in-out;
 }
 
 .simple-bg-overlay {
-  background-image: url('/images/sima_hatter.png'), url('/src/assets/old-film-texture.svg');
+  background-image: url('/src/assets/old-film-texture.svg');
   background-size: cover;
-  opacity: 0.9;
+  opacity: 0.4;
   animation: subtle-movement 20s infinite alternate ease-in-out;
 }
 

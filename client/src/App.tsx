@@ -5,14 +5,19 @@ import { Toaster } from "@/components/ui/toaster";
 import Background from "@/components/Background";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
+
+const AboutPage = React.lazy(() => import('@/pages/About'));
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/about" component={AboutPage} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 
