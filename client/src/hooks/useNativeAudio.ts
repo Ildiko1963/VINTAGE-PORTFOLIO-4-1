@@ -35,8 +35,8 @@ export function useNativeAudio(): AudioControls {
         console.log('Projector sound loaded successfully');
       });
       
-      // Create background music element with direct URL
-      const musicElement = new Audio('https://assets.mixkit.co/active_storage/sfx/2434/2434-preview.mp3');
+      // Eltávolítva a madárcsicsergés
+      const musicElement = new Audio();
       musicElement.loop = true;
       musicElement.volume = state.volume * 0.6; // Lower volume for background music
       musicElement.preload = 'auto';
@@ -52,7 +52,7 @@ export function useNativeAudio(): AudioControls {
       });
       
       // Create and play a test sound to verify audio is working
-      const testSound = new Audio('https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3');
+      const testSound = new Audio();
       testSound.volume = state.volume;
       
       // Try to play a short sound to test if audio is working

@@ -59,36 +59,7 @@
   }
   
   /* Grunge overlay for entire site */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/src/assets/film-scratches.svg');
-    background-size: cover;
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 100;
-    animation: subtle-shift 30s infinite alternate ease-in-out;
-  }
-  
-  /* Film texture overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/src/assets/old-film-texture.svg');
-    background-size: cover;
-    opacity: 0.65;
-    pointer-events: none;
-    z-index: 101;
-    animation: subtle-movement 15s infinite alternate ease-in-out;
-  }
+  /* Film overlay styles moved to specific classes */
   
   @keyframes subtle-shift {
     0% { transform: translateX(-5px) translateY(-3px); }
