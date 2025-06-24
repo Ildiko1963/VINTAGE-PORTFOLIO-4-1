@@ -23,7 +23,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
               className="mb-6 md:mb-0 text-center md:text-left"
             >
               <h2 className="font-playfair text-2xl font-bold mb-2">
-                <span className="text-[#D9BF77]">Ildiko</span>style Portfolio
+                
               </h2>
               <p className="font-typewriter">interior design</p>
             </motion.div>
@@ -59,7 +59,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <p className="font-typewriter">&copy; {currentYear} Ildikostyle Portfolio. All rights reserved.</p>
+            <p className="font-typewriter">&copy; {currentYear} All rights reserved.</p>
             <p className="text-sm mt-2 text-[#C8B28E]">Crafting beautiful interior spaces with timeless elegance.</p>
           </motion.div>
         </div>

@@ -20,7 +20,7 @@ export default function Header({ sections, onNavigate }: HeaderProps) {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h1 className="font-playfair text-4xl md:text-5xl font-bold">
-              <span className="text-[#D9BF77]">Ildiko</span>style Portfolio
+              
             </h1>
             <p className="font-typewriter mt-2">interior design</p>
           </div>
