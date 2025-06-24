@@ -118,7 +118,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 ## Changelog
 
 - June 24, 2025. Initial setup
-- June 24, 2025. Updated branding to "Ildikostyle Portfolio" with interior design theme
+- June 24, 2025. Updated branding to "Ildikostyle Portfolio" with interior design theme (completed all instances including IntroScreen and HTML title)
 
 ## User Preferences
 
