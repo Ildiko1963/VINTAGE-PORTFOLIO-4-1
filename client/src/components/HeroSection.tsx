@@ -54,7 +54,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             transition={{ delay: 1, duration: 0.8 }}
             className="font-playfair text-5xl md:text-7xl font-bold text-[#F2E8D5] mb-6"
           >
-            Creative Storytelling
+            Ildikostyle Portfolio
           </motion.h1>
           
           <div className="max-w-3xl overflow-hidden">
@@ -65,7 +65,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               className="font-typewriter text-xl md:text-2xl text-[#C8B28E] mb-8 overflow-hidden whitespace-nowrap border-r-2 border-[#463730]"
               style={{ borderRightColor: '#463730' }}
             >
-              Capturing timeless moments through the lens of vintage aesthetics
+              interior design
             </motion.p>
           </div>
           

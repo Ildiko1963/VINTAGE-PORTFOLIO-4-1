@@ -23,9 +23,9 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
               className="mb-6 md:mb-0 text-center md:text-left"
             >
               <h2 className="font-playfair text-2xl font-bold mb-2">
-                <span className="text-[#D9BF77]">Film</span>folio
+                <span className="text-[#D9BF77]">Ildiko</span>style Portfolio
               </h2>
-              <p className="font-typewriter">A vintage cinema experience</p>
+              <p className="font-typewriter">interior design</p>
             </motion.div>
             
             <motion.div 
@@ -59,8 +59,8 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center"
           >
-            <p className="font-typewriter">&copy; {currentYear} Vintage Filmfolio. All rights reserved.</p>
-            <p className="text-sm mt-2 text-[#C8B28E]">Designed with love for the golden age of cinema.</p>
+            <p className="font-typewriter">&copy; {currentYear} Ildikostyle Portfolio. All rights reserved.</p>
+            <p className="text-sm mt-2 text-[#C8B28E]">Crafting beautiful interior spaces with timeless elegance.</p>
           </motion.div>
         </div>
       </FilmFrameWrapper>
