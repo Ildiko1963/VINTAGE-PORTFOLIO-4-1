@@ -54,7 +54,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             transition={{ delay: 1, duration: 0.8 }}
             className="font-playfair text-5xl md:text-7xl font-bold text-[#F2E8D5] mb-6"
           >
-            
+            Ildikostyle Portfolio
           </motion.h1>
           
           <div className="max-w-3xl overflow-hidden">
