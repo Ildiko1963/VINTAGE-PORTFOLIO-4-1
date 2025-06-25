@@ -14,9 +14,9 @@ export default function Background() {
       style={{
         minHeight: '200vh',
         backgroundImage: "url('/static/clean_filmstrip_hatter.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'auto',
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'repeat',
         backgroundAttachment: 'scroll'
       }}
     />
