@@ -122,6 +122,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 24, 2025. Removed "Ildikostyle Portfolio" text from all pages, keeping only "interior design" subtitle
 - June 24, 2025. Restored "Ildikostyle Portfolio" title on main page hero section only
 - June 24, 2025. Added "Ildikostyle Portfolio" back to IntroScreen (loading page)
+- June 24, 2025. Updated background image paths to use local filmszalag_hatter.png from /images/ directory
 
 ## User Preferences
 

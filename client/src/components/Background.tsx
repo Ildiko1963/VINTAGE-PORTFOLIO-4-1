@@ -15,7 +15,7 @@ export default function Background() {
       {isHomePage && (
         <div className="fixed inset-0 z-[-1] bg-background">
           <img 
-            src="/static/filmszalag_hatter.png" 
+            src="/images/filmszalag_hatter.png" 
             alt="Filmszalag háttér" 
             className="absolute inset-0 w-full h-full object-cover z-[-2]"
           />

@@ -27,7 +27,7 @@ function App() {
     // Fix for TypeScript error with msOverflowStyle
     document.body.style.setProperty('scrollbar-width', 'none');
     // Alapértelmezett háttérkép beállítása
-    document.body.style.backgroundImage = "url('/static/filmszalag_hatter.png')";
+    document.body.style.backgroundImage = "url('/images/filmszalag_hatter.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
