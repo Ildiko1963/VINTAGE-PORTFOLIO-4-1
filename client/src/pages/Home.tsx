@@ -55,7 +55,7 @@ export default function Home() {
     
   return (
     <>
-      <div className="bg-transparent font-lora text-[#D9BF77] min-h-screen">
+      <div className="bg-transparent font-lora text-[#D9BF77] min-h-screen relative">
         {showIntro && (
           <IntroScreen 
             audioControls={audioControls} 

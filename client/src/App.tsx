@@ -27,11 +27,11 @@ function App() {
   useEffect(() => {
     // Fix for TypeScript error with msOverflowStyle
     document.body.style.setProperty('scrollbar-width', 'none');
-    // Alapértelmezett háttérkép beállítása
+    // Dinamikus háttérkép beállítása
     document.body.style.backgroundImage = "url('/static/clean_filmstrip_hatter.png')";
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundRepeat = "repeat-y";
     document.body.style.backgroundAttachment = "scroll";
     
     const style = document.createElement("style");
