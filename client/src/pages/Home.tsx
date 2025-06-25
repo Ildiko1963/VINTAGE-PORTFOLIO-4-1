@@ -51,28 +51,7 @@ export default function Home() {
     };
   }, []);
   
-  // Filmszalag overlay hatás hozzáadása a főoldalhoz
-  useEffect(() => {
-    // A filmszalag textúra és karcolások hozzáadása
-    const overlay = document.createElement('div');
-    overlay.className = 'film-overlay absolute inset-0 z-[1] pointer-events-none';
-    document.body.appendChild(overlay);
-    
-    // Perforációk a film szélén
-    const leftPerforation = document.createElement('div');
-    leftPerforation.className = 'perforations-left';
-    document.body.appendChild(leftPerforation);
-    
-    const rightPerforation = document.createElement('div');
-    rightPerforation.className = 'perforations-right';
-    document.body.appendChild(rightPerforation);
-    
-    return () => {
-      document.body.removeChild(overlay);
-      document.body.removeChild(leftPerforation);
-      document.body.removeChild(rightPerforation);
-    };
-  }, []);
+  // Ez most a Background komponens kezeli
     
   return (
     <>
