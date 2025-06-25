@@ -14,10 +14,6 @@ export default function Background() {
         src="/static/clean_filmstrip_hatter.png" 
         alt="Tiszta filmszalag háttér" 
         className="absolute inset-0 w-full h-full object-cover z-[-2]"
-        style={{
-          position: 'fixed',
-          backgroundAttachment: 'fixed'
-        }}
       />
 
     </div>

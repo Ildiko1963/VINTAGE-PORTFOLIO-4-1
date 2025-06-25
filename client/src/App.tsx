@@ -32,7 +32,7 @@ function App() {
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundAttachment = "scroll";
     
     const style = document.createElement("style");
     style.textContent = `
