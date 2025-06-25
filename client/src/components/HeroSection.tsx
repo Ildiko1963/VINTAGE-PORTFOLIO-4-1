@@ -23,12 +23,16 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
   
   return (
     <section id="home" className="relative min-h-screen py-16 overflow-hidden">
-      <img 
-        src="/static/filmszalag_hatter.png" 
-        alt="Film strip background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-      <div className="absolute inset-0 bg-[#463730] bg-opacity-50 z-5"></div>
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/static/filmszalag_hatter.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      ></div>
+      <div className="absolute inset-0 bg-[#463730] bg-opacity-30 z-5"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">

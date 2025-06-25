@@ -3,8 +3,14 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema, insertPortfolioItemSchema, insertServiceSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import express from "express";
+import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static files from public directory
+  app.use('/static', express.static(path.join(process.cwd(), 'public/static')));
+  app.use('/images', express.static(path.join(process.cwd(), 'public/images')));
+  app.use('/audio', express.static(path.join(process.cwd(), 'public/audio')));
   // prefix all routes with /api
   
   // GET portfolio items
