@@ -51,7 +51,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="font-playfair text-5xl md:text-7xl font-bold text-[#F2E8D5] mb-6"
+            className="font-playfair text-5xl md:text-7xl font-bold text-[#D9BF77] mb-6"
           >
             Ildikostyle Portfolio
           </motion.h1>
@@ -61,8 +61,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               ref={textRef}
               initial={{ width: 0 }}
               animate={controls}
-              className="font-typewriter text-xl md:text-2xl text-[#C8B28E] mb-8 overflow-hidden whitespace-nowrap border-r-2 border-[#463730]"
-              style={{ borderRightColor: '#463730' }}
+              className="font-typewriter text-xl md:text-2xl text-[#D9BF77] mb-8 overflow-hidden whitespace-nowrap border-r-2 border-[#D9BF77]"
+              style={{ borderRightColor: '#D9BF77' }}
             >
               interior design
             </motion.p>

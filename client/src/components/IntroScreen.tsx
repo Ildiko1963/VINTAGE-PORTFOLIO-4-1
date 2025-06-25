@@ -128,7 +128,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               Ildikostyle Portfolio
             </motion.h1>
             <motion.p 
-              className="text-[#C8B28E] text-lg mb-8"
+              className="text-[#D9BF77] text-lg mb-8"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
