@@ -23,7 +23,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
   
   return (
     <section id="home" className="relative min-h-screen py-16 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/filmszalag_hatter.png')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 bg-[url('/static/clean_filmstrip_hatter.png')] bg-cover bg-center"></div>
       <div className="absolute inset-0 bg-[#463730] bg-opacity-70"></div>
       
       <div className="container mx-auto px-4 relative z-10">

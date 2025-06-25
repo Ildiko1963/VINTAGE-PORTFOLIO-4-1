@@ -151,6 +151,11 @@
   70%, 75% { opacity: 0.8; }
 }
 
+@keyframes projector-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .projector-flicker {
   animation: flicker 8s infinite;
 }
@@ -198,6 +203,13 @@
 
 .perforations-right {
   right: 0;
+}
+
+/* Rotating shadow/projector light effect */
+.rotating-shadow {
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  animation: projector-rotate 10s infinite linear;
+  pointer-events: none;
 }
 
 /* Background overrides for specific pages */

@@ -124,6 +124,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 24, 2025. Added "Ildikostyle Portfolio" back to IntroScreen (loading page)
 - June 24, 2025. Updated background image paths to use local filmszalag_hatter.png from /static/ directory with inline styles
 - June 24, 2025. Created clean filmstrip background without text for IntroScreen
+- June 25, 2025. Applied clean filmstrip background to all pages with rotating shadow effect preserved
 
 ## User Preferences
 
