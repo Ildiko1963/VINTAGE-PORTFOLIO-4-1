@@ -19,13 +19,6 @@ export default function Background() {
         backgroundRepeat: 'repeat',
         backgroundAttachment: 'scroll'
       }}
-    >
-      {/* Film overlay for texture */}
-      <div className="film-overlay absolute inset-0 z-[-1]"></div>
-      
-      {/* Film perforations */}
-      <div className="perforations-left"></div>
-      <div className="perforations-right"></div>
-    </div>
+    />
   );
 }
