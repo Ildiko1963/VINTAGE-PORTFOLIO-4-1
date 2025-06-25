@@ -43,7 +43,7 @@ export default function ServicesSection() {
   });
   
   return (
-    <section id="services" className="py-16 bg-transparent border-t-4 border-[#8B7355]">
+    <section id="services" className="py-16 bg-transparent border-t-8 border-[#8B7355]">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}
