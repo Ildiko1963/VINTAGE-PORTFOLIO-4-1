@@ -102,7 +102,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           style={{
-            backgroundImage: "url('/static/filmszalag_hatter.png')",
+            backgroundImage: "url('/static/clean_filmstrip_hatter.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
