@@ -9,7 +9,7 @@ export default function PortfolioSection() {
   });
   
   return (
-    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77]">
+    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77] border-t-4 border-[#8B7355]">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}

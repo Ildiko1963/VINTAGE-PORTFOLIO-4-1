@@ -131,6 +131,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 25, 2025. Made background image dynamic/scrolling with page content
 - June 25, 2025. Fixed background size to auto and repeat pattern to match intro screen appearance
 - June 25, 2025. Removed film perforations and overlay, keeping clean background only
+- June 25, 2025. Added brown section dividers between pages for better visual separation
 
 ## User Preferences
 
