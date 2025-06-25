@@ -14,7 +14,7 @@ const ServiceItem = ({ service, index }: ServiceItemProps) => {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
-      className="bg-[#C8B28E] bg-opacity-40 p-8 rounded-md border border-[#8B7355]"
+      className="bg-transparent bg-opacity-20 p-8 rounded-md border border-[#8B7355]"
     >
       <div className="flex items-start mb-6">
         <div className="mr-4 text-[#D9BF77]">
@@ -43,7 +43,7 @@ export default function ServicesSection() {
   });
   
   return (
-    <section id="services" className="py-16 bg-[#F2E8D5]">
+    <section id="services" className="py-16 bg-transparent">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}
@@ -59,7 +59,7 @@ export default function ServicesSection() {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[...Array(4)].map((_, index) => (
-                <div key={index} className="bg-[#C8B28E] bg-opacity-30 p-8 rounded-md border border-[#8B7355] animate-pulse h-64"></div>
+                <div key={index} className="bg-transparent bg-opacity-30 p-8 rounded-md border border-[#8B7355] animate-pulse h-64"></div>
               ))}
             </div>
           ) : (

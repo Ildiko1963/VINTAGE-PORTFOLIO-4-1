@@ -11,7 +11,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-[#463730] text-[#F2E8D5] py-8">
+    <footer className="bg-transparent text-[#463730] py-8">
       <FilmFrameWrapper>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
