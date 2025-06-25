@@ -128,6 +128,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 25, 2025. Removed rotating shadow effects to match clean intro screen appearance
 - June 25, 2025. Made all section backgrounds transparent for unified clean appearance
 - June 25, 2025. Updated all text colors to golden (#D9BF77) to match "Ildikostyle Portfolio" visibility
+- June 25, 2025. Made background image fixed/static so it doesn't scroll with page content
 
 ## User Preferences
 
