@@ -47,7 +47,7 @@ export default function ContactSection() {
   };
   
   return (
-    <section id="contact" className="py-16 bg-transparent text-[#463730]">
+    <section id="contact" className="py-16 bg-transparent text-[#D9BF77]">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}

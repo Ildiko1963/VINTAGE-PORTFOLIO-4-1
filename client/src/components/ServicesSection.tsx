@@ -50,7 +50,7 @@ export default function ServicesSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-playfair text-4xl md:text-5xl font-bold text-[#463730] text-center mb-12"
+          className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-12"
         >
           Services Offered
         </motion.h2>

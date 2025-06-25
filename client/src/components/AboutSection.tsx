@@ -10,7 +10,7 @@ export default function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-playfair text-4xl md:text-5xl font-bold text-[#463730] text-center mb-8"
+            className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-8"
           >
             About the Creator
           </motion.h2>
@@ -40,13 +40,13 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="w-full md:w-2/3 font-lora"
             >
-              <p className="text-[#463730] text-lg mb-4">
+              <p className="text-[#D9BF77] text-lg mb-4">
                 As a passionate filmmaker and visual artist, I blend traditional cinematography techniques with modern digital artistry to create timeless portfolio pieces.
               </p>
-              <p className="text-[#463730] text-lg mb-6">
+              <p className="text-[#D9BF77] text-lg mb-6">
                 My work draws inspiration from the golden age of cinema, where storytelling was an art form that captured the imagination and transported viewers to different worlds.
               </p>
-              <p className="text-[#463730] text-lg mb-6 font-typewriter">
+              <p className="text-[#D9BF77] text-lg mb-6 font-typewriter">
                 "Every frame tells a story, every film reel captures a moment in time."
               </p>
               <div className="flex space-x-4 mt-6">
