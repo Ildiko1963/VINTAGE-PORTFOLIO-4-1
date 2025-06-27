@@ -133,6 +133,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 25, 2025. Removed film perforations and overlay, keeping clean background only
 - June 25, 2025. Added brown section dividers between pages for better visual separation
 - June 25, 2025. Made separator lines much thicker (20px) for complete page separation
+- June 27, 2025. Added black shadow strips to top and bottom of all main sections to match IntroScreen styling
 
 ## User Preferences
 

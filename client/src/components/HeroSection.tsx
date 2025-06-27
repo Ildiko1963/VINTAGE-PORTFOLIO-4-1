@@ -23,7 +23,10 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
   
   return (
     <section id="home" className="relative min-h-screen py-16 overflow-hidden">
-
+      {/* Top shadow strip */}
+      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
+      {/* Bottom shadow strip */}
+      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">

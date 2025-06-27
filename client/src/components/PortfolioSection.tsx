@@ -9,7 +9,12 @@ export default function PortfolioSection() {
   });
   
   return (
-    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77] border-t-[20px] border-[#8B7355]">
+    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77] border-t-[20px] border-[#8B7355] relative">
+      {/* Top shadow strip */}
+      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
+      {/* Bottom shadow strip */}
+      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-20"></div>
+      
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ y: 50, opacity: 0 }}
@@ -30,7 +35,7 @@ export default function PortfolioSection() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {portfolioItems?.map((item: PortfolioItem, index: number) => (
+              {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
                 <motion.div 
                   key={item.id}
                   initial={{ y: 30, opacity: 0 }}
