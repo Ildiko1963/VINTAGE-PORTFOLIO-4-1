@@ -68,46 +68,7 @@ export default function AboutSection() {
             </motion.div>
           </div>
           
-          <motion.div 
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
-          >
-            {[
-              {
-                icon: "camera-retro",
-                title: "Photography",
-                description: "Capturing moments with a vintage aesthetic and timeless composition."
-              },
-              {
-                icon: "film",
-                title: "Cinematography",
-                description: "Creating visual stories with an emphasis on lighting and framing."
-              },
-              {
-                icon: "paint-brush",
-                title: "Visual Design",
-                description: "Crafting cohesive visual identities that tell powerful stories."
-              }
-            ].map((item, index) => (
-              <motion.div 
-                key={index}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.8 + (index * 0.1) }}
-                className="bg-[#C8B28E] bg-opacity-30 p-6 rounded-md border border-[#8B7355]"
-              >
-                <div className="mb-4 text-[#D9BF77]">
-                  <i className={`fas fa-${item.icon} text-3xl`}></i>
-                </div>
-                <h3 className="font-playfair text-xl font-bold mb-3">{item.title}</h3>
-                <p>{item.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+
         </div>
       </div>
     </section>

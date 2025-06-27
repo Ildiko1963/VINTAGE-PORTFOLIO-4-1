@@ -110,7 +110,6 @@ export default function ContactSection() {
             
             {/* Small gallery images */}
             <div className="mt-8">
-              <h4 className="font-bold mb-4">Recent Work</h4>
               <div className="flex gap-4">
                 <img 
                   src="/static/23358_pic02.jpg" 
