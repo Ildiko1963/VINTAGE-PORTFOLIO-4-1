@@ -79,15 +79,6 @@ export default function Home() {
         <main>
           <HeroSection onNavigate={scrollToSection} />
           
-          {/* Teszt gomb az aloldalra navigáláshoz */}
-          <div className="container mx-auto py-8 text-center">
-            <Link href="/about">
-              <button className="inline-block px-6 py-3 bg-[#D9BF77] text-[#463730] rounded-md font-semibold shadow-lg hover:bg-[#C8B28E] transition-colors">
-                Teszt oldal megtekintése (sima háttérrel)
-              </button>
-            </Link>
-          </div>
-          
           <AboutSection />
           <PortfolioSection />
           <ServicesSection />
