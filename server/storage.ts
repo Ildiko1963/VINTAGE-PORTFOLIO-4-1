@@ -145,6 +145,20 @@ export class MemStorage implements IStorage {
         imageUrl: "/static/big_vakmero3.jpg",
         category: "Contemporary",
         projectLink: "#"
+      },
+      {
+        title: "Living Room Design",
+        description: "Modern living room wall view design concept",
+        imageUrl: "/static/big_nappalifalnezet2.jpg",
+        category: "Tervek",
+        projectLink: "#"
+      },
+      {
+        title: "Home Sweet Home",
+        description: "Complete home interior design project",
+        imageUrl: "/static/big_otthon.jpg",
+        category: "publikációk",
+        projectLink: "#"
       }
     ];
     
