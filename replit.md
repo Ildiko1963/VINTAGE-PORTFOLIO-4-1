@@ -149,6 +149,9 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Updated About section with Ildikó's portrait (23358_ildiko.jpg) replacing placeholder image
 - June 27, 2025. Added two small gallery images to Contact section: 23358_pic02.jpg, 23358_pic03.jpg under "Recent Work"
 - June 27, 2025. Updated main page filmstrip with interior design images: big_laktanya.jpg, big_nappali_falnezet2.jpg, big_nappali2.jpg, big_nappali3.jpg, big_nappali4.jpg, big_nappali6.jpg
+- June 27, 2025. Updated Services section with interior design categories: Design, Construction, Consulting
+- June 27, 2025. Enlarged Contact section gallery images from 24x24 to 36x36 pixels (1.5x larger)
+- June 27, 2025. Updated Contact information with Hungarian address (2900 Komárom, Igmándi út 27.) and phone (+36209220239) and email (jonathan5@t-online.hu)
 
 ## User Preferences
 

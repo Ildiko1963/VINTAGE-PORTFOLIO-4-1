@@ -80,8 +80,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Studio Location</h4>
-                  <p className="font-typewriter">123 Vintage Avenue, Film District</p>
-                  <p className="font-typewriter">Hollywood, CA 90028</p>
+                  <p className="font-typewriter">2900 Komárom</p>
+                  <p className="font-typewriter">Igmándi út 27.</p>
                 </div>
               </div>
               
@@ -91,7 +91,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Phone</h4>
-                  <p className="font-typewriter">(555) 123-4567</p>
+                  <p className="font-typewriter">+36209220239</p>
                 </div>
               </div>
               
@@ -101,7 +101,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Email</h4>
-                  <p className="font-typewriter">info@vintagefilmfolio.com</p>
+                  <p className="font-typewriter">jonathan5@t-online.hu</p>
                 </div>
               </div>
               
@@ -124,12 +124,12 @@ export default function ContactSection() {
                 <img 
                   src="/static/23358_pic02.jpg" 
                   alt="Interior design project" 
-                  className="w-24 h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-36 h-36 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img 
                   src="/static/23358_pic03.jpg" 
                   alt="Interior design project" 
-                  className="w-24 h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-36 h-36 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>

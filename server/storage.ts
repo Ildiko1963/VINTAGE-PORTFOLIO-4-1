@@ -227,28 +227,22 @@ export class MemStorage implements IStorage {
   private initializeServices() {
     const serviceItems: InsertService[] = [
       {
-        title: "Film Production",
-        description: "Professional film production with vintage aesthetics and modern techniques.",
-        icon: "video",
-        features: ["Short Films", "Documentaries", "Corporate Videos", "Music Videos"]
+        title: "Design",
+        description: "Professional interior design services with personalized concepts and solutions.",
+        icon: "drafting-compass",
+        features: ["Space Planning", "Color Schemes", "Furniture Selection", "Custom Solutions"]
       },
       {
-        title: "Photography",
-        description: "Capturing moments with a timeless vintage aesthetic.",
-        icon: "camera",
-        features: ["Portrait Sessions", "Product Photography", "Event Coverage", "Conceptual Art"]
+        title: "Construction",
+        description: "Quality construction and renovation services for residential and commercial spaces.",
+        icon: "hammer",
+        features: ["Home Renovation", "Kitchen Remodeling", "Bathroom Design", "Custom Building"]
       },
       {
-        title: "Post-Production",
-        description: "Professional editing with vintage film effects and color grading.",
-        icon: "edit",
-        features: ["Film Editing", "Color Grading", "Visual Effects", "Sound Design"]
-      },
-      {
-        title: "Workshops",
-        description: "Learn vintage film techniques and storytelling methods.",
-        icon: "chalkboard-teacher",
-        features: ["Film History", "Analog Photography", "Storytelling Techniques", "Vintage Effects"]
+        title: "Consulting",
+        description: "Expert consultation for design decisions and project planning.",
+        icon: "lightbulb",
+        features: ["Design Consultation", "Project Planning", "Material Selection", "Budget Planning"]
       }
     ];
     
