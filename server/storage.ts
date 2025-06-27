@@ -81,7 +81,12 @@ export class MemStorage implements IStorage {
   
   async createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem> {
     const id = this.portfolioCurrentId++;
-    const portfolioItem: PortfolioItem = { ...item, id };
+    const portfolioItem: PortfolioItem = { 
+      ...item, 
+      id,
+      additionalImages: item.additionalImages || null,
+      projectLink: item.projectLink || null
+    };
     this.portfolioItemsMap.set(id, portfolioItem);
     return portfolioItem;
   }
@@ -115,6 +120,7 @@ export class MemStorage implements IStorage {
         title: "Commercial building with attic and apartment design",
         description: "Contemporary interior design with warm family atmosphere",
         imageUrl: "/static/big_haz.jpg",
+        additionalImages: null,
         category: "Residential",
         projectLink: "#"
       },
@@ -122,6 +128,7 @@ export class MemStorage implements IStorage {
         title: "Ancient design",
         description: "Classic interior design with sophisticated touches",
         imageUrl: "/static/big_okor2.jpg",
+        additionalImages: null,
         category: "Classic",
         projectLink: "#"
       },
@@ -129,6 +136,7 @@ export class MemStorage implements IStorage {
         title: "Historic Renovation",
         description: "Transforming historic spaces with modern functionality",
         imageUrl: "/static/big_oreglaktanya.jpg",
+        additionalImages: null,
         category: "Renovation",
         projectLink: "#"
       },
@@ -136,13 +144,23 @@ export class MemStorage implements IStorage {
         title: "Provence Style",
         description: "French countryside charm with rustic elegance",
         imageUrl: "/static/big_provance.en.jpg",
+        additionalImages: null,
         category: "Rustic",
         projectLink: "#"
       },
       {
         title: "Bold Design",
         description: "Daring interior concepts with unique character",
-        imageUrl: "/static/big_vakmero3.jpg",
+        imageUrl: "/static/_DSC0719.jpg",
+        additionalImages: [
+          "/static/big_nappali2.jpg",
+          "/static/big_nappali3.jpg", 
+          "/static/big_nappali4.jpg",
+          "/static/big_nappali6.jpg",
+          "/static/big_napteto.jpg",
+          "/static/big_rfurdo.jpg",
+          "/static/big_rkonyha.jpg"
+        ],
         category: "Contemporary",
         projectLink: "#"
       },
@@ -150,6 +168,7 @@ export class MemStorage implements IStorage {
         title: "Living Room Design",
         description: "Plans",
         imageUrl: "/static/big_nappalifalnezet2.jpg",
+        additionalImages: null,
         category: "Tervek",
         projectLink: "#"
       },
@@ -157,6 +176,7 @@ export class MemStorage implements IStorage {
         title: "Home Sweet Home",
         description: "Publications",
         imageUrl: "/static/big_otthon.jpg",
+        additionalImages: null,
         category: "publikációk",
         projectLink: "#"
       }
@@ -164,7 +184,12 @@ export class MemStorage implements IStorage {
     
     items.forEach(item => {
       const id = this.portfolioCurrentId++;
-      const portfolioItem: PortfolioItem = { ...item, id };
+      const portfolioItem: PortfolioItem = { 
+        ...item, 
+        id,
+        additionalImages: item.additionalImages || null,
+        projectLink: item.projectLink || null
+      };
       this.portfolioItemsMap.set(id, portfolioItem);
     });
   }
