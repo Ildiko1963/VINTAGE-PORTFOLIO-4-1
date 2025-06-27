@@ -128,7 +128,9 @@ export class MemStorage implements IStorage {
         title: "Ancient design",
         description: "Classic interior design with sophisticated touches",
         imageUrl: "/static/big_okor2.jpg",
-        additionalImages: null,
+        additionalImages: [
+          "/static/big_zebra.jpg"
+        ],
         category: "Classic",
         projectLink: "#"
       },
@@ -136,7 +138,10 @@ export class MemStorage implements IStorage {
         title: "Historic Renovation",
         description: "Transforming historic spaces with modern functionality",
         imageUrl: "/static/big_oreglaktanya.jpg",
-        additionalImages: null,
+        additionalImages: [
+          "/static/big_laktanya.jpg",
+          "/static/big_furdo2.jpg"
+        ],
         category: "Renovation",
         projectLink: "#"
       },

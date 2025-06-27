@@ -117,6 +117,23 @@ export default function ContactSection() {
               </div>
             </div>
             
+            {/* Small gallery images */}
+            <div className="mt-8">
+              <h4 className="font-bold mb-4">Recent Work</h4>
+              <div className="flex gap-4">
+                <img 
+                  src="/static/23358_pic02.jpg" 
+                  alt="Interior design project" 
+                  className="w-24 h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <img 
+                  src="/static/23358_pic03.jpg" 
+                  alt="Interior design project" 
+                  className="w-24 h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            </div>
+            
             <div className="mt-8">
               <h4 className="font-bold mb-4">Connect With Me</h4>
               <div className="flex space-x-6">

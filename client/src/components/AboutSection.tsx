@@ -31,8 +31,8 @@ export default function AboutSection() {
               <div className="relative">
                 <div className="w-full h-full absolute -top-3 -left-3 border-2 border-[#D9BF77]"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                  alt="Portrait of filmmaker" 
+                  src="/static/23358_ildiko.jpg" 
+                  alt="Portrait of interior designer" 
                   className="w-full h-auto relative z-10 border-2 border-[#463730]"
                 />
               </div>
