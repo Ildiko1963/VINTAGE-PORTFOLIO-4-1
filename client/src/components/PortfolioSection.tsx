@@ -22,13 +22,13 @@ function PortfolioItemCard({ item, index }: PortfolioItemCardProps) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className="group relative overflow-hidden rounded-md"
+      className="group relative overflow-hidden rounded-md bg-[#463730] bg-opacity-20"
     >
-      <div className="relative">
+      <div className="relative h-64 flex items-center justify-center">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+          className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
         
         {hasAdditionalImages && (
