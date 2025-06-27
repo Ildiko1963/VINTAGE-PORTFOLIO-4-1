@@ -93,26 +93,26 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
               {/* Film strip images - doubled for seamless loop */}
               {[
-                "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1569587112025-0d460e81a126?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1526218626217-dc65a29bb444?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1485846147915-69f12fbd03b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80"
+                "/static/big_laktanya.jpg",
+                "/static/big_nappali_falnezet2.jpg",
+                "/static/big_nappali2.jpg",
+                "/static/big_nappali3.jpg",
+                "/static/big_nappali4.jpg",
+                "/static/big_nappali6.jpg"
               ].map((src, index) => (
-                <img key={`film-1-${index}`} src={src} alt={`Film frame ${index + 1}`} className="h-24 object-cover mx-1" />
+                <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-24 object-cover mx-1" />
               ))}
               
               {/* Duplicate for seamless loop */}
               {[
-                "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1569587112025-0d460e81a126?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1526218626217-dc65a29bb444?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80",
-                "https://images.unsplash.com/photo-1485846147915-69f12fbd03b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&h=150&q=80"
+                "/static/big_laktanya.jpg",
+                "/static/big_nappali_falnezet2.jpg",
+                "/static/big_nappali2.jpg",
+                "/static/big_nappali3.jpg",
+                "/static/big_nappali4.jpg",
+                "/static/big_nappali6.jpg"
               ].map((src, index) => (
-                <img key={`film-2-${index}`} src={src} alt={`Film frame ${index + 7}`} className="h-24 object-cover mx-1" />
+                <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-24 object-cover mx-1" />
               ))}
             </div>
           </div>

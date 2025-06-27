@@ -148,6 +148,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Added 1 image to Ancient design portfolio: big_zebra.jpg
 - June 27, 2025. Updated About section with Ildikó's portrait (23358_ildiko.jpg) replacing placeholder image
 - June 27, 2025. Added two small gallery images to Contact section: 23358_pic02.jpg, 23358_pic03.jpg under "Recent Work"
+- June 27, 2025. Updated main page filmstrip with interior design images: big_laktanya.jpg, big_nappali_falnezet2.jpg, big_nappali2.jpg, big_nappali3.jpg, big_nappali4.jpg, big_nappali6.jpg
 
 ## User Preferences
 
