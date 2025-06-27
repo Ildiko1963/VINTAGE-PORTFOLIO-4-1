@@ -136,6 +136,7 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Added black shadow strips to top and bottom of all main sections to match IntroScreen styling
 - June 27, 2025. Added two new portfolio items with custom categories "Tervek" and "publikációk" using big_nappalifalnezet2.jpg and big_otthon.jpg
 - June 27, 2025. Updated portfolio hover descriptions: Modern Family Home shows "Commercial building with attic and apartment design", Traditional Elegance shows "Ancient design", Living Room Design shows "Plans", Home Sweet Home shows "Publications"
+- June 27, 2025. Added image gallery support to Bold Design portfolio item with 7 images: big_nappali2.jpg (main), big_nappali3.jpg, big_nappali4.jpg, big_nappali6.jpg, big_napteto.jpg, big_rfurdo.jpg, big_rkonyha.jpg
 
 ## User Preferences
 
