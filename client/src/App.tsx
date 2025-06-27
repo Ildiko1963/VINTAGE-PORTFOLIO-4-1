@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import React, { useEffect, Suspense } from "react";
 
 const AboutPage = React.lazy(() => import('@/pages/About'));
+const PortfolioDetail = React.lazy(() => import('@/pages/PortfolioDetail'));
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/portfolio/:id" component={PortfolioDetail} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

@@ -62,7 +62,7 @@ function PortfolioItemCard({ item, index }: PortfolioItemCardProps) {
           <p className="text-xs text-[#D9BF77] mb-2">📸 {allImages.length} images</p>
         )}
         <a 
-          href={item.projectLink || "#"} 
+          href={`/portfolio/${item.id}`} 
           className="inline-block px-4 py-2 border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
         >
           View Project
