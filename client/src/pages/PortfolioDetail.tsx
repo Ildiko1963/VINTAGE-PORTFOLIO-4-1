@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useParams, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 import { PortfolioItem } from '@/lib/types';
 import FilmFrameWrapper from '@/components/FilmFrameWrapper';
 
@@ -10,6 +10,7 @@ export default function PortfolioDetail() {
   const params = useParams();
   const [, setLocation] = useLocation();
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   
   const { data: portfolioItem, isLoading, error } = useQuery<PortfolioItem>({
     queryKey: [`/api/portfolio/${params.id}`],
@@ -102,8 +103,15 @@ export default function PortfolioDetail() {
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full max-h-96 object-contain rounded-lg shadow-lg mx-auto block"
+                  className="w-full max-h-96 object-contain rounded-lg shadow-lg mx-auto block cursor-pointer"
+                  onClick={() => setIsFullscreen(true)}
                 />
+                <button
+                  onClick={() => setIsFullscreen(true)}
+                  className="absolute top-6 right-6 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                >
+                  <ZoomIn size={20} />
+                </button>
                 
                 {allImages.length > 1 && (
                   <>
@@ -199,6 +207,48 @@ export default function PortfolioDetail() {
           </div>
         </FilmFrameWrapper>
       </div>
+
+      {/* Fullscreen Image Modal */}
+      {isFullscreen && (
+        <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-full max-h-full">
+            <img
+              src={allImages[selectedImage]}
+              alt={portfolioItem.title}
+              className="max-w-full max-h-full object-contain"
+            />
+            <button
+              onClick={() => setIsFullscreen(false)}
+              className="absolute top-4 right-4 bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-opacity-30 transition-all"
+            >
+              <X size={24} />
+            </button>
+            
+            {/* Navigation buttons in fullscreen */}
+            {allImages.length > 1 && (
+              <>
+                <button
+                  onClick={() => setSelectedImage(prev => prev > 0 ? prev - 1 : allImages.length - 1)}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-opacity-30 transition-all"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={() => setSelectedImage(prev => prev < allImages.length - 1 ? prev + 1 : 0)}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 text-white p-2 rounded-full hover:bg-opacity-30 transition-all"
+                >
+                  <ChevronRight size={24} />
+                </button>
+                
+                {/* Image counter in fullscreen */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full">
+                  {selectedImage + 1} / {allImages.length}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
