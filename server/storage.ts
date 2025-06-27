@@ -112,45 +112,38 @@ export class MemStorage implements IStorage {
   private initializePortfolioItems() {
     const items: InsertPortfolioItem[] = [
       {
-        title: "The Silent Era",
-        description: "A photography series capturing the essence of 1920s cinema",
-        imageUrl: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Photography",
+        title: "Modern Family Home",
+        description: "Contemporary interior design with warm family atmosphere",
+        imageUrl: "big_haz.jpg",
+        category: "Residential",
         projectLink: "#"
       },
       {
-        title: "Shadows & Light",
-        description: "A film noir inspired series exploring contrast and shadow",
-        imageUrl: "https://images.unsplash.com/photo-1515634928627-2a4e0dae3ddf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Film",
+        title: "Traditional Elegance",
+        description: "Classic interior design with sophisticated touches",
+        imageUrl: "big_okor2.jpg",
+        category: "Classic",
         projectLink: "#"
       },
       {
-        title: "Chronicles",
-        description: "Documentary-style narrative exploring forgotten histories",
-        imageUrl: "https://images.unsplash.com/photo-1485846147915-69f12fbd03b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Documentary",
+        title: "Historic Renovation",
+        description: "Transforming historic spaces with modern functionality",
+        imageUrl: "big_oreglaktanya.jpg",
+        category: "Renovation",
         projectLink: "#"
       },
       {
-        title: "Timeless Faces",
-        description: "Portrait series using vintage photography techniques",
-        imageUrl: "https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Portraits",
+        title: "Provence Style",
+        description: "French countryside charm with rustic elegance",
+        imageUrl: "big_provance.en.jpg",
+        category: "Rustic",
         projectLink: "#"
       },
       {
-        title: "Analog Dreams",
-        description: "Experimental film techniques on analog media",
-        imageUrl: "https://images.unsplash.com/photo-1533293962070-cb10e9debbb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Experimental",
-        projectLink: "#"
-      },
-      {
-        title: "Golden Age Ads",
-        description: "Reimagining vintage advertising aesthetics",
-        imageUrl: "https://images.unsplash.com/photo-1601447467989-1049be41e915?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        category: "Advertising",
+        title: "Bold Design",
+        description: "Daring interior concepts with unique character",
+        imageUrl: "big_vakmero3.jpg",
+        category: "Contemporary",
         projectLink: "#"
       }
     ];
