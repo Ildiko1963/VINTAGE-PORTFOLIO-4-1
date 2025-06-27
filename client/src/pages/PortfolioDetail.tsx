@@ -15,14 +15,7 @@ export default function PortfolioDetail() {
     queryKey: [`/api/portfolio/${params.id}`],
   });
 
-  // Debug logging
-  console.log('Portfolio Detail Debug:', { 
-    params, 
-    portfolioItem, 
-    isLoading, 
-    error,
-    queryKey: `/api/portfolio/${params.id}`
-  });
+
 
   if (isLoading) {
     return (
@@ -103,12 +96,13 @@ export default function PortfolioDetail() {
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
+              className="w-full"
             >
-              <div className="relative">
+              <div className="relative bg-[#463730] bg-opacity-20 rounded-lg p-4">
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                  className="w-full max-h-96 object-contain rounded-lg shadow-lg mx-auto block"
                 />
                 
                 {allImages.length > 1 && (
@@ -137,24 +131,29 @@ export default function PortfolioDetail() {
               
               {/* Thumbnail navigation */}
               {allImages.length > 1 && (
-                <div className="flex gap-2 mt-4 overflow-x-auto">
-                  {allImages.map((image, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedImage(index)}
-                      className={`flex-shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-all ${
-                        selectedImage === index 
-                          ? 'border-[#D9BF77] opacity-100' 
-                          : 'border-transparent opacity-60 hover:opacity-80'
-                      }`}
-                    >
-                      <img
-                        src={image}
-                        alt=""
-                        className="w-full h-full object-cover"
-                      />
-                    </button>
-                  ))}
+                <div className="mt-4">
+                  <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 max-h-32 overflow-y-auto">
+                    {allImages.map((image, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setSelectedImage(index)}
+                        className={`aspect-square rounded-md overflow-hidden border-2 transition-all ${
+                          selectedImage === index 
+                            ? 'border-[#D9BF77] opacity-100' 
+                            : 'border-transparent opacity-60 hover:opacity-80'
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`Image ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                  <div className="text-center mt-2 text-sm text-[#C8B28E]">
+                    {allImages.length} images available
+                  </div>
                 </div>
               )}
             </motion.div>

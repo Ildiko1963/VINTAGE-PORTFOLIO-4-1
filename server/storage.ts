@@ -167,7 +167,7 @@ export class MemStorage implements IStorage {
       {
         title: "Plans",
         description: "Architectural plans and design concepts",
-        imageUrl: "/static/big_emelet_falnezet.jpg",
+        imageUrl: "/static/big_nappali_falnezet2.jpg",
         additionalImages: [
           "/static/big_emeletalaprajz.jpg",
           "/static/big_emelethalo_falnezet.jpg",
