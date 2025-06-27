@@ -78,25 +78,25 @@ export default function PortfolioDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-transparent text-[#D9BF77] pt-20 pb-16">
+    <div className="min-h-screen bg-transparent text-[#D9BF77] pt-20 pb-16 relative">
       {/* Top shadow strip */}
-      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
+      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-10"></div>
       {/* Bottom shadow strip */}
-      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-20"></div>
+      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-20">
         {/* Back button */}
         <motion.button
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           onClick={() => setLocation('/')}
-          className="flex items-center gap-2 mb-8 text-[#D9BF77] hover:text-[#C8B28E] transition-colors"
+          className="flex items-center gap-2 mb-8 text-[#D9BF77] hover:text-[#C8B28E] transition-colors z-30 relative"
         >
           <ArrowLeft size={20} />
           Back to Portfolio
         </motion.button>
 
-        <FilmFrameWrapper className="py-8">
+        <FilmFrameWrapper className="py-8 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Image Gallery */}
             <motion.div

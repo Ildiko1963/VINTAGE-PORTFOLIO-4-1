@@ -165,10 +165,26 @@ export class MemStorage implements IStorage {
         projectLink: "#"
       },
       {
-        title: "Living Room Design",
-        description: "Plans",
-        imageUrl: "/static/big_nappalifalnezet2.jpg",
-        additionalImages: null,
+        title: "Plans",
+        description: "Architectural plans and design concepts",
+        imageUrl: "/static/big_emelet_falnezet.jpg",
+        additionalImages: [
+          "/static/big_emeletalaprajz.jpg",
+          "/static/big_emelethalo_falnezet.jpg",
+          "/static/big_fodszintialaprajz.jpg",
+          "/static/big_furdo.jpg",
+          "/static/big_halo_falnezet.jpg",
+          "/static/big_halo.jpg",
+          "/static/big_konyha.jpg",
+          "/static/big_nappali_falnezet.jpg",
+          "/static/big_nappali_falnezet2.jpg",
+          "/static/big_nappali_falnezet3.jpg",
+          "/static/big_nappali.jpg",
+          "/static/big_furdo_montazs.jpg",
+          "/static/big_halo_montazs.jpg.jpg",
+          "/static/big_konyhamontazs.jpg.jpg",
+          "/static/big_nappali_montazs.jpg"
+        ],
         category: "Tervek",
         projectLink: "#"
       },
