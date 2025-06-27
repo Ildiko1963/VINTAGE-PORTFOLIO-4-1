@@ -11,14 +11,40 @@ export default function PortfolioDetail() {
   const [, setLocation] = useLocation();
   const [selectedImage, setSelectedImage] = useState(0);
   
-  const { data: portfolioItem, isLoading } = useQuery<PortfolioItem>({
-    queryKey: ['/api/portfolio', params.id],
+  const { data: portfolioItem, isLoading, error } = useQuery<PortfolioItem>({
+    queryKey: [`/api/portfolio/${params.id}`],
+  });
+
+  // Debug logging
+  console.log('Portfolio Detail Debug:', { 
+    params, 
+    portfolioItem, 
+    isLoading, 
+    error,
+    queryKey: `/api/portfolio/${params.id}`
   });
 
   if (isLoading) {
     return (
       <div className="min-h-screen bg-transparent text-[#D9BF77] flex items-center justify-center">
-        <div className="animate-pulse text-xl">Loading project...</div>
+        <div className="animate-pulse text-xl">Loading project... (ID: {params.id})</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-transparent text-[#D9BF77] flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl mb-4">Error loading project</h2>
+          <p className="mb-4">Error: {error.message}</p>
+          <button
+            onClick={() => setLocation('/')}
+            className="px-6 py-2 border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
+          >
+            Back to Home
+          </button>
+        </div>
       </div>
     );
   }
@@ -28,6 +54,7 @@ export default function PortfolioDetail() {
       <div className="min-h-screen bg-transparent text-[#D9BF77] flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl mb-4">Project not found</h2>
+          <p className="mb-4">Looking for ID: {params.id}</p>
           <button
             onClick={() => setLocation('/')}
             className="px-6 py-2 border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
