@@ -189,10 +189,14 @@ export class MemStorage implements IStorage {
         projectLink: "#"
       },
       {
-        title: "Home Sweet Home",
+        title: "Publications",
         description: "Publications",
-        imageUrl: "/static/big_otthon.jpg",
-        additionalImages: null,
+        imageUrl: "/static/big_otthon2.jpg",
+        additionalImages: [
+          "/static/big_otthonnap2.jpg",
+          "/static/big_otthonnap.jpg",
+          "/static/big_otthonfurdo.jpg"
+        ],
         category: "publikációk",
         projectLink: "#"
       }

@@ -139,6 +139,9 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Added image gallery support to Bold Design portfolio item with 8 images: big_vakmero4.jpg (main), big_nappali2.jpg, big_nappali3.jpg, big_nappali4.jpg, big_nappali6.jpg, big_napteto.jpg, big_rfurdo.jpg, big_rkonyha.jpg
 - June 27, 2025. Updated "Living Room Design" to "Plans" with 16 architectural images and floor plans
 - June 27, 2025. Created portfolio detail page with full-screen image gallery and navigation
+- June 27, 2025. Fixed image display issues by changing from object-cover to object-contain to prevent cropping
+- June 27, 2025. Updated portfolio card layout with proper centering and background containers
+- June 27, 2025. Changed "Home Sweet Home" to "Publications" with big_otthon2.jpg as main image and 3 additional images
 
 ## User Preferences
 
