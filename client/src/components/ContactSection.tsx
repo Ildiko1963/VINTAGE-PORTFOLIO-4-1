@@ -105,16 +105,7 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="flex items-start">
-                <div className="mr-4 text-[#D9BF77]">
-                  <i className="fas fa-clock text-2xl"></i>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-1">Working Hours</h4>
-                  <p className="font-typewriter">Monday - Friday: 9am - 6pm</p>
-                  <p className="font-typewriter">Saturday: By appointment only</p>
-                </div>
-              </div>
+
             </div>
             
             {/* Small gallery images */}
@@ -213,10 +204,9 @@ export default function ContactSection() {
                     className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   >
                     <option value="">Select a subject</option>
-                    <option value="Film Production">Film Production</option>
-                    <option value="Photography">Photography</option>
-                    <option value="Post-Production">Post-Production</option>
-                    <option value="Workshops">Workshops</option>
+                    <option value="Design">Design</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Consulting">Consulting</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.subject && (

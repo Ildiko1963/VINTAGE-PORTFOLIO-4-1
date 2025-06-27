@@ -152,6 +152,8 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Updated Services section with interior design categories: Design, Construction, Consulting
 - June 27, 2025. Enlarged Contact section gallery images from 24x24 to 36x36 pixels (1.5x larger)
 - June 27, 2025. Updated Contact information with Hungarian address (2900 Komárom, Igmándi út 27.) and phone (+36209220239) and email (jonathan5@t-online.hu)
+- June 27, 2025. Removed Working Hours section from Contact page
+- June 27, 2025. Updated contact form subject dropdown with interior design options: Design, Construction, Consulting
 
 ## User Preferences
 
