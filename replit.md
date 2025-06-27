@@ -134,6 +134,8 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 25, 2025. Added brown section dividers between pages for better visual separation
 - June 25, 2025. Made separator lines much thicker (20px) for complete page separation
 - June 27, 2025. Added black shadow strips to top and bottom of all main sections to match IntroScreen styling
+- June 27, 2025. Added two new portfolio items with custom categories "Tervek" and "publikációk" using big_nappalifalnezet2.jpg and big_otthon.jpg
+- June 27, 2025. Updated portfolio hover descriptions: Modern Family Home shows "Commercial building with attic and apartment design", Traditional Elegance shows "Ancient design", Living Room Design shows "Plans", Home Sweet Home shows "Publications"
 
 ## User Preferences
 

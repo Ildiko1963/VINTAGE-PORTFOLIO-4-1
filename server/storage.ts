@@ -113,14 +113,14 @@ export class MemStorage implements IStorage {
     const items: InsertPortfolioItem[] = [
       {
         title: "Modern Family Home",
-        description: "Contemporary interior design with warm family atmosphere",
+        description: "Commercial building with attic and apartment design (Complete business and home interior design project)",
         imageUrl: "/static/big_haz.jpg",
         category: "Residential",
         projectLink: "#"
       },
       {
         title: "Traditional Elegance",
-        description: "Classic interior design with sophisticated touches",
+        description: "Ancient design",
         imageUrl: "/static/big_okor2.jpg",
         category: "Classic",
         projectLink: "#"
@@ -148,14 +148,14 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Living Room Design",
-        description: "Modern living room wall view design concept",
+        description: "Plans",
         imageUrl: "/static/big_nappalifalnezet2.jpg",
         category: "Tervek",
         projectLink: "#"
       },
       {
         title: "Home Sweet Home",
-        description: "Complete home interior design project",
+        description: "Publications",
         imageUrl: "/static/big_otthon.jpg",
         category: "publikációk",
         projectLink: "#"
