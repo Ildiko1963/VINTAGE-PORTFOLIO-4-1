@@ -114,35 +114,35 @@ export class MemStorage implements IStorage {
       {
         title: "Modern Family Home",
         description: "Contemporary interior design with warm family atmosphere",
-        imageUrl: "big_haz.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         category: "Residential",
         projectLink: "#"
       },
       {
         title: "Traditional Elegance",
         description: "Classic interior design with sophisticated touches",
-        imageUrl: "big_okor2.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         category: "Classic",
         projectLink: "#"
       },
       {
         title: "Historic Renovation",
         description: "Transforming historic spaces with modern functionality",
-        imageUrl: "big_oreglaktanya.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         category: "Renovation",
         projectLink: "#"
       },
       {
         title: "Provence Style",
         description: "French countryside charm with rustic elegance",
-        imageUrl: "big_provance.en.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         category: "Rustic",
         projectLink: "#"
       },
       {
         title: "Bold Design",
         description: "Daring interior concepts with unique character",
-        imageUrl: "big_vakmero3.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
         category: "Contemporary",
         projectLink: "#"
       }
