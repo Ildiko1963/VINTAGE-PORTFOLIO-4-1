@@ -114,35 +114,35 @@ export class MemStorage implements IStorage {
       {
         title: "Modern Family Home",
         description: "Contemporary interior design with warm family atmosphere",
-        imageUrl: "https://vintageportfolio-2-2.ildikotlts.repl.co/big_haz.jpg",
+        imageUrl: "/static/big_haz.jpg",
         category: "Residential",
         projectLink: "#"
       },
       {
         title: "Traditional Elegance",
         description: "Classic interior design with sophisticated touches",
-        imageUrl: "https://vintageportfolio-2-2.ildikotlts.repl.co/big_okor2.jpg",
+        imageUrl: "/static/big_okor2.jpg",
         category: "Classic",
         projectLink: "#"
       },
       {
         title: "Historic Renovation",
         description: "Transforming historic spaces with modern functionality",
-        imageUrl: "https://vintageportfolio-2-2.ildikotlts.repl.co/big_oreglaktanya.jpg",
+        imageUrl: "/static/big_oreglaktanya.jpg",
         category: "Renovation",
         projectLink: "#"
       },
       {
         title: "Provence Style",
         description: "French countryside charm with rustic elegance",
-        imageUrl: "https://vintageportfolio-2-2.ildikotlts.repl.co/big_provance.en.jpg",
+        imageUrl: "/static/big_provance.en.jpg",
         category: "Rustic",
         projectLink: "#"
       },
       {
         title: "Bold Design",
         description: "Daring interior concepts with unique character",
-        imageUrl: "https://vintageportfolio-2-2.ildikotlts.repl.co/big_vakmero3.jpg",
+        imageUrl: "/static/big_vakmero3.jpg",
         category: "Contemporary",
         projectLink: "#"
       }
