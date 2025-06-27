@@ -4,7 +4,7 @@ import FilmFrameWrapper from './FilmFrameWrapper';
 import { PortfolioItem } from '@/lib/types';
 
 export default function PortfolioSection() {
-  const { data: portfolioItems, isLoading } = useQuery({
+  const { data: portfolioItems, isLoading } = useQuery<PortfolioItem[]>({
     queryKey: ['/api/portfolio'],
   });
   

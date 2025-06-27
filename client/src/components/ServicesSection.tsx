@@ -38,7 +38,7 @@ const ServiceItem = ({ service, index }: ServiceItemProps) => {
 };
 
 export default function ServicesSection() {
-  const { data: services, isLoading } = useQuery({
+  const { data: services, isLoading } = useQuery<Service[]>({
     queryKey: ['/api/services'],
   });
   
