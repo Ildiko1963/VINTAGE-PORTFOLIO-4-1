@@ -142,6 +142,8 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Fixed image display issues by changing from object-cover to object-contain to prevent cropping
 - June 27, 2025. Updated portfolio card layout with proper centering and background containers
 - June 27, 2025. Changed "Home Sweet Home" to "Publications" with big_otthon2.jpg as main image and 3 additional images
+- June 27, 2025. Added fullscreen zoom functionality to portfolio images with click-to-zoom and navigation
+- June 27, 2025. Added 4 additional images to Provence Style portfolio: big_myaraloterasz.jpg.jpg, big_nyaralo2.jpg, big_nyaralokert.jpg, big_nyaralonappali.jpg
 
 ## User Preferences
 

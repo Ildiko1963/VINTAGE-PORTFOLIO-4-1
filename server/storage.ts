@@ -144,7 +144,12 @@ export class MemStorage implements IStorage {
         title: "Provence Style",
         description: "French countryside charm with rustic elegance",
         imageUrl: "/static/big_provance.en.jpg",
-        additionalImages: null,
+        additionalImages: [
+          "/static/big_myaraloterasz.jpg.jpg",
+          "/static/big_nyaralo2.jpg",
+          "/static/big_nyaralokert.jpg",
+          "/static/big_nyaralonappali.jpg"
+        ],
         category: "Rustic",
         projectLink: "#"
       },
