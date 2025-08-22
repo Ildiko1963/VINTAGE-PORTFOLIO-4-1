@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import Background from "@/components/Background";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import React, { useEffect, Suspense } from "react";
 
 const AboutPage = React.lazy(() => import('@/pages/About'));
@@ -51,8 +53,11 @@ function App() {
   
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
+      <LanguageProvider>
+        <LanguageSwitcher />
+        <Router />
+        <Toaster />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Service } from '@/lib/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ServiceItemProps {
   service: Service;
@@ -38,6 +39,7 @@ const ServiceItem = ({ service, index }: ServiceItemProps) => {
 };
 
 export default function ServicesSection() {
+  const { t } = useLanguage();
   const { data: services, isLoading } = useQuery<Service[]>({
     queryKey: ['/api/services'],
   });
@@ -57,7 +59,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-12"
         >
-          Services Offered
+{t('services.title')}
         </motion.h2>
         
         <div className="max-w-5xl mx-auto">

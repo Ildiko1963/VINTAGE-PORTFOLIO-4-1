@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import FilmFrameWrapper from './FilmFrameWrapper';
 import { PortfolioItem } from '@/lib/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PortfolioItemCardProps {
   item: PortfolioItem;
   index: number;
+  t: (key: string) => string;
 }
 
-function PortfolioItemCard({ item, index }: PortfolioItemCardProps) {
+function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
   const [selectedImage, setSelectedImage] = useState(0);
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
@@ -65,7 +67,7 @@ function PortfolioItemCard({ item, index }: PortfolioItemCardProps) {
           href={`/portfolio/${item.id}`} 
           className="inline-block px-4 py-2 border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
         >
-          View Project
+View Gallery
         </a>
       </div>
     </motion.div>
@@ -73,6 +75,7 @@ function PortfolioItemCard({ item, index }: PortfolioItemCardProps) {
 }
 
 export default function PortfolioSection() {
+  const { t } = useLanguage();
   const { data: portfolioItems, isLoading } = useQuery<PortfolioItem[]>({
     queryKey: ['/api/portfolio'],
   });
@@ -92,7 +95,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.5 }}
           className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          Featured Works
+{t('portfolio.title')}
         </motion.h2>
         
         <FilmFrameWrapper className="py-8">
@@ -105,7 +108,7 @@ export default function PortfolioSection() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
-                <PortfolioItemCard key={item.id} item={item} index={index} />
+                <PortfolioItemCard key={item.id} item={item} index={index} t={t} />
               ))}
             </div>
           )}

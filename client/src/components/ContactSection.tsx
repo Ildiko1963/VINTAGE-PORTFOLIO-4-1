@@ -6,8 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { apiRequest } from '@/lib/queryClient';
 import { contactFormSchema, ContactForm } from '@shared/schema';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [formSubmitted, setFormSubmitted] = useState(false);
   
@@ -60,7 +62,7 @@ export default function ContactSection() {
           transition={{ duration: 0.5 }}
           className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          Get in Touch
+{t('contact.title')}
         </motion.h2>
         
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
@@ -71,7 +73,7 @@ export default function ContactSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-full md:w-1/2"
           >
-            <h3 className="font-playfair text-2xl font-bold mb-6 text-[#D9BF77]">Contact Information</h3>
+            <h3 className="font-playfair text-2xl font-bold mb-6 text-[#D9BF77]">{t('contact.info')}</h3>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -79,10 +81,8 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Studio Location</h4>
-                  <p className="font-typewriter">2900 Komárom</p>
-                  <p className="font-typewriter">Igmándi út 27.</p>
-                  <p className="font-typewriter">Magyarország</p>
+                  <h4 className="font-bold mb-1">{t('contact.studio')}</h4>
+                  <p className="font-typewriter">{t('contact.address')}</p>
                 </div>
               </div>
               

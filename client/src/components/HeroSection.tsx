@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import FilmFrameWrapper from './FilmFrameWrapper';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroSectionProps {
   onNavigate: (id: string) => void;
@@ -9,6 +10,7 @@ interface HeroSectionProps {
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
   const controls = useAnimation();
   const textRef = useRef<HTMLParagraphElement>(null);
+  const { t } = useLanguage();
   
   // Typing effect
   useEffect(() => {
@@ -56,7 +58,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             transition={{ delay: 1, duration: 0.8 }}
             className="font-playfair text-5xl md:text-7xl font-bold text-[#D9BF77] mb-6"
           >
-            Ildikostyle Portfolio
+{t('hero.title')}
           </motion.h1>
           
           <div className="max-w-3xl overflow-hidden">
@@ -67,7 +69,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               className="font-typewriter text-xl md:text-2xl text-[#D9BF77] mb-8 overflow-hidden whitespace-nowrap border-r-2 border-[#D9BF77]"
               style={{ borderRightColor: '#D9BF77' }}
             >
-              interior design
+{t('hero.subtitle')}
             </motion.p>
           </div>
           

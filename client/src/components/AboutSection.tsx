@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AboutSection() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-16 bg-transparent border-t-[20px] border-[#8B7355] relative">
       {/* Top shadow strip */}
@@ -17,7 +19,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-8"
           >
-            About the Creator
+{t('about.title')}
           </motion.h2>
           
           <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
@@ -46,37 +48,37 @@ export default function AboutSection() {
               className="w-full md:w-2/3 font-lora"
             >
               <p className="text-[#D9BF77] text-lg mb-4">
-                Tölts Ildikó vagyok. A Junior Art neves lakberendező iskola hallgatójaként végeztem. Már iskolai tanulmányaim megkezdése előtt is több referencia munkával büszkélkedhettem.
+                {t('about.intro')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Életem szerves része, mindennapjaim alkotó eleme a harmóniára való törekvés, a harmónia megteremtése. Fontosnak érzem, hogy figyeljünk magunkra, mind belsőleg, mind külsőleg, mind az életterünk által, mivel csak egy önmagunkat visszatükröző környezetben érezhetjük igazán jól magunkat. Az erre való tudatos törekvés kellene, hogy átitassa életünk minden szegmensét, területét.
+                {t('about.philosophy1')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Ha hagyjuk magunkat a mai, társadalmi struktúrából fakadó, piacorientált, személytelen attitűd által sodródni, tömegnormáknak engedelmeskedve, életünk elsivárosodása, mindennapjaink egyhangúsága örömtelenséggel és kiegyensúlyozatlansággal párosulva nem sok boldog és derűs pillanatot fog tartogatni a számunkra.
+                {t('about.philosophy2')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Ezért tartom fontosnak az enteriőrtervezést, mivel általa bátrabban tudunk kilépni az élet küzdőterére, felvértezve magunkat a környezetünk szépségéből, és harmóniájából fakadó biztonságérzettel.
+                {t('about.philosophy3')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Egy jó tervező feladata az, hogy meglássa, meglátassa és az életterünkben egyben megalkossa a belső lényünkben lakó indivíduumot, megtalálva a hozzá vezető utat eklektika, minimál art, high-tech, posztmodern, vagy bármely stílus által...
+                {t('about.philosophy4')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Továbbá egy jó tervező feladata nem a megszokott szabályok felállítása, ezzel is növelve az életünk merevségét, gátoltságát, hanem azok lerombolása teret adva az egyéniség határtalan szárnyalásának egy minőségibb, kiteljesedettebb élet felé, megnyitva az ajtót belső lényünkben annak a szikrának, aminek a segítségével áttörhetünk a hétköznapok szürkeségén, a többi emberhez való kényszeres megfelelés erőltetett, fojtogató rabszolgaságán!
+                {t('about.philosophy5')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Feladatomnak érzem ennek az elkötelezettségnek a szellemében viszonyulni ehhez a munkához, és a munkán keresztül az emberekhez.
+                {t('about.philosophy6')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4 font-typewriter italic">
-                Mert egy alkotó munka sikerét nem az határozza meg, hogy az alkotó mit tett, hanem, hogy az alkotása az alázatnak és a benne lakó szeretetnek engedelmeskedve, mennyire volt képes javítani az önmagunk iránt érzett elfogadás, az emberi méltóságunk manapság oly megfakult képén...
+                {t('about.philosophy7')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                És ha egy jól megkomponált enteriőr nem is többet, mint egy parányi örömet, békességet, meghittséget ajándékoz megrendelőjének, már megérte.
+                {t('about.philosophy8')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Mert megmutatni magunkat a külvilág számára, mégha egy szakember által is, sokunknak nem kis feladat. De bizony megéri! Ehhez bátorság kell, de bátornak lenni egy méltóbb élet reményében, főleg megéri!
+                {t('about.philosophy9')}
               </p>
               <p className="text-[#D9BF77] text-lg mb-6 font-typewriter">
-                "A stílus az egyetlen olyan igazi luxus, amit bárki megengedhet magának, függetlenül attól, hogy mennyi pénze van. Ez olyan dolog, ami velünk született, de tanulható, feltéve, ha megvan hozzá az emberben a kellő intelligencia." - Giorgio Armani
+                "{t('about.armani')}" - Giorgio Armani
               </p>
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
