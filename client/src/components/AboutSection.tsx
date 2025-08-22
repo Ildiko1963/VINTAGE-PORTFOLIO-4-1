@@ -67,13 +67,16 @@ export default function AboutSection() {
                 Feladatomnak érzem ennek az elkötelezettségnek a szellemében viszonyulni ehhez a munkához, és a munkán keresztül az emberekhez.
               </p>
               <p className="text-[#D9BF77] text-lg mb-4 font-typewriter italic">
-                Mert egy alkotó munka sikerét nem az határozza meg, hogy az alkotó mit tett, hanem, hogy az alkotása az alázatnak, és a benne lakó szeretetnek engedelmeskedve, mennyire volt képes javítani az önmagunk iránt érzett elfogadás, az emberi méltóságunk manapság oly megfakult képén...
+                Mert egy alkotó munka sikerét nem az határozza meg, hogy az alkotó mit tett, hanem, hogy az alkotása az alázatnak és a benne lakó szeretetnek engedelmeskedve, mennyire volt képes javítani az önmagunk iránt érzett elfogadás, az emberi méltóságunk manapság oly megfakult képén...
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
                 És ha egy jól megkomponált enteriőr nem is többet, mint egy parányi örömet, békességet, meghittséget ajándékoz megrendelőjének, már megérte.
               </p>
+              <p className="text-[#D9BF77] text-lg mb-4">
+                Mert megmutatni magunkat a külvilág számára, mégha egy szakember által is, sokunknak nem kis feladat. De bizony megéri! Ehhez bátorság kell, de bátornak lenni egy méltóbb élet reményében, főleg megéri!
+              </p>
               <p className="text-[#D9BF77] text-lg mb-6 font-typewriter">
-                "Mert megmutatni magunkat a külvilág számára, mégha egy szakember által is, sokunknak nem kis feladat. De bizony megéri! Ehhez bátorság kell, de bátornak lenni egy méltóbb élet reményében, főleg megéri!"
+                "A stílus az egyetlen olyan igazi luxus, amit bárki megengedhet magának, függetlenül attól, hogy mennyi pénze van. Ez olyan dolog, ami velünk született, de tanulható, feltéve, ha megvan hozzá az emberben a kellő intelligencia." - Giorgio Armani
               </p>
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
