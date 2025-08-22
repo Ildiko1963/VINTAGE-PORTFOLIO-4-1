@@ -108,18 +108,18 @@ export default function ContactSection() {
 
             </div>
             
-            {/* Small gallery images */}
+            {/* Gallery images */}
             <div className="mt-8">
-              <div className="flex gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <img 
                   src="/static/23358_pic02.jpg" 
                   alt="Interior design project" 
-                  className="w-36 h-36 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-full h-32 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img 
                   src="/static/23358_pic03.jpg" 
                   alt="Interior design project" 
-                  className="w-36 h-36 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-full h-32 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>
