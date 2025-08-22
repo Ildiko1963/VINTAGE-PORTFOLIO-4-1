@@ -46,13 +46,19 @@ export default function AboutSection() {
               className="w-full md:w-2/3 font-lora"
             >
               <p className="text-[#D9BF77] text-lg mb-4">
-                As a passionate filmmaker and visual artist, I blend traditional cinematography techniques with modern digital artistry to create timeless portfolio pieces.
+                Tölts Ildikó vagyok. A Junior Art neves lakberendező iskola hallgatójaként végeztem. Már iskolai tanulmányaim megkezdése előtt is több referencia munkával büszkélkedhettem.
               </p>
-              <p className="text-[#D9BF77] text-lg mb-6">
-                My work draws inspiration from the golden age of cinema, where storytelling was an art form that captured the imagination and transported viewers to different worlds.
+              <p className="text-[#D9BF77] text-lg mb-4">
+                Életem szerves része, mindennapjaim alkotó eleme a harmóniára való törekvés, a harmónia megteremtése. Fontosnak érzem, hogy figyeljünk magunkra, mind belsőleg, mind külsőleg, mind az életterünk által, mivel csak egy önmagunkat visszatükröző környezetben érezhetjük igazán jól magunkat.
+              </p>
+              <p className="text-[#D9BF77] text-lg mb-4">
+                Ezért tartom fontosnak az enteriőrtervezést, mivel általa bátrabban tudunk kilépni az élet küzdőterére, felvértezve magunkat a környezetünk szépségéből és harmóniájából fakadó biztonságérzettel.
+              </p>
+              <p className="text-[#D9BF77] text-lg mb-4">
+                Egy jó tervező feladata az, hogy meglássa, meglátassa és az életterünkben egyben megalkossa a belső lényünkben lakó indivíduumot, megtalálva a hozzá vezető utat eklektika, minimál art, high-tech, posztmodern, vagy bármely stílus által...
               </p>
               <p className="text-[#D9BF77] text-lg mb-6 font-typewriter">
-                "Every frame tells a story, every film reel captures a moment in time."
+                "És ha egy jól megkomponált enteriőr nem is többet, mint egy parányi örömet, békességet, meghittséget ajándékoz megrendelőjének, már megérte."
               </p>
               <div className="flex space-x-4 mt-6">
                 <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">

@@ -156,6 +156,8 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Updated contact form subject dropdown with interior design options: Design, Construction, Consulting
 - June 27, 2025. Removed "Recent Work" heading from Contact section gallery images
 - June 27, 2025. Removed professional specialties section from About page (Photography, Cinematography, Visual Design)
+- June 27, 2025. Updated About section with Ildikó's personal introduction and interior design philosophy in Hungarian
+- June 27, 2025. Added "Magyarország" to Studio Location in Contact section
 
 ## User Preferences
 
