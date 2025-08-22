@@ -8,7 +8,44 @@ interface ServiceItemProps {
   index: number;
 }
 
-const ServiceItem = ({ service, index }: ServiceItemProps) => {
+interface ServiceItemPropsWithT extends ServiceItemProps {
+  t: (key: string) => string;
+}
+
+const ServiceItem = ({ service, index, t }: ServiceItemPropsWithT) => {
+  const getTranslatedTitle = () => {
+    if (service.title === 'Design') return t('services.design.title');
+    if (service.title === 'Construction') return t('services.construction.title');
+    if (service.title === 'Consulting') return t('services.consulting.title');
+    return service.title;
+  };
+
+  const getTranslatedDescription = () => {
+    if (service.title === 'Design') return t('services.design.desc');
+    if (service.title === 'Construction') return t('services.construction.desc');
+    if (service.title === 'Consulting') return t('services.consulting.desc');
+    return service.description;
+  };
+
+  const getTranslatedFeatures = () => {
+    if (service.title === 'Design') return [
+      t('services.design.features.1'),
+      t('services.design.features.2'),
+      t('services.design.features.3')
+    ];
+    if (service.title === 'Construction') return [
+      t('services.construction.features.1'),
+      t('services.construction.features.2'),
+      t('services.construction.features.3')
+    ];
+    if (service.title === 'Consulting') return [
+      t('services.consulting.features.1'),
+      t('services.consulting.features.2'),
+      t('services.consulting.features.3')
+    ];
+    return service.features;
+  };
+
   return (
     <motion.div 
       initial={{ y: 30, opacity: 0 }}
@@ -22,10 +59,10 @@ const ServiceItem = ({ service, index }: ServiceItemProps) => {
           <i className={`fas fa-${service.icon} text-3xl`}></i>
         </div>
         <div>
-          <h3 className="font-playfair text-2xl font-bold mb-3">{service.title}</h3>
-          <p className="mb-4">{service.description}</p>
+          <h3 className="font-playfair text-2xl font-bold mb-3">{getTranslatedTitle()}</h3>
+          <p className="mb-4">{getTranslatedDescription()}</p>
           <ul className="space-y-2">
-            {service.features.map((feature, idx) => (
+            {getTranslatedFeatures().map((feature, idx) => (
               <li key={idx} className="flex items-center">
                 <i className="fas fa-check text-[#D9BF77] mr-2"></i>
                 {feature}
@@ -72,7 +109,7 @@ export default function ServicesSection() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {(services || []).map((service: Service, index: number) => (
-                <ServiceItem key={service.id} service={service} index={index} />
+                <ServiceItem key={service.id} service={service} index={index} t={t} />
               ))}
             </div>
           )}
@@ -88,7 +125,7 @@ export default function ServicesSection() {
               href="#contact" 
               className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#8B7355] hover:text-[#F2E8D5] transition-colors"
             >
-              Request a Quote
+{t('services.cta')}
             </a>
           </motion.div>
         </div>

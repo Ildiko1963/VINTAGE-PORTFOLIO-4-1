@@ -168,10 +168,10 @@ export default function ContactSection() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="bg-[#F2E8D5] p-6 rounded-md text-[#463730]"
               >
-                <h3 className="font-playfair text-2xl font-bold mb-6 text-[#463730]">Send a Message</h3>
+                <h3 className="font-playfair text-2xl font-bold mb-6 text-[#463730]">{t('contact.form.title')}</h3>
                 
                 <div className="mb-4">
-                  <label htmlFor="name" className="block mb-2 font-bold">Name</label>
+                  <label htmlFor="name" className="block mb-2 font-bold">{t('contact.form.name')}</label>
                   <input 
                     type="text" 
                     id="name"
@@ -184,7 +184,7 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="email" className="block mb-2 font-bold">Email</label>
+                  <label htmlFor="email" className="block mb-2 font-bold">{t('contact.form.email')}</label>
                   <input 
                     type="email" 
                     id="email"
@@ -197,16 +197,16 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="subject" className="block mb-2 font-bold">Subject</label>
+                  <label htmlFor="subject" className="block mb-2 font-bold">{t('contact.form.subject')}</label>
                   <select 
                     id="subject"
                     {...register('subject')}
                     className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   >
                     <option value="">Select a subject</option>
-                    <option value="Design">Design</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Consulting">Consulting</option>
+                    <option value="Design">{t('contact.form.subject.design')}</option>
+                    <option value="Construction">{t('contact.form.subject.construction')}</option>
+                    <option value="Consulting">{t('contact.form.subject.consulting')}</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.subject && (
@@ -215,7 +215,7 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block mb-2 font-bold">Message</label>
+                  <label htmlFor="message" className="block mb-2 font-bold">{t('contact.form.message')}</label>
                   <textarea 
                     id="message"
                     {...register('message')}
@@ -232,7 +232,7 @@ export default function ContactSection() {
                   disabled={isPending}
                   className="w-full px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter text-lg rounded-md hover:bg-[#8B7355] hover:text-[#F2E8D5] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {isPending ? 'Sending...' : 'Send Message'}
+{isPending ? t('loading') : t('contact.form.send')}
                 </button>
               </form>
             )}

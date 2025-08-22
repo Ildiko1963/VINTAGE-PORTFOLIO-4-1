@@ -158,6 +158,9 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Removed professional specialties section from About page (Photography, Cinematography, Visual Design)
 - June 27, 2025. Updated About section with Ildikó's personal introduction and interior design philosophy in Hungarian
 - June 27, 2025. Added "Magyarország" to Studio Location in Contact section
+- June 27, 2025. Created multilingual interface with Hungarian/English language switcher
+- June 27, 2025. Added complete translation system for all sections (Hero, About, Portfolio, Services, Contact)
+- June 27, 2025. Dynamic language switching with translation context and language switcher button in top-right corner
 
 ## User Preferences
 

@@ -67,7 +67,7 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
           href={`/portfolio/${item.id}`} 
           className="inline-block px-4 py-2 border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
         >
-View Gallery
+{t('portfolio.viewGallery')}
         </a>
       </div>
     </motion.div>

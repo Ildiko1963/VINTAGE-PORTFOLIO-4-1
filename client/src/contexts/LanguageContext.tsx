@@ -46,10 +46,20 @@ const translations = {
     'services.title': 'Szolgáltatások',
     'services.design.title': 'Tervezés',
     'services.design.desc': 'Professzionális lakberendezési tervek és koncepcióalkotás',
+    'services.design.features.1': 'Lakástervezés és térszervezés',
+    'services.design.features.2': 'Színkiválasztás és anyaghasználat',
+    'services.design.features.3': 'Bútor és dekoráció kiválasztása',
     'services.construction.title': 'Kivitelezés',
     'services.construction.desc': 'Teljes körű projektmenedzsment és kivitelezési felügyelet',
+    'services.construction.features.1': 'Projektmenedzsment szolgáltatások',
+    'services.construction.features.2': 'Kivitelezői koordináció',
+    'services.construction.features.3': 'Minőségbiztosítás és felügyelet',
     'services.consulting.title': 'Tanácsadás',
     'services.consulting.desc': 'Személyre szabott stílustanácsadás és tervezési konzultáció',
+    'services.consulting.features.1': 'Személyes stíluskonsultáció',
+    'services.consulting.features.2': 'Lakberendezési tanácsadás',
+    'services.consulting.features.3': 'Szakértői vélemény és javaslatok',
+    'services.cta': 'Árajánlat kérése',
     
     // Contact Section
     'contact.title': 'Kapcsolat',
@@ -65,6 +75,8 @@ const translations = {
     'contact.form.subject.design': 'Tervezés',
     'contact.form.subject.construction': 'Kivitelezés',
     'contact.form.subject.consulting': 'Tanácsadás',
+    'contact.form.success': 'Köszönjük!',
+    'contact.form.successMsg': 'Az üzeneted megérkezett. Hamarosan felvesszük veled a kapcsolatot.',
     
     // Common
     'loading': 'Betöltés...',
@@ -104,10 +116,20 @@ const translations = {
     'services.title': 'Services',
     'services.design.title': 'Design',
     'services.design.desc': 'Professional interior design plans and concept development',
+    'services.design.features.1': 'Space planning and organization',
+    'services.design.features.2': 'Color selection and material usage',
+    'services.design.features.3': 'Furniture and decoration selection',
     'services.construction.title': 'Construction',
     'services.construction.desc': 'Complete project management and construction supervision',
+    'services.construction.features.1': 'Project management services',
+    'services.construction.features.2': 'Construction coordination',
+    'services.construction.features.3': 'Quality assurance and supervision',
     'services.consulting.title': 'Consulting',
     'services.consulting.desc': 'Personalized style consulting and design consultation',
+    'services.consulting.features.1': 'Personal style consultation',
+    'services.consulting.features.2': 'Interior design advice',
+    'services.consulting.features.3': 'Expert opinion and recommendations',
+    'services.cta': 'Request Quote',
     
     // Contact Section
     'contact.title': 'Contact',
@@ -123,6 +145,8 @@ const translations = {
     'contact.form.subject.design': 'Design',
     'contact.form.subject.construction': 'Construction',
     'contact.form.subject.consulting': 'Consulting',
+    'contact.form.success': 'Thank You!',
+    'contact.form.successMsg': 'Your message has been received. We\'ll get back to you shortly.',
     
     // Common
     'loading': 'Loading...',
