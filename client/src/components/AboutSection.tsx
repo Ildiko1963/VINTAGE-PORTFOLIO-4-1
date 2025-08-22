@@ -64,7 +64,10 @@ export default function AboutSection() {
                 Továbbá egy jó tervező feladata nem a megszokott szabályok felállítása, ezzel is növelve az életünk merevségét, gátoltságát, hanem azok lerombolása teret adva az egyéniség határtalan szárnyalásának egy minőségibb, kiteljesedettebb élet felé, megnyitva az ajtót belső lényünkben annak a szikrának, aminek a segítségével áttörhetünk a hétköznapok szürkeségén, a többi emberhez való kényszeres megfelelés erőltetett, fojtogató rabszolgaságán!
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
-                Feladatomnak érzem ennek az elkötelezettségnek a szellemében viszonyulni ehhez a munkához, és a munkán keresztül az emberekhez. Mert egy alkotó munka sikerét nem az határozza meg, hogy az alkotó mit tett, hanem, hogy az alkotása az alázatnak, és a benne lakó szeretetnek engedelmeskedve, mennyire volt képes javítani az önmagunk iránt érzett elfogadás, az emberi méltóságunk manapság oly megfakult képén...
+                Feladatomnak érzem ennek az elkötelezettségnek a szellemében viszonyulni ehhez a munkához, és a munkán keresztül az emberekhez.
+              </p>
+              <p className="text-[#D9BF77] text-lg mb-4 font-typewriter italic">
+                Mert egy alkotó munka sikerét nem az határozza meg, hogy az alkotó mit tett, hanem, hogy az alkotása az alázatnak, és a benne lakó szeretetnek engedelmeskedve, mennyire volt képes javítani az önmagunk iránt érzett elfogadás, az emberi méltóságunk manapság oly megfakult képén...
               </p>
               <p className="text-[#D9BF77] text-lg mb-4">
                 És ha egy jól megkomponált enteriőr nem is többet, mint egy parányi örömet, békességet, meghittséget ajándékoz megrendelőjének, már megérte.
