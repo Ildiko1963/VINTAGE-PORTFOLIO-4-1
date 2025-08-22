@@ -82,6 +82,7 @@ export default function ContactSection() {
                   <h4 className="font-bold mb-1">Studio Location</h4>
                   <p className="font-typewriter">2900 Komárom</p>
                   <p className="font-typewriter">Igmándi út 27.</p>
+                  <p className="font-typewriter">Magyarország</p>
                 </div>
               </div>
               
@@ -110,16 +111,16 @@ export default function ContactSection() {
             
             {/* Gallery images */}
             <div className="mt-8">
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <img 
                   src="/static/23358_pic02.jpg" 
                   alt="Interior design project" 
-                  className="w-full h-48 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-full h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
                 <img 
                   src="/static/23358_pic03.jpg" 
                   alt="Interior design project" 
-                  className="w-full h-48 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
+                  className="w-full h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>
