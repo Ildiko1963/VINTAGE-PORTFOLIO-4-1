@@ -28,7 +28,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-[30%] flex items-start justify-center image-hover-container"
+              className="w-full md:w-[28%] flex items-start justify-center image-hover-container"
             >
               <div className="film-frame projector-flicker film-grain w-full max-w-xs hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer">
                 <img 
