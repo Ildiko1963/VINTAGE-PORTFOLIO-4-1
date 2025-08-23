@@ -22,7 +22,7 @@ export default function Header({ sections, onNavigate }: HeaderProps) {
                 <li key={section.id}>
                   <button 
                     onClick={() => onNavigate(section.id)}
-                    className="px-3 py-2 rounded hover:bg-[#8B7355] hover:text-[#D9BF77] transition-colors"
+                    className="px-3 py-2 rounded text-[#D9BF77] font-typewriter hover:bg-[#8B7355] hover:text-[#F2E8D5] transition-colors"
                   >
                     {section.title}
                   </button>
