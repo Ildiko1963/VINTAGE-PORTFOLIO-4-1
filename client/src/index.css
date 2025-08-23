@@ -97,7 +97,7 @@
   content: '';
   position: absolute;
   height: 100%;
-  width: 12px;
+  width: 16px;
   top: 0;
   background-image: 
     repeating-linear-gradient(
@@ -111,11 +111,11 @@
 }
 
 .film-frame::before {
-  left: -6px;
+  left: -8px;
 }
 
 .film-frame::after {
-  right: -6px;
+  right: -8px;
 }
 
 /* Film grain texture overlay */
@@ -212,7 +212,7 @@
 .perforations-right {
   position: absolute;
   top: 0;
-  width: 20px;
+  width: 24px;
   height: 100%;
   background-image: 
     repeating-linear-gradient(
