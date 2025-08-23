@@ -36,7 +36,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
                   <li key={section.id}>
                     <button 
                       onClick={() => onNavigate(section.id)} 
-                      className="hover:text-[#D9BF77] transition-colors"
+                      className="hover:text-[#D9BF77] transition-colors font-typewriter"
                     >
                       {section.title}
                     </button>
