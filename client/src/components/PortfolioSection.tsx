@@ -29,7 +29,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       className={`group relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
       style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
-      <div className="relative h-48 flex items-center justify-center film-frame projector-flicker film-grain">
+      <div className="film-frame projector-flicker film-grain w-full max-w-xs hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer" style={{height: '192px'}}>
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
