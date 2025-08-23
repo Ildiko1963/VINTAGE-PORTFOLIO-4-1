@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { t } = useLanguage();
   const [currentPage, setCurrentPage] = useState(0);
   return (
-    <section id="about" className="pt-32 pb-8 bg-transparent relative">
+    <section id="about" className="pt-48 pb-8 bg-transparent relative">
       
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
