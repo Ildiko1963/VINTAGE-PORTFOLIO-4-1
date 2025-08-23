@@ -30,7 +30,7 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 animate-subtle-float"
         />
         
         {hasAdditionalImages && (

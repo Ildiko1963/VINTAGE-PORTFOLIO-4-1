@@ -79,10 +79,17 @@ export default {
             height: "0",
           },
         },
+        "subtle-float": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "25%": { transform: "translateY(-3px) translateX(-1px)" },
+          "50%": { transform: "translateY(-5px) translateX(2px)" },
+          "75%": { transform: "translateY(-2px) translateX(-1px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "subtle-float": "subtle-float 4s ease-in-out infinite",
       },
     },
   },
