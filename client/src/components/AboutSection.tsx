@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { t } = useLanguage();
   const [currentPage, setCurrentPage] = useState(0);
   return (
-    <section id="about" className="py-16 bg-transparent border-t-[20px] border-[#8B7355] relative">
+    <section id="about" className="py-16 bg-transparent relative">
       {/* Top shadow strip */}
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
       {/* Bottom shadow strip */}
@@ -31,7 +31,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-1/3"
+              className="w-full md:w-1/2"
             >
               <div className="film-frame projector-flicker film-grain">
                 <img 

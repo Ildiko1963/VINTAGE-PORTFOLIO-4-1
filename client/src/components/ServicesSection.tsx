@@ -82,7 +82,7 @@ export default function ServicesSection() {
   });
   
   return (
-    <section id="services" className="py-16 bg-transparent border-t-[20px] border-[#8B7355] relative">
+    <section id="services" className="py-16 bg-transparent relative">
       {/* Top shadow strip */}
       <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
       {/* Bottom shadow strip */}

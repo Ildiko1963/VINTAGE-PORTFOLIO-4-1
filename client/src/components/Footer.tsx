@@ -22,10 +22,10 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
               transition={{ duration: 0.5 }}
               className="mb-6 md:mb-0 text-center md:text-left"
             >
-              <h2 className="font-playfair text-2xl font-bold mb-2">
-                
+              <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Bodoni Moda, serif' }}>
+                Ildikó Style
               </h2>
-              <p className="font-typewriter">interior design</p>
+              <p style={{ fontFamily: 'Great Vibes, cursive', fontSize: '1.25rem', position: 'relative', top: '-10px' }}>Interior Design</p>
             </motion.div>
             
             <motion.div 

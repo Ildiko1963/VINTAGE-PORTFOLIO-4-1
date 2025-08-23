@@ -43,6 +43,14 @@ export default function Home() {
       .font-typewriter {
         font-family: 'Special Elite', cursive;
       }
+      
+      .font-bodoni {
+        font-family: 'Bodoni Moda', serif;
+      }
+      
+      .font-great-vibes {
+        font-family: 'Great Vibes', cursive;
+      }
     `;
     document.head.appendChild(style);
     
