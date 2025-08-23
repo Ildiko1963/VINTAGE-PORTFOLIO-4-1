@@ -43,7 +43,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-3/5 font-lora relative md:pt-8 px-16"
+              className="w-full md:w-2/3 font-lora relative md:pt-4 px-12"
             >
               <div className="h-full flex flex-col justify-between">
                 {/* Page content */}
@@ -151,6 +151,11 @@ export default function AboutSection() {
                       </div>
                     </motion.div>
                   )}
+                  
+                  {/* Lapozási utalás */}
+                  <div className="text-center mt-6 text-[#D9BF77] text-sm opacity-75" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                    → Lapozz a teljes történetért →
+                  </div>
                 </div>
                 
                 {/* Navigation */}
