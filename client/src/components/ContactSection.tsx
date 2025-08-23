@@ -127,7 +127,7 @@ export default function ContactSection() {
             </div>
             
             <div className="mt-8">
-              <h4 className="font-bold mb-4">Connect With Me</h4>
+              <h4 className="font-bold mb-4 font-lora">Connect With Me</h4>
               <div className="flex space-x-6">
                 <a href="#" className="text-[#D9BF77] hover:text-[#C8B28E] transition-colors">
                   <i className="fab fa-instagram text-2xl"></i>
