@@ -53,7 +53,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             transition={{ delay: 1, duration: 0.8 }}
             className="mb-6 relative"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, serif', fontWeight: 'bold' }}>
+            <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Modern No. 20, serif', fontWeight: 'bold' }}>
               Ildikó Style
             </h1>
             <p className="text-3xl md:text-4xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-5px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
