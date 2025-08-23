@@ -144,22 +144,25 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
           <div className="text-center">
             <div className="mb-8">
               <motion.img 
-                src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                alt="Vintage film projector" 
+                src="/static/23358_ildiko.jpg" 
+                alt="Portrait of interior designer" 
                 className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               />
             </div>
-            <motion.h1 
-              className="text-3xl md:text-5xl font-playfair text-[#D9BF77] mb-4"
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.5 }}
+              className="mb-4 relative"
             >
-              Ildikostyle Portfolio
-            </motion.h1>
+              <h1 className="text-3xl md:text-5xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Bodoni Moda, serif' }}>
+                Ildikó Style
+              </h1>
+              <p className="text-2xl md:text-3xl text-[#D9BF77]" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px' }}>Interior Design</p>
+            </motion.div>
             <motion.p 
               className="text-[#D9BF77] text-lg mb-8"
               initial={{ y: 20, opacity: 0 }}
