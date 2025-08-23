@@ -65,13 +65,13 @@ export default function ContactSection() {
 {t('contact.title')}
         </motion.h2>
         
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
           <motion.div 
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full md:w-1/2"
+            className="w-full md:w-3/5"
           >
             <h3 className="font-playfair text-2xl font-bold mb-6 text-[#D9BF77]">{t('contact.info')}</h3>
             
@@ -111,17 +111,21 @@ export default function ContactSection() {
             
             {/* Gallery images */}
             <div className="mt-8">
-              <div className="grid grid-cols-2 gap-4">
-                <img 
-                  src="/static/23358_pic02.jpg" 
-                  alt="Interior design project" 
-                  className="w-full h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
-                />
-                <img 
-                  src="/static/23358_pic03.jpg" 
-                  alt="Interior design project" 
-                  className="w-full h-24 object-cover rounded-md border-2 border-[#D9BF77] opacity-80 hover:opacity-100 transition-opacity"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="film-frame projector-flicker film-grain">
+                  <img 
+                    src="/static/23358_pic02.jpg" 
+                    alt="Interior design project" 
+                    className="w-full h-40 object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+                <div className="film-frame projector-flicker film-grain">
+                  <img 
+                    src="/static/23358_pic03.jpg" 
+                    alt="Interior design project" 
+                    className="w-full h-40 object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
               </div>
             </div>
             
@@ -149,7 +153,7 @@ export default function ContactSection() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full md:w-1/2"
+            className="w-full md:w-2/5"
           >
             {formSubmitted ? (
               <div className="bg-[#F2E8D5] p-6 rounded-md text-[#463730] h-full flex flex-col justify-center items-center">
