@@ -161,7 +161,7 @@ export default function ContactSection() {
                   onClick={() => setFormSubmitted(false)}
                   className="px-6 py-2 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
                 >
-                  Send Another Message
+                  <span className="font-typewriter">Send Another Message</span>
                 </button>
               </div>
             ) : (
@@ -205,10 +205,10 @@ export default function ContactSection() {
                     className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   >
                     <option value="" className="font-typewriter">Select a subject</option>
-                    <option value="Design">{t('contact.form.subject.design')}</option>
-                    <option value="Construction">{t('contact.form.subject.construction')}</option>
-                    <option value="Consulting">{t('contact.form.subject.consulting')}</option>
-                    <option value="Other">Other</option>
+                    <option value="Design" className="font-typewriter">{t('contact.form.subject.design')}</option>
+                    <option value="Construction" className="font-typewriter">{t('contact.form.subject.construction')}</option>
+                    <option value="Consulting" className="font-typewriter">{t('contact.form.subject.consulting')}</option>
+                    <option value="Other" className="font-typewriter">Other</option>
                   </select>
                   {errors.subject && (
                     <p className="text-red-600 text-sm mt-1">{errors.subject.message}</p>
