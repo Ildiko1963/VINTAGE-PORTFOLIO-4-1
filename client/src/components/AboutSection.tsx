@@ -154,7 +154,7 @@ export default function AboutSection() {
                     }`}
                   >
                     <ChevronLeft size={20} />
-                    {t('nav.previous') || 'Előző'}
+                    Előző
                   </button>
                   
                   <div className="flex gap-2">
@@ -178,7 +178,7 @@ export default function AboutSection() {
                         : 'text-[#D9BF77] hover:text-[#C8B28E]'
                     }`}
                   >
-                    {t('nav.next') || 'Következő'}
+                    Következő
                     <ChevronRight size={20} />
                   </button>
                 </div>

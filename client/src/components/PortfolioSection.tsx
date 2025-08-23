@@ -29,19 +29,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       className={`group relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
       style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
-      <div className="relative h-48 flex items-center justify-center vintage-portfolio-frame" style={{
-        border: '6px solid rgba(42, 26, 22, 0.6)', 
-        borderRadius: '10px 6px 12px 7px',
-        boxShadow: `
-          0 2px 6px rgba(0,0,0,0.3),
-          inset 0 1px 0 rgba(255,255,255,0.1),
-          inset 0 -1px 2px rgba(0,0,0,0.15),
-          1px -1px 3px rgba(42, 26, 22, 0.2),
-          -1px 2px 4px rgba(42, 26, 22, 0.15)
-        `,
-        transform: `rotate(${0.3 * (index % 3 - 1)}deg)`,
-        filter: 'contrast(1.05) sepia(0.05)'
-      }}>
+      <div className="relative h-48 flex items-center justify-center" style={{border: '6px solid rgba(42, 26, 22, 0.6)', borderRadius: '8px'}}>
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 

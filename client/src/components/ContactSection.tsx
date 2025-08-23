@@ -30,15 +30,15 @@ export default function ContactSection() {
     },
     onSuccess: () => {
       toast({
-        title: t('contact.form.success'),
-        description: t('contact.form.successMsg'),
+        title: "Message Sent!",
+        description: "Thank you for your message. We'll get back to you soon.",
       });
       setFormSubmitted(true);
     },
     onError: (error) => {
       toast({
-        title: t('contact.form.error') || 'Error',
-        description: t('contact.form.errorMsg') || 'Failed to send message. Please try again.',
+        title: "Error",
+        description: "Failed to send message. Please try again.",
         variant: "destructive",
       });
     }
