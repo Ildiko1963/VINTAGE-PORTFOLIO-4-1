@@ -44,7 +44,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-[60%] font-lora relative md:pt-0 px-2 min-h-[480px] md:ml-8"
+              className="w-full md:w-[60%] font-lora relative md:pt-0 px-2 min-h-[480px] md:ml-12"
             >
               <div className="h-full flex flex-col justify-between">
                 {/* Page content - kitölti a teljes magasságot */}
