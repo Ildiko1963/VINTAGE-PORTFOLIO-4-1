@@ -30,12 +30,11 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full md:w-1/3"
             >
-              <div className="relative">
-                <div className="w-full h-full absolute -top-3 -left-3 border-2 border-[#D9BF77]"></div>
+              <div className="film-frame projector-flicker film-grain">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 
-                  className="w-full h-auto relative z-10 border-2 border-[#463730]"
+                  className="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             </motion.div>

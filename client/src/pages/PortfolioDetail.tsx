@@ -99,11 +99,11 @@ export default function PortfolioDetail() {
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-              <div className="relative bg-[#463730] bg-opacity-20 rounded-lg p-4">
+              <div className="relative film-frame projector-flicker film-grain">
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full max-h-96 object-contain rounded-lg shadow-lg mx-auto block cursor-pointer"
+                  className="w-full max-h-96 object-cover mx-auto block cursor-pointer filter grayscale hover:grayscale-0 transition-all duration-500"
                   onClick={() => setIsFullscreen(true)}
                 />
                 <button
@@ -145,16 +145,17 @@ export default function PortfolioDetail() {
                       <button
                         key={index}
                         onClick={() => setSelectedImage(index)}
-                        className={`aspect-square rounded-md overflow-hidden border-2 transition-all ${
+                        className={`aspect-square overflow-hidden transition-all film-frame ${
                           selectedImage === index 
-                            ? 'border-[#D9BF77] opacity-100' 
-                            : 'border-transparent opacity-60 hover:opacity-80'
+                            ? 'opacity-100' 
+                            : 'opacity-60 hover:opacity-80'
                         }`}
+                        style={{ transform: 'scale(0.8)' }}
                       >
                         <img
                           src={image}
                           alt={`Image ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
                         />
                       </button>
                     ))}
