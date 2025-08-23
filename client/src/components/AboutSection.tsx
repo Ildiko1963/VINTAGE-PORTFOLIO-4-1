@@ -123,7 +123,7 @@ export default function AboutSection() {
                 </div>
                 
                 {/* Navigation */}
-                <div className="flex justify-between items-center mt-8">
+                <div className="flex justify-between items-center mt-12 mb-4">
                   <button
                     onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
                     disabled={currentPage === 0}
