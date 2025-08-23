@@ -16,7 +16,7 @@ export default function AboutSection() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-8"
+            className="font-typewriter text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-8"
           >
 {t('about.title')}
           </motion.h2>
