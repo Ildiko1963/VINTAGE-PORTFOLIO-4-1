@@ -25,11 +25,11 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
       transition={{ duration: 0.3, delay: 0.1 * index }}
       className="group relative overflow-hidden"
     >
-      <div className="relative h-64 flex items-center justify-center">
+      <div className="relative h-48 flex items-center justify-center">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale sepia-[0.7] brightness-[0.85] contrast-[0.7] group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 group-hover:contrast-100"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
         />
         
         {hasAdditionalImages && (
@@ -97,7 +97,7 @@ export default function PortfolioSection() {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {[...Array(6)].map((_, index) => (
-                <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-64 animate-pulse"></div>
+                <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
               ))}
             </div>
           ) : (
