@@ -12,17 +12,11 @@ export default function Header({ sections, onNavigate }: HeaderProps) {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="relative bg-[#463730] text-[#F2E8D5] py-8 z-20"
+      className="relative bg-[#2A1A16] bg-opacity-60 text-[#F2E8D5] py-3 z-20"
     >
-
-      
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            
-          </div>
-          
-          <nav className="w-full md:w-auto">
+        <div className="flex justify-center items-center">
+          <nav className="w-auto">
             <ul className="flex flex-wrap justify-center space-x-1 md:space-x-4">
               {sections.map((section) => (
                 <li key={section.id}>
