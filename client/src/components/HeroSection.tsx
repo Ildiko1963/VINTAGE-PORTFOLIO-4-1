@@ -73,24 +73,22 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0">
-        <div className="relative">
-          {/* Film perforations */}
-          <div className="absolute left-0 top-0 bottom-0 w-4 bg-[#1A1611] z-20">
-            <div className="w-full h-full" style={{
-              backgroundImage: `radial-gradient(circle at center, transparent 2px, #1A1611 3px)`,
-              backgroundSize: '8px 8px',
-              backgroundRepeat: 'repeat'
-            }}></div>
+      <div className="absolute bottom-0 left-0 right-0 bg-[#2A1F1A] py-4">
+        <div className="relative bg-black">
+          {/* Film perforations - Left side */}
+          <div className="absolute left-2 top-0 bottom-0 w-8 bg-[#2A1F1A] z-30 flex flex-col justify-around">
+            {[...Array(6)].map((_, i) => (
+              <div key={`left-${i}`} className="w-6 h-3 bg-black mx-auto rounded-sm"></div>
+            ))}
           </div>
-          <div className="absolute right-0 top-0 bottom-0 w-4 bg-[#1A1611] z-20">
-            <div className="w-full h-full" style={{
-              backgroundImage: `radial-gradient(circle at center, transparent 2px, #1A1611 3px)`,
-              backgroundSize: '8px 8px', 
-              backgroundRepeat: 'repeat'
-            }}></div>
+          {/* Film perforations - Right side */}
+          <div className="absolute right-2 top-0 bottom-0 w-8 bg-[#2A1F1A] z-30 flex flex-col justify-around">
+            {[...Array(6)].map((_, i) => (
+              <div key={`right-${i}`} className="w-6 h-3 bg-black mx-auto rounded-sm"></div>
+            ))}
           </div>
-          <div className="flex overflow-hidden relative">
+          
+          <div className="flex overflow-hidden h-24 mx-12">
             <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
               {/* Film strip images - doubled for seamless loop */}
               {[
@@ -101,7 +99,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 "/static/big_nappali4.jpg",
                 "/static/big_nappali6.jpg"
               ].map((src, index) => (
-                <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-24 object-cover mx-1" />
+                <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full w-20 object-cover mx-0.5 border border-[#463730]" />
               ))}
               
               {/* Duplicate for seamless loop */}
@@ -113,7 +111,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 "/static/big_nappali4.jpg",
                 "/static/big_nappali6.jpg"
               ].map((src, index) => (
-                <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-24 object-cover mx-1" />
+                <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full w-20 object-cover mx-0.5 border border-[#463730]" />
               ))}
             </div>
           </div>
