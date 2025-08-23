@@ -79,11 +79,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
             {/* Top perforations */}
             <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(150)].map((_, i) => (
+              {[...Array(200)].map((_, i) => (
                 <div key={`top-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '1.5px',
+                       width: '2px',
                        height: '6px',
                        clipPath: 'polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)'
                      }}></div>
@@ -91,11 +91,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             </div>
             {/* Bottom perforations */}
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(150)].map((_, i) => (
+              {[...Array(200)].map((_, i) => (
                 <div key={`bottom-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '1.5px',
+                       width: '2px',
                        height: '6px',
                        clipPath: 'polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)'
                      }}></div>
