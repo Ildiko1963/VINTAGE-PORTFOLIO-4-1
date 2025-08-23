@@ -54,9 +54,9 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             className="mb-6 relative"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>
-              Ildikó Style
+              {t('hero.title')}
             </h1>
-            <p className="text-3xl md:text-4xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-5px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
+            <p className="text-3xl md:text-4xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-5px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>{t('hero.subtitle')}</p>
           </motion.div>
           
           <motion.div 
@@ -66,7 +66,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             className="mt-8 mb-24 max-w-2xl mx-auto p-6 bg-[#463730] bg-opacity-30 rounded-lg border border-[#2A1A16] border-opacity-60"
           >
             <blockquote className="text-[#D9BF77] font-lora italic text-lg leading-relaxed text-center">
-              "The only real luxury is style which anybody can afford independent from amount of money they have. This is the kind of thing that was born with us but it can be learnt supposing one has the proper intelligence for it..."
+              "{t('about.armani')}"
             </blockquote>
             <p className="text-[#D9BF77] font-typewriter text-right mt-4">— Giorgio Armani</p>
           </motion.div>

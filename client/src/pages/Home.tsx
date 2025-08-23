@@ -13,18 +13,20 @@ import AudioControls from '@/components/AudioControls';
 import { useNativeAudio } from '@/hooks/useNativeAudio';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import { Section } from '@/lib/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const [showIntro, setShowIntro] = useState(true);
   const [audioError, setAudioError] = useState<string | null>(null);
   const audioControls = useNativeAudio();
   
   const sections: Section[] = [
-    { id: 'home', title: 'Home' },
-    { id: 'about', title: 'About' },
-    { id: 'portfolio', title: 'Portfolio' },
-    { id: 'services', title: 'Services' },
-    { id: 'contact', title: 'Contact' },
+    { id: 'home', title: t('hero.title') },
+    { id: 'about', title: t('nav.about') },
+    { id: 'portfolio', title: t('nav.portfolio') },
+    { id: 'services', title: t('nav.services') },
+    { id: 'contact', title: t('nav.contact') },
   ];
   
   const { scrollToSection } = useSmoothScroll(sections);
