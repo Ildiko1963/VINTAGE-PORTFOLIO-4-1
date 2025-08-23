@@ -58,16 +58,16 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Üdvözlöm!</h3>
-                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
-                          Ildikó vagyok, belsőépítész és designer. Több mint 15 éve foglalkozom terek átalakításával, 
-                          lakások és irodák egyedi tervezésével. Számomra minden projekt egy új kaland, ahol a funkcionalitás 
-                          és az esztétikum tökéletes harmóniájára törekszem.
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.intro')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
-                          Hiszem, hogy minden térnek megvan a maga karaktere, és az én feladatom, hogy ezt kibontakoztassam. 
-                          Nem csak szép tereket tervezek, hanem olyan környezetet, amely tükrözi az ott élők személyiségét 
-                          és támogatja életstílusukat.
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy1')}
+                        </p>
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy2')}
                         </p>
                       </div>
                     </motion.div>
@@ -82,16 +82,16 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Filozófiám</h3>
-                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
-                          Minden projektben egyedi megoldásokat keresek, amelyek a megbízó igényeihez és életstílusához 
-                          igazodnak. Szeretem az anyagok játékát, a színek és formák összehangolását. Klasszikus elegancia 
-                          és modern funkcionalizmus - ez jellemzi a munkáimat.
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy3')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
-                          Munkám során különös figyelmet fordítok a fenntarthatóságra és a környezettudatos megoldásokra. 
-                          Szívesen használok újrahasznosított anyagokat és vintage darabokat, amelyek egyedi karaktert 
-                          adnak a tereknek.
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy4')}
+                        </p>
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy5')}
                         </p>
                       </div>
                     </motion.div>
@@ -106,15 +106,22 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Együttműködés</h3>
-                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
-                          A projekt minden szakaszában szorosan együttműködöm ügyfeleimmel. Hiszem, hogy a legjobb eredmény 
-                          akkor születik, amikor a tervező és a megbízó együtt álmodják meg az új teret.
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy6')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-6 font-typewriter leading-relaxed">
-                          Minden terem egy történetet mesél. Az én feladatom, hogy ezt a történetet láthatóvá tegyem 
-                          a bútorokon, a színeken és a részleteken keresztül.
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy7')}
                         </p>
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy8')}
+                        </p>
+                        
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter">
+                          {t('about.philosophy9')}
+                        </p>
+                        
                         <div className="flex space-x-4">
                           <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
                             <i className="fab fa-instagram text-2xl"></i>
