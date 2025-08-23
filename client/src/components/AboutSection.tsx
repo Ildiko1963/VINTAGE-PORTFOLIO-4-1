@@ -102,16 +102,6 @@ export default function AboutSection() {
                       <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy8')}
                       </p>
-                    </motion.div>
-                  )}
-                  
-                  {currentPage === 3 && (
-                    <motion.div
-                      key="page3"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
                       <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy9')}
                       </p>
@@ -152,7 +142,7 @@ export default function AboutSection() {
                   </button>
                   
                   <div className="flex gap-2">
-                    {[0, 1, 2, 3].map(page => (
+                    {[0, 1, 2].map(page => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
@@ -164,10 +154,10 @@ export default function AboutSection() {
                   </div>
                   
                   <button
-                    onClick={() => setCurrentPage(prev => Math.min(3, prev + 1))}
-                    disabled={currentPage === 3}
+                    onClick={() => setCurrentPage(prev => Math.min(2, prev + 1))}
+                    disabled={currentPage === 2}
                     className={`flex items-center gap-2 px-4 py-2 transition-colors ${
-                      currentPage === 5 
+                      currentPage === 2 
                         ? 'text-gray-500 cursor-not-allowed' 
                         : 'text-[#D9BF77] hover:text-[#C8B28E]'
                     }`}
