@@ -88,7 +88,8 @@ export default function PortfolioSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#D9BF77]"
+          style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}
         >
 {t('portfolio.title')}
         </motion.h2>
