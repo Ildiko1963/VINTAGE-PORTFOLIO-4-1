@@ -88,10 +88,44 @@
   position: relative;
   border: 9px solid rgba(42, 26, 22, 0.6);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 0 10px rgba(0,0,0,0.2),
+    0 0 0 2px rgba(101, 67, 33, 0.4),
+    0 0 20px rgba(0,0,0,0.1);
   overflow: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+  transform: rotate(-0.5deg);
+  border-style: solid;
+  border-image: linear-gradient(45deg, 
+    rgba(42, 26, 22, 0.8) 0%, 
+    rgba(42, 26, 22, 0.4) 25%, 
+    rgba(42, 26, 22, 0.9) 50%, 
+    rgba(42, 26, 22, 0.3) 75%, 
+    rgba(42, 26, 22, 0.7) 100%) 1;
 }
 
+
+/* Vintage portfolio frames */
+.vintage-frame {
+  border: 6px solid rgba(42, 26, 22, 0.6);
+  border-radius: 8px;
+  box-shadow: 
+    0 3px 8px rgba(0,0,0,0.4),
+    inset 0 0 15px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(101, 67, 33, 0.5),
+    0 0 25px rgba(0,0,0,0.15);
+  filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2));
+  transform: rotate(0.3deg);
+  border-style: solid;
+  border-image: linear-gradient(35deg, 
+    rgba(42, 26, 22, 0.9) 0%, 
+    rgba(42, 26, 22, 0.3) 20%, 
+    rgba(42, 26, 22, 0.8) 40%, 
+    rgba(42, 26, 22, 0.4) 60%, 
+    rgba(42, 26, 22, 0.9) 80%, 
+    rgba(42, 26, 22, 0.5) 100%) 1;
+}
 
 /* Film grain texture overlay */
 .film-grain {
