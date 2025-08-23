@@ -83,6 +83,24 @@
   50% { border-color: currentColor; }
 }
 
+/* Clean intro screen frame */
+.intro-frame {
+  position: relative;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  filter: none;
+  transform: none;
+  background: none;
+  clip-path: none;
+}
+
+.intro-frame::before,
+.intro-frame::after {
+  display: none;
+}
+
 /* Vintage film-strip frames */
 .film-frame {
   position: relative;
