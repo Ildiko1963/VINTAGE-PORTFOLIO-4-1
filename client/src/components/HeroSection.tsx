@@ -76,25 +76,29 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="relative">
           {/* Film perforations */}
-          <div className="absolute left-0 top-0 bottom-0 w-3 bg-[#463730] z-10" 
+          <div className="absolute left-0 top-0 bottom-0 w-6 bg-[#2A1F1A] z-20" 
                style={{
                  backgroundImage: `repeating-linear-gradient(
                    to bottom,
-                   transparent,
-                   transparent 8px,
-                   #2A1F1A 8px,
-                   #2A1F1A 12px
+                   #2A1F1A,
+                   #2A1F1A 6px,
+                   transparent 6px,
+                   transparent 10px,
+                   #2A1F1A 10px,
+                   #2A1F1A 16px
                  )`
                }}>
           </div>
-          <div className="absolute right-0 top-0 bottom-0 w-3 bg-[#463730] z-10"
+          <div className="absolute right-0 top-0 bottom-0 w-6 bg-[#2A1F1A] z-20"
                style={{
                  backgroundImage: `repeating-linear-gradient(
                    to bottom,
-                   transparent,
-                   transparent 8px,
-                   #2A1F1A 8px,
-                   #2A1F1A 12px
+                   #2A1F1A,
+                   #2A1F1A 6px,
+                   transparent 6px,
+                   transparent 10px,
+                   #2A1F1A 10px,
+                   #2A1F1A 16px
                  )`
                }}>
           </div>
