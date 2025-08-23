@@ -112,9 +112,20 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   "/static/big_nappali3.jpg",
                   "/static/big_nappali4.jpg",
                   "/static/big_nappali6.jpg"
-                ].map((src, index) => (
-                  <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full object-cover mx-1" />
-                ))}
+                ].flatMap((src, index, array) => {
+                  const elements = [
+                    <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full object-cover" />
+                  ];
+                  if (index < array.length - 1) {
+                    elements.push(
+                      <div key={`sep-1-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
+                    );
+                  }
+                  return elements;
+                })}
+                
+                {/* Separator between sets */}
+                <div className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
                 
                 {/* Duplicate for seamless loop */}
                 {[
@@ -124,9 +135,17 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   "/static/big_nappali3.jpg",
                   "/static/big_nappali4.jpg",
                   "/static/big_nappali6.jpg"
-                ].map((src, index) => (
-                  <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full object-cover mx-1" />
-                ))}
+                ].flatMap((src, index, array) => {
+                  const elements = [
+                    <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full object-cover" />
+                  ];
+                  if (index < array.length - 1) {
+                    elements.push(
+                      <div key={`sep-2-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
+                    );
+                  }
+                  return elements;
+                })}
               </div>
             </div>
           </div>
