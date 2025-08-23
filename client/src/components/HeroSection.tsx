@@ -74,8 +74,31 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       </div>
       
       <div className="absolute bottom-0 left-0 right-0">
-        <div>
-          <div className="flex overflow-hidden">
+        <div className="relative">
+          {/* Film perforations */}
+          <div className="absolute left-0 top-0 bottom-0 w-3 bg-[#463730] z-10" 
+               style={{
+                 backgroundImage: `repeating-linear-gradient(
+                   to bottom,
+                   transparent,
+                   transparent 8px,
+                   #2A1F1A 8px,
+                   #2A1F1A 12px
+                 )`
+               }}>
+          </div>
+          <div className="absolute right-0 top-0 bottom-0 w-3 bg-[#463730] z-10"
+               style={{
+                 backgroundImage: `repeating-linear-gradient(
+                   to bottom,
+                   transparent,
+                   transparent 8px,
+                   #2A1F1A 8px,
+                   #2A1F1A 12px
+                 )`
+               }}>
+          </div>
+          <div className="flex overflow-hidden relative">
             <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
               {/* Film strip images - doubled for seamless loop */}
               {[
