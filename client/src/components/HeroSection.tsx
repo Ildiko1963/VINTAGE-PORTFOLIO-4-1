@@ -78,26 +78,26 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Film strip background */}
           <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
             {/* Top perforations */}
-            <div className="absolute top-0 left-0 right-0 h-2 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(20)].map((_, i) => (
+            <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
+              {[...Array(40)].map((_, i) => (
                 <div key={`top-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '4px',
-                       height: '4px',
-                       clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)'
+                       width: '3px',
+                       height: '6px',
+                       clipPath: 'polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%)'
                      }}></div>
               ))}
             </div>
             {/* Bottom perforations */}
-            <div className="absolute bottom-0 left-0 right-0 h-2 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(20)].map((_, i) => (
+            <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
+              {[...Array(40)].map((_, i) => (
                 <div key={`bottom-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '4px',
-                       height: '4px',
-                       clipPath: 'polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%)'
+                       width: '3px',
+                       height: '6px',
+                       clipPath: 'polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%)'
                      }}></div>
               ))}
             </div>
