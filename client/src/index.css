@@ -86,7 +86,7 @@
 /* Vintage film-strip frames */
 .film-frame {
   position: relative;
-  border: 10px solid rgba(42, 26, 22, 0.6);
+  border: 9px solid rgba(42, 26, 22, 0.6);
   border-radius: 2px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   overflow: visible;
