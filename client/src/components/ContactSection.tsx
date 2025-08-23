@@ -56,7 +56,8 @@ export default function ContactSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-playfair text-4xl md:text-5xl font-bold text-center mb-12"
+          className="text-4xl md:text-5xl font-bold text-center mb-12"
+          style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}
         >
 {t('contact.title')}
         </motion.h2>
@@ -69,7 +70,7 @@ export default function ContactSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-full md:w-3/5"
           >
-            <h3 className="font-playfair text-2xl font-bold mb-6 text-[#D9BF77]">{t('contact.info')}</h3>
+            <h3 className="text-2xl font-bold mb-6 text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>{t('contact.info')}</h3>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -168,7 +169,7 @@ export default function ContactSection() {
                 onSubmit={handleSubmit(onSubmit)}
                 className="bg-[#F2E8D5] p-6 rounded-md text-[#463730]"
               >
-                <h3 className="font-playfair text-2xl font-bold mb-6 text-[#463730]">{t('contact.form.title')}</h3>
+                <h3 className="text-2xl font-bold mb-6 text-[#463730]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>{t('contact.form.title')}</h3>
                 
                 <div className="mb-4">
                   <label htmlFor="name" className="block mb-2 font-bold">{t('contact.form.name')}</label>

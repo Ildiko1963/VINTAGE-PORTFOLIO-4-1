@@ -59,7 +59,7 @@ const ServiceItem = ({ service, index, t }: ServiceItemPropsWithT) => {
           <i className={`fas fa-${service.icon} text-3xl`}></i>
         </div>
         <div>
-          <h3 className="font-playfair text-2xl font-bold mb-3">{getTranslatedTitle()}</h3>
+          <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>{getTranslatedTitle()}</h3>
           <p className="mb-4">{getTranslatedDescription()}</p>
           <ul className="space-y-2">
             {getTranslatedFeatures().map((feature, idx) => (
@@ -90,7 +90,8 @@ export default function ServicesSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-playfair text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-12"
+          className="text-4xl md:text-5xl font-bold text-[#D9BF77] text-center mb-12"
+          style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}
         >
 {t('services.title')}
         </motion.h2>
