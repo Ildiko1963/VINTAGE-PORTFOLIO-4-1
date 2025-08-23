@@ -67,6 +67,10 @@ export default function AboutSection() {
                         </p>
                         
                         <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
+                          {t('about.philosophy1b')}
+                        </p>
+                        
+                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
                           {t('about.philosophy2')}
                         </p>
                       </div>

@@ -26,7 +26,8 @@ const translations = {
     // About Section
     'about.title': 'Rólam',
     'about.intro': 'Tölts Ildikó vagyok. A Junior Art neves lakberendező iskola hallgatójaként végeztem. Már iskolai tanulmányaim megkezdése előtt is több referencia munkával büszkélkedhettem.',
-    'about.philosophy1': 'Életem szerves része, mindennapjaim alkotó eleme a harmóniára való törekvés, a harmónia megteremtése. Fontosnak érzem, hogy figyeljünk magunkra, mind belsőleg, mind külsőleg, mind az életterünk által, mivel csak egy önmagunkat visszatükröző környezetben érezhetjük igazán jól magunkat. Az erre való tudatos törekvés kellene, hogy átitassa életünk minden szegmensét, területét.',
+    'about.philosophy1': 'Életem szerves része, mindennapjaim alkotó eleme a harmóniára való törekvés, a harmónia megteremtése.',
+    'about.philosophy1b': 'Fontosnak érzem, hogy figyeljünk magunkra, mind belsőleg, mind külsőleg, mind az életterünk által, mivel csak egy önmagunkat visszatükröző környezetben érezhetjük igazán jól magunkat. Az erre való tudatos törekvés kellene, hogy átitassa életünk minden szegmensét, területét.',
     'about.philosophy2': 'Ha hagyjuk magunkat a mai, társadalmi struktúrából fakadó, piacorientált, személytelen attitűd által sodródni, tömegnormáknak engedelmeskedve, életünk elsivárosodása, mindennapjaink egyhangúsága örömtelenséggel és kiegyensúlyozatlansággal párosulva nem sok boldog és derűs pillanatot fog tartogatni a számunkra.',
     'about.philosophy3': 'Ezért tartom fontosnak az enteriőrtervezést, mivel általa bátrabban tudunk kilépni az élet küzdőterére, felvértezve magunkat a környezetünk szépségéből, és harmóniájából fakadó biztonságérzettel.',
     'about.philosophy4': 'Egy jó tervező feladata az, hogy meglássa, meglátassa és az életterünkben egyben megalkossa a belső lényünkben lakó indivíduumot, megtalálva a hozzá vezető utat eklektika, minimál art, high-tech, posztmodern, vagy bármely stílus által...',
@@ -96,7 +97,8 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.intro': 'I am Ildikó Tölts. I graduated from the renowned Junior Art interior design school. Even before starting my studies, I could already boast several reference works.',
-    'about.philosophy1': 'An integral part of my life, a creative element of my daily routine is the pursuit of harmony, the creation of harmony. I feel it is important that we pay attention to ourselves, both internally and externally, and through our living space, since we can only truly feel comfortable in an environment that reflects ourselves. This conscious striving should permeate every segment and area of our lives.',
+    'about.philosophy1': 'An integral part of my life, a creative element of my daily routine is the pursuit of harmony, the creation of harmony.',
+    'about.philosophy1b': 'I feel it is important that we pay attention to ourselves, both internally and externally, and through our living space, since we can only truly feel comfortable in an environment that reflects ourselves. This conscious striving should permeate every segment and area of our lives.',
     'about.philosophy2': 'If we allow ourselves to be swept away by today\'s market-oriented, impersonal attitude stemming from social structure, obeying mass norms, the suburbanization of our lives, the monotony of our daily lives paired with joylessness and imbalance will not hold many happy and cheerful moments for us.',
     'about.philosophy3': 'This is why I consider interior design important, because through it we can step more boldly into the arena of life, arming ourselves with the sense of security arising from the beauty and harmony of our environment.',
     'about.philosophy4': 'A good designer\'s task is to see, show and create in our living space the individual living within our inner being, finding the path to it through eclecticism, minimal art, high-tech, postmodern, or any style...',
