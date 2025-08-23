@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import FilmFrameWrapper from './FilmFrameWrapper';
 import { Section } from '@/lib/types';
 
 interface FooterProps {
@@ -12,7 +11,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
   
   return (
     <footer className="bg-transparent text-[#D9BF77] py-8">
-      <FilmFrameWrapper>
+      <div>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div 
@@ -47,7 +46,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
             </motion.div>
           </div>
           
-          <hr className="my-6 border-[#8B7355]" />
+          <hr className="my-6 border-transparent" />
           
           <motion.div 
             initial={{ y: 20, opacity: 0 }}
@@ -60,7 +59,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
             <p className="text-sm mt-2 text-[#C8B28E]">Crafting beautiful interior spaces with timeless elegance.</p>
           </motion.div>
         </div>
-      </FilmFrameWrapper>
+      </div>
     </footer>
   );
 }

@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import FilmFrameWrapper from './FilmFrameWrapper';
 import { PortfolioItem } from '@/lib/types';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -24,9 +23,9 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className="group relative overflow-hidden film-frame projector-flicker"
+      className="group relative overflow-hidden"
     >
-      <div className="relative h-64 flex items-center justify-center film-grain">
+      <div className="relative h-64 flex items-center justify-center">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
@@ -81,11 +80,7 @@ export default function PortfolioSection() {
   });
   
   return (
-    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77] border-t-[5px] border-[#8B7355] relative">
-      {/* Top shadow strip */}
-      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-20"></div>
-      {/* Bottom shadow strip */}
-      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-20"></div>
+    <section id="portfolio" className="py-16 bg-transparent text-[#D9BF77] relative">
       
       <div className="container mx-auto px-4">
         <motion.h2 
@@ -98,7 +93,7 @@ export default function PortfolioSection() {
 {t('portfolio.title')}
         </motion.h2>
         
-        <FilmFrameWrapper className="py-8">
+        <div className="py-8">
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               {[...Array(6)].map((_, index) => (
@@ -125,7 +120,7 @@ export default function PortfolioSection() {
               View Full Portfolio
             </motion.a>
           </div>
-        </FilmFrameWrapper>
+        </div>
       </div>
     </section>
   );

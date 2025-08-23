@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 import { PortfolioItem } from '@/lib/types';
-import FilmFrameWrapper from '@/components/FilmFrameWrapper';
 
 export default function PortfolioDetail() {
   const params = useParams();
@@ -73,10 +72,6 @@ export default function PortfolioDetail() {
 
   return (
     <div className="min-h-screen bg-transparent text-[#D9BF77] pt-20 pb-16 relative">
-      {/* Top shadow strip */}
-      <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-60 z-10"></div>
-      {/* Bottom shadow strip */}
-      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-60 z-10"></div>
       
       <div className="container mx-auto px-4 relative z-20">
         {/* Back button */}
@@ -90,7 +85,7 @@ export default function PortfolioDetail() {
           Back to Portfolio
         </motion.button>
 
-        <FilmFrameWrapper className="py-8 relative z-20">
+        <div className="py-8 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Image Gallery */}
             <motion.div
@@ -99,7 +94,7 @@ export default function PortfolioDetail() {
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-              <div className="relative film-frame projector-flicker film-grain">
+              <div className="relative">
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
@@ -206,7 +201,7 @@ export default function PortfolioDetail() {
               </div>
             </motion.div>
           </div>
-        </FilmFrameWrapper>
+        </div>
       </div>
 
       {/* Fullscreen Image Modal */}
