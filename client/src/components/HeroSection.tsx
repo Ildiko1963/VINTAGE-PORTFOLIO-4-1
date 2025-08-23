@@ -76,34 +76,34 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="relative">
           {/* Film strip background */}
-          <div className="bg-[#2A1A16] h-24 relative overflow-hidden">
+          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
             {/* Top perforations */}
-            <div className="absolute top-0 left-0 right-0 h-3 bg-[#2A1A16] z-10 flex justify-around items-center">
+            <div className="absolute top-0 left-0 right-0 h-2 bg-transparent z-10 flex justify-around items-center">
               {[...Array(20)].map((_, i) => (
                 <div key={`top-perf-${i}`} 
-                     className="bg-black"
+                     className="bg-[#2A1A16]"
                      style={{
                        width: '4px',
-                       height: '6px',
+                       height: '4px',
                        clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)'
                      }}></div>
               ))}
             </div>
             {/* Bottom perforations */}
-            <div className="absolute bottom-0 left-0 right-0 h-3 bg-[#2A1A16] z-10 flex justify-around items-center">
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-transparent z-10 flex justify-around items-center">
               {[...Array(20)].map((_, i) => (
                 <div key={`bottom-perf-${i}`} 
-                     className="bg-black"
+                     className="bg-[#2A1A16]"
                      style={{
                        width: '4px',
-                       height: '6px',
+                       height: '4px',
                        clipPath: 'polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%)'
                      }}></div>
               ))}
             </div>
             
             {/* Film strip images */}
-            <div className="flex overflow-hidden h-full py-3">
+            <div className="flex overflow-hidden h-full">
               <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
                 {[
                   "/static/big_laktanya.jpg",
