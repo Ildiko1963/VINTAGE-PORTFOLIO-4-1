@@ -29,7 +29,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="w-full md:w-2/5 flex items-start justify-center"
             >
-              <div className="film-frame projector-flicker film-grain w-full max-w-md hover:rotate-2 transition-transform duration-300 ease-in-out">
+              <div className="film-frame projector-flicker film-grain w-full max-w-md hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 

@@ -178,6 +178,11 @@
   animation: flicker 8s infinite, subtle-movement 15s ease-in-out infinite alternate;
 }
 
+.projector-flicker:hover {
+  transform: scale(1.05) rotate(2deg) !important;
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Background styles for different pages */
 .film-overlay {
   background-image: url('/src/assets/film-scratches.svg'), url('/src/assets/old-film-texture.svg');
