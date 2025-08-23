@@ -27,9 +27,9 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-[37%] flex items-start justify-center image-hover-container"
+              className="w-full md:w-[30%] flex items-start justify-center image-hover-container"
             >
-              <div className="film-frame projector-flicker film-grain w-full max-w-md hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer">
+              <div className="film-frame projector-flicker film-grain w-full max-w-xs hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 
@@ -43,7 +43,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-3/5 font-lora relative md:pt-0 px-2"
+              className="w-full md:w-[70%] font-lora relative md:pt-0 px-2"
             >
               <div className="h-full flex flex-col justify-between">
                 {/* Page content */}
