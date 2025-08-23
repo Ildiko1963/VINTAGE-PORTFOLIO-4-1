@@ -76,31 +76,19 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="relative">
           {/* Film perforations */}
-          <div className="absolute left-0 top-0 bottom-0 w-6 bg-[#2A1F1A] z-20" 
-               style={{
-                 backgroundImage: `repeating-linear-gradient(
-                   to bottom,
-                   #2A1F1A,
-                   #2A1F1A 6px,
-                   transparent 6px,
-                   transparent 10px,
-                   #2A1F1A 10px,
-                   #2A1F1A 16px
-                 )`
-               }}>
+          <div className="absolute left-0 top-0 bottom-0 w-4 bg-[#1A1611] z-20">
+            <div className="w-full h-full" style={{
+              backgroundImage: `radial-gradient(circle at center, transparent 2px, #1A1611 3px)`,
+              backgroundSize: '8px 8px',
+              backgroundRepeat: 'repeat'
+            }}></div>
           </div>
-          <div className="absolute right-0 top-0 bottom-0 w-6 bg-[#2A1F1A] z-20"
-               style={{
-                 backgroundImage: `repeating-linear-gradient(
-                   to bottom,
-                   #2A1F1A,
-                   #2A1F1A 6px,
-                   transparent 6px,
-                   transparent 10px,
-                   #2A1F1A 10px,
-                   #2A1F1A 16px
-                 )`
-               }}>
+          <div className="absolute right-0 top-0 bottom-0 w-4 bg-[#1A1611] z-20">
+            <div className="w-full h-full" style={{
+              backgroundImage: `radial-gradient(circle at center, transparent 2px, #1A1611 3px)`,
+              backgroundSize: '8px 8px', 
+              backgroundRepeat: 'repeat'
+            }}></div>
           </div>
           <div className="flex overflow-hidden relative">
             <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
