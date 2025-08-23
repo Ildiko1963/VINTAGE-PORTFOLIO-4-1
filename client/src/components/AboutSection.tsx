@@ -115,9 +115,6 @@ export default function AboutSection() {
                       <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy9')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        "A stílus az egyetlen olyan igazi luxus, amit bárki megengedhet magának, függetlenül attól, hogy mennyi pénze van. Ez olyan dolog, ami velünk született, de tanulható, feltéve, ha megvan hozzá az emberben a kellő intelligencia." - Giorgio Armani
-                      </p>
                       <div className="flex space-x-4 mt-6">
                         <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
                           <i className="fab fa-instagram text-2xl"></i>
