@@ -88,6 +88,7 @@ export default function Home() {
           <HeroSection onNavigate={scrollToSection} />
           
           <AboutSection />
+          <div className="py-8"></div>
           <PortfolioSection />
           <ServicesSection />
           <ContactSection />
