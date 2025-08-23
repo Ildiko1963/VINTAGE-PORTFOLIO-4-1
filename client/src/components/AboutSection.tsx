@@ -57,17 +57,20 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          Üdvözlöm! Ildikó vagyok, belsőépítész és designer. Több mint 15 éve foglalkozom terek átalakításával, lakások és irodák egyedi tervezésével.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.intro')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          Hiszem, hogy minden térnek megvan a maga karaktere, és a feladatom az, hogy ezt kibontakoztassam. Nem csak szép tereket tervezek, hanem olyan környezetet, amely tükrözi az ott élők személyiségét.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy1')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          A funkcionalitás és az esztétikum harmóniájában hiszek. Minden projektben egyedi megoldásokat keresek, amelyek a megbízó igényeihez és életstílusához igazodnak.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy2')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          Szeretem az anyagok játékát, a színek és formák összehangolását. Klasszikus elegancia és modern funkcionalizmus - ez jellemzi a munkáimat.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy3')}
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy4')}
                         </p>
                       </div>
                     </motion.div>
@@ -82,14 +85,20 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          Munkám során különös figyelmet fordítok a fenntarthatóságra és a környezettudatos megoldásokra. Szívesen használok újrahasznosított anyagokat és vintage darabokat.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy5')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          A projekt minden szakaszában szorosan együttműködöm ügyfeleimmel. Hiszem, hogy a legjobb eredmény akkor születik, amikor a tervező és a megbízó együtt álmodják meg az új teret.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy6')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
-                          Minden terem egy történetet mesél. Az én feladatom, hogy ezt a történetet láthatóvá tegyem a bútorokon, a színeken és a részleteken keresztül.
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy7')}
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy8')}
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                          {t('about.philosophy9')}
                         </p>
                         <div className="flex space-x-4 mt-6">
                           <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
