@@ -61,7 +61,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       </div>
       
       <div className="absolute bottom-0 left-0 right-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <div className="bg-[#463730] bg-opacity-95 px-3 py-2 mx-2 mb-2 rounded">
+        <div className="bg-[#2A1A16] bg-opacity-80 px-3 py-2 mx-2 mb-2 rounded">
           <h3 className="text-sm font-bold text-[#D9BF77] text-center" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{item.title}</h3>
           <p className="text-center text-xs font-typewriter mt-1">{item.description}</p>
         </div>
