@@ -31,9 +31,9 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-1/2"
+              className="w-full md:w-1/2 flex items-center justify-center"
             >
-              <div className="film-frame projector-flicker film-grain">
+              <div className="film-frame projector-flicker film-grain max-w-sm">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 
@@ -49,7 +49,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="w-full md:w-1/2 font-lora relative"
             >
-              <div className="min-h-[400px] flex flex-col justify-between">
+              <div className="min-h-[350px] flex flex-col justify-between">
                 {/* Page content */}
                 <div>
                   {currentPage === 0 && (
@@ -59,13 +59,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.intro')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy1')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy2')}
                       </p>
                     </motion.div>
@@ -78,13 +78,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy3')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy4')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy5')}
                       </p>
                     </motion.div>
@@ -97,13 +97,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy6')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4 font-typewriter italic">
+                      <p className="text-[#D9BF77] text-base mb-3 font-typewriter italic">
                         {t('about.philosophy7')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy8')}
                       </p>
                     </motion.div>
@@ -116,10 +116,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-3">
                         {t('about.philosophy9')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-6 font-typewriter">
+                      <p className="text-[#D9BF77] text-base mb-4 font-typewriter">
                         "{t('about.armani')}" - Giorgio Armani
                       </p>
                       <div className="flex space-x-4 mt-6">
