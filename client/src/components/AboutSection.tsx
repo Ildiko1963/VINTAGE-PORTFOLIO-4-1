@@ -27,7 +27,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-2/5 flex items-start justify-center"
+              className="w-full md:w-1/3 flex items-start justify-center"
             >
               <div className="film-frame projector-flicker film-grain w-full max-w-md">
                 <img 
@@ -43,7 +43,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-2/3 font-lora relative md:pt-4 px-12"
+              className="w-full md:w-3/4 font-lora relative md:pt-4 px-8"
             >
               <div className="h-full flex flex-col justify-between">
                 {/* Page content */}
