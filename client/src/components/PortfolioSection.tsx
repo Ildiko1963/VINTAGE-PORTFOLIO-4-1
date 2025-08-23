@@ -94,32 +94,34 @@ export default function PortfolioSection() {
 {t('portfolio.title')}
         </motion.h2>
         
-        <div className="py-8">
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mb-12">
-              {[...Array(6)].map((_, index) => (
-                <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
-              ))}
+        <div className="py-8 flex justify-center">
+          <div className="w-full max-w-6xl">
+            {isLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mb-12 justify-items-center">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mb-12 justify-items-center">
+                {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
+                  <PortfolioItemCard key={item.id} item={item} index={index} t={t} />
+                ))}
+              </div>
+            )}
+            
+            <div className="text-center mt-8">
+              <motion.a 
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                href="#" 
+                className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
+              >
+                View Full Portfolio
+              </motion.a>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 mb-12">
-              {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
-                <PortfolioItemCard key={item.id} item={item} index={index} t={t} />
-              ))}
-            </div>
-          )}
-          
-          <div className="text-center mt-8">
-            <motion.a 
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              href="#" 
-              className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
-            >
-              View Full Portfolio
-            </motion.a>
           </div>
         </div>
       </div>
