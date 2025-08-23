@@ -46,8 +46,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 repeat: Infinity, 
                 duration: 3,
               }}
-              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-              alt="Vintage film projector" 
+              src="/static/23358_ildiko.jpg" 
+              alt="Portrait of interior designer" 
               className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
             />
           </motion.div>
