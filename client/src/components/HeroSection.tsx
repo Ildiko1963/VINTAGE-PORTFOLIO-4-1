@@ -83,7 +83,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 <div key={`top-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '2px',
+                       width: '2.5px',
                        height: '6px',
                        clipPath: 'polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)'
                      }}></div>
@@ -95,7 +95,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 <div key={`bottom-perf-${i}`} 
                      className="bg-[#2A1A16]"
                      style={{
-                       width: '2px',
+                       width: '2.5px',
                        height: '6px',
                        clipPath: 'polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)'
                      }}></div>
