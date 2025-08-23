@@ -185,7 +185,7 @@
     0 0 0 2px rgba(139, 69, 19, 0.4);
   overflow: visible;
   filter: drop-shadow(8px 12px 15px rgba(0,0,0,0.4)) contrast(1.1);
-  transform: rotate(2.8deg) skew(-1.5deg, 2.1deg) perspective(800px) rotateY(-3deg);
+  transform: rotate(-2.8deg) skew(1.5deg, -2.1deg) perspective(800px) rotateY(3deg);
   background: 
     radial-gradient(circle at 25% 30%, rgba(0,0,0,0.2) 2px, transparent 3px),
     radial-gradient(circle at 75% 60%, rgba(0,0,0,0.15) 3px, transparent 4px),
