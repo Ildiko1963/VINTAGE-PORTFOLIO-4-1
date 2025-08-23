@@ -118,6 +118,9 @@ export default function AboutSection() {
                       <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         "{t('about.armani')}" - Giorgio Armani
                       </p>
+                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        Kapcsolat és további munkáim megtekintése:
+                      </p>
                       <div className="flex space-x-4 mt-6">
                         <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
                           <i className="fab fa-instagram text-2xl"></i>
