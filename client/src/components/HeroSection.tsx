@@ -76,7 +76,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="relative">
           {/* Film strip background */}
-          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
+          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden border-t border-b border-[#2A1A16] border-opacity-30">
             {/* Top perforations */}
             <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
               {[...Array(200)].map((_, i) => (
@@ -84,7 +84,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                      className="bg-[#2A1A16]"
                      style={{
                        width: '2.5px',
-                       height: '6px',
+                       height: '8px',
                        clipPath: 'polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)'
                      }}></div>
               ))}
@@ -96,7 +96,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                      className="bg-[#2A1A16]"
                      style={{
                        width: '2.5px',
-                       height: '6px',
+                       height: '8px',
                        clipPath: 'polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%)'
                      }}></div>
               ))}
