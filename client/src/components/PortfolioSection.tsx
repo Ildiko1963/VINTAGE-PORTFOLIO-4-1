@@ -95,13 +95,13 @@ export default function PortfolioSection() {
         
         <div className="py-8">
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-12">
               {[...Array(6)].map((_, index) => (
                 <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mb-12">
               {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
                 <PortfolioItemCard key={item.id} item={item} index={index} t={t} />
               ))}
