@@ -87,9 +87,43 @@
 .film-frame {
   position: relative;
   border: 9px solid rgba(42, 26, 22, 0.6);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  border-radius: 12px 8px 15px 6px;
+  box-shadow: 
+    0 3px 8px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 3px rgba(0,0,0,0.2),
+    2px -2px 4px rgba(42, 26, 22, 0.3),
+    -1px 3px 6px rgba(42, 26, 22, 0.2);
   overflow: visible;
+  transform: rotate(-0.5deg);
+  filter: contrast(1.1) sepia(0.1);
+}
+
+.film-frame::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid rgba(42, 26, 22, 0.3);
+  border-radius: 10px 6px 13px 8px;
+  z-index: -1;
+}
+
+.film-frame::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  width: 4px;
+  height: 12px;
+  background: rgba(42, 26, 22, 0.4);
+  border-radius: 2px;
+  transform: rotate(15deg);
+  box-shadow: 
+    -15px 20px 0 -1px rgba(42, 26, 22, 0.3),
+    -30px -10px 0 -1px rgba(42, 26, 22, 0.2);
 }
 
 
