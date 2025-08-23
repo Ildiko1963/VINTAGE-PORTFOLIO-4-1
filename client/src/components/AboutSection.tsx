@@ -55,10 +55,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.intro')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy1')}
                       </p>
                     </motion.div>
@@ -71,10 +71,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy2')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy3')}
                       </p>
                     </motion.div>
@@ -87,10 +87,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy4')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy5')}
                       </p>
                     </motion.div>
@@ -103,7 +103,7 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy6')}
                       </p>
                       <p className="text-[#D9BF77] text-sm mb-3 font-typewriter italic">
@@ -119,10 +119,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy8')}
                       </p>
-                      <p className="text-[#D9BF77] text-lg mb-4">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy9')}
                       </p>
                     </motion.div>
@@ -135,7 +135,7 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-lg mb-4 font-typewriter">
+                      <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         "{t('about.armani')}" - Giorgio Armani
                       </p>
                       <div className="flex space-x-4 mt-6">
