@@ -57,19 +57,19 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.intro')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy1')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy2')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy3')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy4')}
                         </p>
                       </div>
@@ -85,19 +85,19 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy5')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy6')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy7')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy8')}
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
                           {t('about.philosophy9')}
                         </p>
                         <div className="flex space-x-4 mt-6">
