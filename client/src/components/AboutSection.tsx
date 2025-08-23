@@ -22,7 +22,7 @@ export default function AboutSection() {
 {t('about.title')}
           </motion.h2>
           
-          <div className="flex flex-col md:flex-row items-stretch gap-8 mb-12">
+          <div className="flex flex-col md:flex-row items-stretch gap-8 mb-12 md:ml-8">
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
