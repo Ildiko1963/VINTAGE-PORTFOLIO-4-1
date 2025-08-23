@@ -31,7 +31,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-1/2"
+              className="w-full md:w-3/5"
             >
               <div className="film-frame projector-flicker film-grain">
                 <img 

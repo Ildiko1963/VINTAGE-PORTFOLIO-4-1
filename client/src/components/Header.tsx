@@ -18,11 +18,8 @@ export default function Header({ sections, onNavigate }: HeaderProps) {
       
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0 relative">
-            <h1 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Bodoni Moda, serif' }}>
-              Ildikó Style
-            </h1>
-            <p className="mt-2" style={{ fontFamily: 'Great Vibes, cursive', fontSize: '1.5rem', position: 'relative', top: '-20px' }}>Interior Design</p>
+          <div className="mb-6 md:mb-0">
+            
           </div>
           
           <nav className="w-full md:w-auto">

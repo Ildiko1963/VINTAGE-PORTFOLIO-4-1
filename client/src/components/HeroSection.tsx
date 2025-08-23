@@ -52,39 +52,28 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             />
           </motion.div>
           
-          <motion.h1 
+          <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="font-playfair text-5xl md:text-7xl font-bold text-[#D9BF77] mb-6"
+            className="mb-6 relative"
           >
-{t('hero.title')}
-          </motion.h1>
-          
-          <div className="max-w-3xl overflow-hidden">
-            <motion.p 
-              ref={textRef}
-              initial={{ width: 0 }}
-              animate={controls}
-              className="font-typewriter text-xl md:text-2xl text-[#D9BF77] mb-8 overflow-hidden whitespace-nowrap border-r-2 border-[#D9BF77]"
-              style={{ borderRightColor: '#D9BF77' }}
-            >
-{t('hero.subtitle')}
-            </motion.p>
-          </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Bodoni Moda, serif' }}>
+              Ildikó Style
+            </h1>
+            <p className="text-3xl md:text-4xl text-[#D9BF77]" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px' }}>Interior Design</p>
+          </motion.div>
           
           <motion.div 
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 2, duration: 0.5 }}
-            className="mt-8"
+            className="mt-8 max-w-2xl mx-auto p-6 bg-[#463730] bg-opacity-80 rounded-lg border border-[#8B7355]"
           >
-            <button 
-              onClick={() => onNavigate('portfolio')}
-              className="px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter text-lg rounded-md hover:bg-[#C8B28E] transition-colors"
-            >
-              View Projects
-            </button>
+            <blockquote className="text-[#D9BF77] font-lora italic text-lg leading-relaxed text-center">
+              "The only real luxury is style which anybody can afford independent from amount of money they have. This is the kind of thing that was born with us but it can be learnt supposing one has the proper intelligence for it..."
+            </blockquote>
+            <p className="text-[#C8B28E] font-typewriter text-right mt-4">— Giorgio Armani</p>
           </motion.div>
         </div>
       </div>
