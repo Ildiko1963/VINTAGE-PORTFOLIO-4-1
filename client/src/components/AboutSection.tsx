@@ -21,15 +21,15 @@ export default function AboutSection() {
 {t('about.title')}
           </motion.h2>
           
-          <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
+          <div className="flex flex-col items-start gap-8 mb-12">
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-1/3 flex items-start justify-center"
+              className="w-full flex items-start justify-center"
             >
-              <div className="film-frame projector-flicker film-grain w-full max-w-xs">
+              <div className="film-frame projector-flicker film-grain w-full max-w-sm">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 
@@ -43,9 +43,9 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-2/3 font-lora relative"
+              className="w-full font-lora relative"
             >
-              <div className="min-h-[300px] flex flex-col justify-between">
+              <div className="min-h-[500px] flex flex-col justify-between">
                 {/* Page content */}
                 <div>
                   {currentPage === 0 && (
@@ -55,10 +55,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.intro')}
                       </p>
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy1')}
                       </p>
                     </motion.div>
@@ -71,10 +71,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy2')}
                       </p>
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy3')}
                       </p>
                     </motion.div>
@@ -87,10 +87,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy4')}
                       </p>
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy5')}
                       </p>
                     </motion.div>
@@ -103,7 +103,7 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy6')}
                       </p>
                       <p className="text-[#D9BF77] text-sm mb-3 font-typewriter italic">
@@ -119,10 +119,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy8')}
                       </p>
-                      <p className="text-[#D9BF77] text-sm mb-3">
+                      <p className="text-[#D9BF77] text-lg mb-4">
                         {t('about.philosophy9')}
                       </p>
                     </motion.div>
@@ -135,7 +135,7 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-sm mb-4 font-typewriter">
+                      <p className="text-[#D9BF77] text-lg mb-4 font-typewriter">
                         "{t('about.armani')}" - Giorgio Armani
                       </p>
                       <div className="flex space-x-4 mt-6">
