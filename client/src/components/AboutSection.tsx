@@ -45,25 +45,31 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="w-full md:w-[70%] font-lora relative md:pt-0 px-2"
             >
-              <div className="h-full flex flex-col justify-start">
-                {/* Page content */}
-                <div>
+              <div className="h-full flex flex-col justify-between">
+                {/* Page content - kitölti a teljes magasságot */}
+                <div className="flex-1 flex flex-col justify-between">
                   {currentPage === 0 && (
                     <motion.div
                       key="page0"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
+                      className="h-full flex flex-col justify-between"
                     >
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.intro')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy1')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy2')}
-                      </p>
+                      <div>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          Üdvözlöm! Ildikó vagyok, belsőépítész és designer. Több mint 15 éve foglalkozom terek átalakításával, lakások és irodák egyedi tervezésével.
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          Hiszem, hogy minden térnek megvan a maga karaktere, és a feladatom az, hogy ezt kibontakoztassam. Nem csak szép tereket tervezek, hanem olyan környezetet, amely tükrözi az ott élők személyiségét.
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          A funkcionalitás és az esztétikum harmóniájában hiszek. Minden projektben egyedi megoldásokat keresek, amelyek a megbízó igényeihez és életstílusához igazodnak.
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          Szeretem az anyagok játékát, a színek és formák összehangolását. Klasszikus elegancia és modern funkcionalizmus - ez jellemzi a munkáimat.
+                        </p>
+                      </div>
                     </motion.div>
                   )}
                   
@@ -73,57 +79,36 @@ export default function AboutSection() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
+                      className="h-full flex flex-col justify-between"
                     >
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy3')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy4')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy5')}
-                      </p>
-                    </motion.div>
-                  )}
-                  
-                  {currentPage === 2 && (
-                    <motion.div
-                      key="page2"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy6')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy7')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy8')}
-                      </p>
-                      <p className="text-[#D9BF77] text-base mb-0.5" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                        {t('about.philosophy9')}
-                      </p>
-                      <div className="flex space-x-4 mt-6">
-                        <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
-                          <i className="fab fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
-                          <i className="fab fa-vimeo-v text-2xl"></i>
-                        </a>
-                        <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
-                          <i className="fab fa-behance text-2xl"></i>
-                        </a>
+                      <div>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          Munkám során különös figyelmet fordítok a fenntarthatóságra és a környezettudatos megoldásokra. Szívesen használok újrahasznosított anyagokat és vintage darabokat.
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          A projekt minden szakaszában szorosan együttműködöm ügyfeleimmel. Hiszem, hogy a legjobb eredmény akkor születik, amikor a tervező és a megbízó együtt álmodják meg az új teret.
+                        </p>
+                        <p className="text-[#D9BF77] text-base mb-4" style={{ fontFamily: 'Special Elite, monospace' }}>
+                          Minden terem egy történetet mesél. Az én feladatom, hogy ezt a történetet láthatóvá tegyem a bútorokon, a színeken és a részleteken keresztül.
+                        </p>
+                        <div className="flex space-x-4 mt-6">
+                          <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
+                            <i className="fab fa-instagram text-2xl"></i>
+                          </a>
+                          <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
+                            <i className="fab fa-vimeo-v text-2xl"></i>
+                          </a>
+                          <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
+                            <i className="fab fa-behance text-2xl"></i>
+                          </a>
+                        </div>
                       </div>
                     </motion.div>
                   )}
-                  
-                  
                 </div>
                 
                 {/* Navigation */}
-                <div className="flex justify-between items-center mt-12 mb-4">
+                <div className="flex justify-between items-center mt-8 mb-4">
                   <button
                     onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
                     disabled={currentPage === 0}
@@ -138,7 +123,7 @@ export default function AboutSection() {
                   </button>
                   
                   <div className="flex gap-2">
-                    {[0, 1, 2].map(page => (
+                    {[0, 1].map(page => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
@@ -150,10 +135,10 @@ export default function AboutSection() {
                   </div>
                   
                   <button
-                    onClick={() => setCurrentPage(prev => Math.min(2, prev + 1))}
-                    disabled={currentPage === 2}
+                    onClick={() => setCurrentPage(prev => Math.min(1, prev + 1))}
+                    disabled={currentPage === 1}
                     className={`flex items-center gap-2 px-4 py-2 transition-colors ${
-                      currentPage === 2 
+                      currentPage === 1 
                         ? 'text-gray-500 cursor-not-allowed' 
                         : 'text-[#D9BF77] hover:text-[#C8B28E]'
                     }`}
