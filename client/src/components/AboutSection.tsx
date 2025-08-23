@@ -27,7 +27,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-2/3 flex items-start justify-center"
+              className="w-full md:w-1/3 flex items-start justify-center"
             >
               <div className="film-frame projector-flicker film-grain w-full max-w-md">
                 <img 
@@ -43,7 +43,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-2/3 font-lora relative md:pt-2 px-4"
+              className="w-full md:w-2/3 font-lora relative md:pt-2 px-2"
             >
               <div className="h-full flex flex-col justify-between">
                 {/* Page content */}
@@ -55,13 +55,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.intro')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy1')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy2')}
                       </p>
                     </motion.div>
@@ -74,13 +74,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy3')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy4')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy5')}
                       </p>
                     </motion.div>
@@ -93,13 +93,13 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy6')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy7')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy8')}
                       </p>
                     </motion.div>
@@ -112,10 +112,10 @@ export default function AboutSection() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         {t('about.philosophy9')}
                       </p>
-                      <p className="text-[#D9BF77] text-base mb-2" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
+                      <p className="text-[#D9BF77] text-base mb-1" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
                         "{t('about.armani')}" - Giorgio Armani
                       </p>
                       <div className="flex space-x-4 mt-6">
