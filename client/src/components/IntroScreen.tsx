@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioControls } from '@/lib/types';
 
@@ -11,11 +11,36 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [audioPreloaded, setAudioPreloaded] = useState(false);
+  const instrumentalRef = useRef<HTMLAudioElement | null>(null);
   
   // Pre-initialize audio when component mounts to ensure proper loading
   useEffect(() => {
-    // No actual sound will play until user interaction
     console.log('Preparing audio resources...');
+    
+    // Initialize instrumental music for loading screen
+    const instrumental = new Audio('/audio/instrumental.mp3.mp3');
+    instrumental.loop = true;
+    instrumental.volume = 0.7;
+    instrumentalRef.current = instrumental;
+    
+    // Try to play instrumental music immediately (some browsers allow it)
+    const playInstrumental = async () => {
+      try {
+        await instrumental.play();
+        console.log('Instrumental music started during loading');
+      } catch (error) {
+        console.log('Instrumental music will start after user interaction');
+      }
+    };
+    
+    playInstrumental();
+    
+    return () => {
+      if (instrumentalRef.current) {
+        instrumentalRef.current.pause();
+        instrumentalRef.current.src = '';
+      }
+    };
   }, []);
   
   // Simulate loading progress
@@ -36,6 +61,12 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
   }, []);
   
   const handleEnterSite = useCallback(() => {
+    // Stop instrumental music
+    if (instrumentalRef.current) {
+      instrumentalRef.current.pause();
+      console.log('Instrumental music stopped');
+    }
+    
     // Mark site as entering
     setIsVisible(false);
     
@@ -72,21 +103,9 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     // Unlock audio on all browsers
     unlockAudio();
     
-    // Initialize audio context (browser requires user interaction)
+    // Initialize main audio system (browser requires user interaction)
     console.log('Starting audio initialization...');
     audioControls.initializeAudio();
-    
-    // Start projector sound with a small delay to ensure initialization
-    setTimeout(() => {
-      console.log('Starting projector sound...');
-      audioControls.toggleProjector();
-    }, 500);
-    
-    // Start background music with delay
-    setTimeout(() => {
-      console.log('Starting background music...');
-      audioControls.toggleMusic();
-    }, 2000);
     
     // Notify parent that intro is complete
     setTimeout(() => {
