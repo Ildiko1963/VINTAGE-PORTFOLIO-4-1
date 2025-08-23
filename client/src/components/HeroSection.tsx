@@ -68,7 +68,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 2, duration: 0.5 }}
-            className="mt-8 mb-24 max-w-2xl mx-auto p-6 bg-transparent border border-[#8B7355] border-opacity-60"
+            className="mt-8 mb-24 max-w-2xl mx-auto p-6 bg-[#463730] bg-opacity-30 rounded-lg border border-[#8B7355] border-opacity-60"
           >
             <blockquote className="text-[#D9BF77] font-lora italic text-lg leading-relaxed text-center">
               "The only real luxury is style which anybody can afford independent from amount of money they have. This is the kind of thing that was born with us but it can be learnt supposing one has the proper intelligence for it..."
