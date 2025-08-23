@@ -22,12 +22,12 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   return (
     <motion.div 
       key={item.id}
-      initial={{ y: 30, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      initial={{ y: 30, opacity: 0, scale: isLast ? 1.3 : isFirst ? 1.1 : 1 }}
+      whileInView={{ y: 0, opacity: 1, scale: isLast ? 1.3 : isFirst ? 1.1 : 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`group relative overflow-hidden ${isFirst ? 'scale-110' : ''} ${isLast ? 'scale-125' : ''}`}
-      style={isFirst ? { transform: 'scale(1.1)', zIndex: 10 } : isLast ? { transform: 'scale(1.25)', zIndex: 15 } : {}}
+      className="group relative overflow-hidden"
+      style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
       <div className="relative h-48 flex items-center justify-center">
         <img 
