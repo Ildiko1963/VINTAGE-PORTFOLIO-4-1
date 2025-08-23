@@ -8,13 +8,15 @@ interface PortfolioItemCardProps {
   item: PortfolioItem;
   index: number;
   t: (key: string) => string;
+  totalItems: number;
 }
 
-function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
+function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProps) {
   const [selectedImage, setSelectedImage] = useState(0);
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
+  const isFirstOrLast = index === 0 || index === totalItems - 1;
 
   return (
     <motion.div 
@@ -23,7 +25,7 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className="group relative overflow-hidden"
+      className={`group relative overflow-hidden ${isFirstOrLast ? 'transform scale-110' : ''}`}
     >
       <div className="relative h-48 flex items-center justify-center">
         <img 
@@ -105,7 +107,7 @@ export default function PortfolioSection() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mb-12 justify-items-center">
                 {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
-                  <PortfolioItemCard key={item.id} item={item} index={index} t={t} />
+                  <PortfolioItemCard key={item.id} item={item} index={index} t={t} totalItems={(portfolioItems || []).length} />
                 ))}
               </div>
             )}
