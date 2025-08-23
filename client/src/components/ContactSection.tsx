@@ -159,7 +159,7 @@ export default function ContactSection() {
                 <p className="text-center mb-6">Your message has been received. We'll get back to you shortly.</p>
                 <button 
                   onClick={() => setFormSubmitted(false)}
-                  className="px-6 py-2 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
+                  className="px-6 py-2 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] transition-colors"
                 >
                   <span className="font-typewriter">Send Another Message</span>
                 </button>
@@ -177,7 +177,7 @@ export default function ContactSection() {
                     type="text" 
                     id="name"
                     {...register('name')}
-                    className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
+                    className="w-full px-4 py-2 bg-[#2A1A16] bg-opacity-30 border border-[#2A1A16] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   />
                   {errors.name && (
                     <p className="text-red-600 text-sm mt-1">{errors.name.message}</p>
@@ -190,7 +190,7 @@ export default function ContactSection() {
                     type="email" 
                     id="email"
                     {...register('email')}
-                    className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
+                    className="w-full px-4 py-2 bg-[#2A1A16] bg-opacity-30 border border-[#2A1A16] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   />
                   {errors.email && (
                     <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
@@ -202,7 +202,7 @@ export default function ContactSection() {
                   <select 
                     id="subject"
                     {...register('subject')}
-                    className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
+                    className="w-full px-4 py-2 bg-[#2A1A16] bg-opacity-30 border border-[#2A1A16] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   >
                     <option value="" className="font-typewriter">Select a subject</option>
                     <option value="Design" className="font-typewriter">{t('contact.form.subject.design')}</option>
@@ -221,7 +221,7 @@ export default function ContactSection() {
                     id="message"
                     {...register('message')}
                     rows={5}
-                    className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77] resize-none font-typewriter"
+                    className="w-full px-4 py-2 bg-[#2A1A16] bg-opacity-30 border border-[#2A1A16] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77] resize-none font-typewriter"
                   ></textarea>
                   {errors.message && (
                     <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
@@ -231,7 +231,7 @@ export default function ContactSection() {
                 <button 
                   type="submit"
                   disabled={isPending}
-                  className="w-full px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter text-lg rounded-md hover:bg-[#8B7355] hover:text-[#F2E8D5] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter text-lg rounded-md hover:bg-[#2A1A16] hover:text-[#F2E8D5] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
 {isPending ? t('loading') : t('contact.form.send')}
                 </button>

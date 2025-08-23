@@ -120,7 +120,7 @@ export default function ServicesSection() {
           >
             <a 
               href="#contact" 
-              className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#8B7355] hover:text-[#F2E8D5] transition-colors"
+              className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] hover:text-[#F2E8D5] transition-colors"
             >
 {t('services.cta')}
             </a>

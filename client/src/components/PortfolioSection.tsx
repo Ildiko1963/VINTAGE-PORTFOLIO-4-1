@@ -96,7 +96,7 @@ export default function PortfolioSection() {
             {isLoading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 mb-12 justify-items-center">
                 {[...Array(6)].map((_, index) => (
-                  <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
+                  <div key={index} className="bg-[#2A1A16] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
                 ))}
               </div>
             ) : (
@@ -114,7 +114,7 @@ export default function PortfolioSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 href="#" 
-                className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
+                className="inline-block px-8 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] transition-colors"
               >
                 View Full Portfolio
               </motion.a>

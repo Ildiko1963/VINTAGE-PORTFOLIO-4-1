@@ -194,7 +194,7 @@ export default function PortfolioDetail() {
               <div className="pt-4">
                 <button
                   onClick={() => setLocation('/')}
-                  className="px-8 py-3 bg-[#D9BF77] text-[#463730] font-semibold rounded-md hover:bg-[#C8B28E] transition-colors"
+                  className="px-8 py-3 bg-[#D9BF77] text-[#463730] font-semibold rounded-md hover:bg-[#2A1A16] transition-colors"
                 >
                   View More Projects
                 </button>

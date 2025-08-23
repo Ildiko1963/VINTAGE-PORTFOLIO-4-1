@@ -12,7 +12,7 @@ export default function About() {
         </p>
         <div className="mt-8 text-center">
           <Link href="/">
-            <button className="px-6 py-3 bg-[#D9BF77] text-[#463730] rounded-md font-semibold shadow-lg hover:bg-[#C8B28E] transition-colors">
+            <button className="px-6 py-3 bg-[#D9BF77] text-[#463730] rounded-md font-semibold shadow-lg hover:bg-[#2A1A16] transition-colors">
               Vissza a főoldalra
             </button>
           </Link>

@@ -172,7 +172,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               Loading the projector...
             </motion.p>
             <motion.div 
-              className="w-64 h-4 mx-auto bg-[#8B7355] rounded-full overflow-hidden"
+              className="w-64 h-4 mx-auto bg-[#2A1A16] rounded-full overflow-hidden"
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "16rem", opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
@@ -186,7 +186,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
             </motion.div>
             <motion.button
               id="enter-site"
-              className="mt-8 px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors"
+              className="mt-8 px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] transition-colors"
               initial={{ opacity: 0 }}
               animate={{ opacity: progress >= 100 ? 1 : 0 }}
               transition={{ duration: 0.5 }}

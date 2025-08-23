@@ -18,7 +18,7 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-4 right-4 z-40 p-3 bg-[#C8B28E] bg-opacity-80 rounded-lg shadow-lg flex items-center space-x-3"
+      className="fixed bottom-4 right-4 z-40 p-3 bg-[#2A1A16] bg-opacity-80 rounded-lg shadow-lg flex items-center space-x-3"
     >
       <button 
         onClick={toggleProjector}
@@ -46,7 +46,7 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
         <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block">
           <input 
             type="range" 
-            className="w-24 appearance-none h-2 bg-[#8B7355] rounded-lg outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-[#D9BF77] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:bg-[#D9BF77] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+            className="w-24 appearance-none h-2 bg-[#2A1A16] rounded-lg outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-[#D9BF77] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:bg-[#D9BF77] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
             min="0" 
             max="1" 
             step="0.1" 
