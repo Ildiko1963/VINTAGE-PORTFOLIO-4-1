@@ -78,8 +78,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Film strip background */}
           <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
             {/* Top perforations */}
-            <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(150)].map((_, i) => (
+            <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex items-center" style={{gap: '18px', paddingLeft: '18px'}}>
+              {[...Array(80)].map((_, i) => (
                 <div key={`top-perf-${i}`} 
                      className="bg-[#2A1A16] bg-opacity-60"
                      style={{
@@ -90,8 +90,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               ))}
             </div>
             {/* Bottom perforations */}
-            <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
-              {[...Array(150)].map((_, i) => (
+            <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10 flex items-center" style={{gap: '18px', paddingLeft: '18px'}}>
+              {[...Array(80)].map((_, i) => (
                 <div key={`bottom-perf-${i}`} 
                      className="bg-[#2A1A16] bg-opacity-60"
                      style={{
