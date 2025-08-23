@@ -58,20 +58,16 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.intro')}
+                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Üdvözlöm!</h3>
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
+                          Ildikó vagyok, belsőépítész és designer. Több mint 15 éve foglalkozom terek átalakításával, 
+                          lakások és irodák egyedi tervezésével. Számomra minden projekt egy új kaland, ahol a funkcionalitás 
+                          és az esztétikum tökéletes harmóniájára törekszem.
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy1')}
-                        </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy2')}
-                        </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy3')}
-                        </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy4')}
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
+                          Hiszem, hogy minden térnek megvan a maga karaktere, és az én feladatom, hogy ezt kibontakoztassam. 
+                          Nem csak szép tereket tervezek, hanem olyan környezetet, amely tükrözi az ott élők személyiségét 
+                          és támogatja életstílusukat.
                         </p>
                       </div>
                     </motion.div>
@@ -86,22 +82,40 @@ export default function AboutSection() {
                       className="h-full flex flex-col justify-between"
                     >
                       <div>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy5')}
+                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Filozófiám</h3>
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
+                          Minden projektben egyedi megoldásokat keresek, amelyek a megbízó igényeihez és életstílusához 
+                          igazodnak. Szeretem az anyagok játékát, a színek és formák összehangolását. Klasszikus elegancia 
+                          és modern funkcionalizmus - ez jellemzi a munkáimat.
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy6')}
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
+                          Munkám során különös figyelmet fordítok a fenntarthatóságra és a környezettudatos megoldásokra. 
+                          Szívesen használok újrahasznosított anyagokat és vintage darabokat, amelyek egyedi karaktert 
+                          adnak a tereknek.
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy7')}
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {currentPage === 2 && (
+                    <motion.div
+                      key="page2"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="h-full flex flex-col justify-between"
+                    >
+                      <div>
+                        <h3 className="text-[#D9BF77] text-lg font-bold mb-4 font-typewriter">Együttműködés</h3>
+                        <p className="text-[#D9BF77] text-base mb-4 font-typewriter leading-relaxed">
+                          A projekt minden szakaszában szorosan együttműködöm ügyfeleimmel. Hiszem, hogy a legjobb eredmény 
+                          akkor születik, amikor a tervező és a megbízó együtt álmodják meg az új teret.
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy8')}
+                        <p className="text-[#D9BF77] text-base mb-6 font-typewriter leading-relaxed">
+                          Minden terem egy történetet mesél. Az én feladatom, hogy ezt a történetet láthatóvá tegyem 
+                          a bútorokon, a színeken és a részleteken keresztül.
                         </p>
-                        <p className="text-[#D9BF77] text-base mb-0.5 font-typewriter">
-                          {t('about.philosophy9')}
-                        </p>
-                        <div className="flex space-x-4 mt-6">
+                        <div className="flex space-x-4">
                           <a href="#" className="text-[#D9BF77] hover:text-[#8B7355] transition-colors">
                             <i className="fab fa-instagram text-2xl"></i>
                           </a>
@@ -133,7 +147,7 @@ export default function AboutSection() {
                   </button>
                   
                   <div className="flex gap-2">
-                    {[0, 1].map(page => (
+                    {[0, 1, 2].map(page => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
@@ -145,10 +159,10 @@ export default function AboutSection() {
                   </div>
                   
                   <button
-                    onClick={() => setCurrentPage(prev => Math.min(1, prev + 1))}
-                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage(prev => Math.min(2, prev + 1))}
+                    disabled={currentPage === 2}
                     className={`flex items-center gap-2 px-4 py-2 transition-colors ${
-                      currentPage === 1 
+                      currentPage === 2 
                         ? 'text-gray-500 cursor-not-allowed' 
                         : 'text-[#D9BF77] hover:text-[#C8B28E]'
                     }`}
