@@ -31,7 +31,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-3/5"
+              className="w-full md:w-1/2"
             >
               <div className="film-frame projector-flicker film-grain">
                 <img 
@@ -47,7 +47,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-2/3 font-lora relative"
+              className="w-full md:w-1/2 font-lora relative"
             >
               <div className="min-h-[400px] flex flex-col justify-between">
                 {/* Page content */}
