@@ -158,7 +158,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               transition={{ delay: 0.4, duration: 0.5 }}
               className="mb-4 relative"
             >
-              <h1 className="text-3xl md:text-5xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>
+              <h1 className="text-3xl md:text-5xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', transform: 'scaleX(1.3)' }}>
                 Ildikó Style
               </h1>
               <p className="text-2xl md:text-3xl text-[#D9BF77]" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px' }}>Interior Design</p>
