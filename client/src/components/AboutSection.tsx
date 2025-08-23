@@ -21,7 +21,7 @@ export default function AboutSection() {
 {t('about.title')}
           </motion.h2>
           
-          <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
+          <div className="flex flex-col md:flex-row items-stretch gap-8 mb-12">
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -45,7 +45,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="w-full md:w-[70%] font-lora relative md:pt-0 px-2"
             >
-              <div className="h-full flex flex-col justify-between">
+              <div className="h-full flex flex-col justify-start">
                 {/* Page content */}
                 <div>
                   {currentPage === 0 && (
