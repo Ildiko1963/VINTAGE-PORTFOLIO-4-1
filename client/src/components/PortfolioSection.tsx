@@ -26,7 +26,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       whileInView={{ y: 0, opacity: 1, scale: isLast ? 1.3 : isFirst ? 1.1 : 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`group relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
+      className={`group relative overflow-hidden ${isLast ? 'mt-4' : ''}`}
       style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
       <div className="relative h-48 flex items-center justify-center">
