@@ -29,7 +29,7 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter sepia-[0.8] brightness-[0.9] contrast-[0.8] group-hover:sepia-0 group-hover:brightness-100 group-hover:contrast-100"
         />
         
         {hasAdditionalImages && (
