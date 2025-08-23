@@ -161,7 +161,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               <h1 className="text-3xl md:text-5xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>
                 Ildikó Style
               </h1>
-              <p className="text-2xl md:text-3xl text-[#D9BF77]" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px' }}>Interior Design</p>
+              <p className="text-2xl md:text-3xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
             </motion.div>
             <motion.p 
               className="text-[#D9BF77] text-lg mb-8"
