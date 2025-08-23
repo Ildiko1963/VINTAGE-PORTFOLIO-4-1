@@ -60,10 +60,10 @@ const ServiceItem = ({ service, index, t }: ServiceItemPropsWithT) => {
         </div>
         <div>
           <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>{getTranslatedTitle()}</h3>
-          <p className="mb-4 font-lora">{getTranslatedDescription()}</p>
+          <p className="mb-4 font-typewriter">{getTranslatedDescription()}</p>
           <ul className="space-y-2">
             {getTranslatedFeatures().map((feature, idx) => (
-              <li key={idx} className="flex items-center font-lora">
+              <li key={idx} className="flex items-center font-typewriter">
                 <i className="fas fa-check text-[#D9BF77] mr-2"></i>
                 {feature}
               </li>

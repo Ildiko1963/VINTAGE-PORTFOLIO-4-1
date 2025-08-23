@@ -56,7 +56,7 @@ export default function Footer({ sections, onNavigate }: FooterProps) {
             className="text-center"
           >
             <p className="font-typewriter">&copy; {currentYear} All rights reserved.</p>
-            <p className="text-sm mt-2 text-[#C8B28E] font-lora">Crafting beautiful interior spaces with timeless elegance.</p>
+            <p className="text-sm mt-2 text-[#C8B28E] font-typewriter">Crafting beautiful interior spaces with timeless elegance.</p>
           </motion.div>
         </div>
       </div>

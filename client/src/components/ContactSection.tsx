@@ -78,8 +78,8 @@ export default function ContactSection() {
                   <i className="fas fa-map-marker-alt text-2xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1 font-lora">{t('contact.studio')}</h4>
-                  <p className="font-lora">{t('contact.address')}</p>
+                  <h4 className="font-bold mb-1 font-typewriter">{t('contact.studio')}</h4>
+                  <p className="font-typewriter">{t('contact.address')}</p>
                 </div>
               </div>
               
@@ -88,8 +88,8 @@ export default function ContactSection() {
                   <i className="fas fa-phone text-2xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1 font-lora">Phone</h4>
-                  <p className="font-lora">+36209220239</p>
+                  <h4 className="font-bold mb-1 font-typewriter">Phone</h4>
+                  <p className="font-typewriter">+36209220239</p>
                 </div>
               </div>
               
@@ -98,8 +98,8 @@ export default function ContactSection() {
                   <i className="fas fa-envelope text-2xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1 font-lora">Email</h4>
-                  <p className="font-lora">jonathan5@t-online.hu</p>
+                  <h4 className="font-bold mb-1 font-typewriter">Email</h4>
+                  <p className="font-typewriter">jonathan5@t-online.hu</p>
                 </div>
               </div>
               
@@ -127,7 +127,7 @@ export default function ContactSection() {
             </div>
             
             <div className="mt-8">
-              <h4 className="font-bold mb-4 font-lora">Connect With Me</h4>
+              <h4 className="font-bold mb-4 font-typewriter">Connect With Me</h4>
               <div className="flex space-x-6">
                 <a href="#" className="text-[#D9BF77] hover:text-[#C8B28E] transition-colors">
                   <i className="fab fa-instagram text-2xl"></i>
@@ -172,7 +172,7 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-bold mb-6 text-[#463730]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>{t('contact.form.title')}</h3>
                 
                 <div className="mb-4">
-                  <label htmlFor="name" className="block mb-2 font-bold font-lora">{t('contact.form.name')}</label>
+                  <label htmlFor="name" className="block mb-2 font-bold font-typewriter">{t('contact.form.name')}</label>
                   <input 
                     type="text" 
                     id="name"
@@ -185,7 +185,7 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="email" className="block mb-2 font-bold font-lora">{t('contact.form.email')}</label>
+                  <label htmlFor="email" className="block mb-2 font-bold font-typewriter">{t('contact.form.email')}</label>
                   <input 
                     type="email" 
                     id="email"
@@ -198,13 +198,13 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="subject" className="block mb-2 font-bold font-lora">{t('contact.form.subject')}</label>
+                  <label htmlFor="subject" className="block mb-2 font-bold font-typewriter">{t('contact.form.subject')}</label>
                   <select 
                     id="subject"
                     {...register('subject')}
                     className="w-full px-4 py-2 bg-[#C8B28E] bg-opacity-30 border border-[#8B7355] rounded-md focus:outline-none focus:ring-2 focus:ring-[#D9BF77]"
                   >
-                    <option value="" className="font-lora">Select a subject</option>
+                    <option value="" className="font-typewriter">Select a subject</option>
                     <option value="Design">{t('contact.form.subject.design')}</option>
                     <option value="Construction">{t('contact.form.subject.construction')}</option>
                     <option value="Consulting">{t('contact.form.subject.consulting')}</option>
@@ -216,7 +216,7 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="message" className="block mb-2 font-bold font-lora">{t('contact.form.message')}</label>
+                  <label htmlFor="message" className="block mb-2 font-bold font-typewriter">{t('contact.form.message')}</label>
                   <textarea 
                     id="message"
                     {...register('message')}
