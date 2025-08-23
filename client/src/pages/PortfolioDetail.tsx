@@ -98,7 +98,7 @@ export default function PortfolioDetail() {
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full h-96 object-cover mx-auto block cursor-pointer filter sepia-[0.3] brightness-[1.1] contrast-[1.1] saturate-[0.8] transition-all duration-500"
+                  className="w-full h-96 object-cover mx-auto block cursor-pointer filter grayscale sepia-[0.4] brightness-[1.05] contrast-[0.9] transition-all duration-500"
                   onClick={() => setIsFullscreen(true)}
                 />
                 <button
