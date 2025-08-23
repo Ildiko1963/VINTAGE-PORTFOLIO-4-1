@@ -176,11 +176,18 @@
 
 .projector-flicker {
   animation: flicker 8s infinite, subtle-movement 15s ease-in-out infinite alternate;
+  transition: transform 0.3s ease-in-out;
 }
 
 .projector-flicker:hover {
-  transform: scale(1.05) rotate(2deg) !important;
-  transition: transform 0.3s ease-in-out;
+  animation-play-state: paused;
+  transform: scale(1.08) rotate(3deg);
+}
+
+.image-hover-container:hover .film-frame {
+  transform: scale(1.1) rotate(4deg) !important;
+  transition: transform 0.4s ease-in-out !important;
+  animation: none !important;
 }
 
 /* Background styles for different pages */
