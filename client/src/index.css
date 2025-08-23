@@ -86,7 +86,7 @@
 /* Vintage film-strip frames */
 .film-frame {
   position: relative;
-  border: 8px solid rgba(42, 26, 22, 0.7);
+  border: 10px solid rgba(42, 26, 22, 0.7);
   border-radius: 15px 8px 20px 12px;
   box-shadow: 
     0 4px 12px rgba(0,0,0,0.4),
@@ -137,7 +137,7 @@
 
 /* Vintage portfolio frames */
 .vintage-frame {
-  border: 6px solid rgba(42, 26, 22, 0.8);
+  border: 8px solid rgba(42, 26, 22, 0.8);
   border-radius: 12px 6px 16px 9px;
   box-shadow: 
     0 6px 15px rgba(0,0,0,0.5),
