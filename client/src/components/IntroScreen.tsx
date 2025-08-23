@@ -164,7 +164,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               <p className="text-2xl md:text-3xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
             </motion.div>
             <motion.p 
-              className="text-[#D9BF77] text-lg mb-8"
+              className="text-[#D9BF77] text-lg mb-8 font-typewriter"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
