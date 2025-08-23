@@ -60,18 +60,9 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
         )}
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[#463730] bg-opacity-90 flex flex-col justify-center items-center px-4 py-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <h3 className="text-lg font-bold mb-1 text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{item.title}</h3>
-        <p className="text-center text-sm mb-2 font-typewriter">{item.description}</p>
-        {hasAdditionalImages && (
-          <p className="text-xs text-[#D9BF77] mb-2 font-typewriter">📸 {allImages.length} images</p>
-        )}
-        <a 
-          href={`/portfolio/${item.id}`} 
-          className="inline-block px-3 py-1 text-xs border border-[#D9BF77] text-[#D9BF77] hover:bg-[#D9BF77] hover:text-[#463730] transition-colors font-typewriter"
-        >
-{t('portfolio.viewGallery')}
-        </a>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#463730] bg-opacity-90 flex flex-col justify-center items-center px-3 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <h3 className="text-sm font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{item.title}</h3>
+        <p className="text-center text-xs font-typewriter">{item.description}</p>
       </div>
     </motion.div>
   );
