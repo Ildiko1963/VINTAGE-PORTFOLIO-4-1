@@ -56,7 +56,10 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Bodoni Moda, serif' }}>
               Ildikó Style
             </h1>
-            <p className="text-3xl md:text-4xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-5px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
+            <div style={{ position: 'relative', top: '-5px' }}>
+              <p className="text-3xl md:text-4xl text-gray-400 font-bold absolute" style={{ fontFamily: 'Great Vibes, cursive', left: '3px', top: '3px', opacity: 0.4 }}>Interior Design</p>
+              <p className="text-3xl md:text-4xl text-black font-bold relative" style={{ fontFamily: 'Great Vibes, cursive' }}>Interior Design</p>
+            </div>
           </motion.div>
           
           <motion.div 
