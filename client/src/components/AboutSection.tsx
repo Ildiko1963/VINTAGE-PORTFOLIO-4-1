@@ -10,7 +10,7 @@ export default function AboutSection() {
     <section id="about" className="py-16 bg-transparent relative">
       
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.h2 
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -21,15 +21,15 @@ export default function AboutSection() {
 {t('about.title')}
           </motion.h2>
           
-          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
             <motion.div 
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="w-full md:w-3/5 flex items-center justify-center"
+              className="w-full md:w-1/2 flex items-start justify-center"
             >
-              <div className="film-frame projector-flicker film-grain max-w-lg">
+              <div className="film-frame projector-flicker film-grain w-full max-w-lg">
                 <img 
                   src="/static/23358_ildiko.jpg" 
                   alt="Portrait of interior designer" 
@@ -43,7 +43,7 @@ export default function AboutSection() {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="w-full md:w-2/5 font-lora relative"
+              className="w-full md:w-1/2 font-lora relative"
             >
               <div className="min-h-[300px] flex flex-col justify-between">
                 {/* Page content */}
