@@ -81,7 +81,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
               {[...Array(150)].map((_, i) => (
                 <div key={`top-perf-${i}`} 
-                     className="bg-[#2A1A16] opacity-70"
+                     className="bg-[#2A1A16] opacity-60"
                      style={{
                        width: '3px',
                        height: '11px',
@@ -93,7 +93,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
               {[...Array(150)].map((_, i) => (
                 <div key={`bottom-perf-${i}`} 
-                     className="bg-[#2A1A16] opacity-70"
+                     className="bg-[#2A1A16] opacity-60"
                      style={{
                        width: '3px',
                        height: '11px',
@@ -118,14 +118,14 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   ];
                   if (index < array.length - 1) {
                     elements.push(
-                      <div key={`sep-1-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
+                      <div key={`sep-1-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-60 flex-shrink-0"></div>
                     );
                   }
                   return elements;
                 })}
                 
                 {/* Separator between sets */}
-                <div className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
+                <div className="w-1 h-full bg-[#2A1A16] opacity-60 flex-shrink-0"></div>
                 
                 {/* Duplicate for seamless loop */}
                 {[
@@ -141,7 +141,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   ];
                   if (index < array.length - 1) {
                     elements.push(
-                      <div key={`sep-2-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-70 flex-shrink-0"></div>
+                      <div key={`sep-2-${index}`} className="w-1 h-full bg-[#2A1A16] opacity-60 flex-shrink-0"></div>
                     );
                   }
                   return elements;
