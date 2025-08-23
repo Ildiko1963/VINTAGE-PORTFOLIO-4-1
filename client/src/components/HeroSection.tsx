@@ -83,8 +83,8 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                 <div key={`top-perf-${i}`} 
                      className="bg-[#2A1A16] opacity-60"
                      style={{
-                       width: '3px',
-                       height: '11px',
+                       width: '3.5px',
+                       height: '12px',
                        clipPath: 'polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)'
                      }}></div>
               ))}
