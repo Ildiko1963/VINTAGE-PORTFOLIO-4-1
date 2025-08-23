@@ -103,9 +103,9 @@
     repeating-linear-gradient(
       to bottom,
       transparent,
-      transparent 10px,
-      #463730 10px,
-      #463730 16px
+      transparent 8px,
+      #463730 8px,
+      #463730 18px
     );
   z-index: 2;
 }
@@ -218,9 +218,9 @@
     repeating-linear-gradient(
       to bottom,
       transparent,
-      transparent 15px,
-      #000 15px,
-      #000 25px
+      transparent 12px,
+      #000 12px,
+      #000 28px
     );
   opacity: 0.9;
   z-index: 10;
