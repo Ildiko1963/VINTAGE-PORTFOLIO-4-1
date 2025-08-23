@@ -101,13 +101,13 @@ export default function PortfolioSection() {
         <div className="py-8 flex justify-center">
           <div className="w-full max-w-4xl">
             {isLoading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mb-12 justify-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14 mb-12 justify-items-center">
                 {[...Array(6)].map((_, index) => (
                   <div key={index} className="bg-[#8B7355] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mb-12 justify-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14 mb-12 justify-items-center">
                 {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
                   <PortfolioItemCard key={item.id} item={item} index={index} t={t} totalItems={(portfolioItems || []).length} />
                 ))}
