@@ -40,9 +40,9 @@ export function useNativeAudio(): AudioControls {
           console.log('Projector sound loaded successfully');
         });
         
-        // Background music
+        // Background music - using zenegép.mp3
         const musicElement = new Audio();
-        musicElement.src = '/audio/background.mp3';
+        musicElement.src = '/audio/zenegép.mp3';
         musicElement.loop = true;
         musicElement.volume = state.volume * 0.6;
         musicElement.preload = 'metadata';

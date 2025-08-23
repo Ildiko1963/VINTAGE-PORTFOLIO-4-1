@@ -107,6 +107,12 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     console.log('Starting audio initialization...');
     audioControls.initializeAudio();
     
+    // Auto-start the background music (zenegép.mp3) after site loads
+    setTimeout(() => {
+      console.log('Starting background music...');
+      audioControls.toggleMusic();
+    }, 1500);
+    
     // Notify parent that intro is complete
     setTimeout(() => {
       onComplete();
