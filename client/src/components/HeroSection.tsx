@@ -73,46 +73,49 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 bg-[#2A1F1A] py-4">
-        <div className="relative bg-black">
-          {/* Film perforations - Left side */}
-          <div className="absolute left-2 top-0 bottom-0 w-8 bg-[#2A1F1A] z-30 flex flex-col justify-around">
-            {[...Array(6)].map((_, i) => (
-              <div key={`left-${i}`} className="w-6 h-3 bg-black mx-auto rounded-sm"></div>
-            ))}
-          </div>
-          {/* Film perforations - Right side */}
-          <div className="absolute right-2 top-0 bottom-0 w-8 bg-[#2A1F1A] z-30 flex flex-col justify-around">
-            {[...Array(6)].map((_, i) => (
-              <div key={`right-${i}`} className="w-6 h-3 bg-black mx-auto rounded-sm"></div>
-            ))}
-          </div>
-          
-          <div className="flex overflow-hidden h-24 mx-12">
-            <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
-              {/* Film strip images - doubled for seamless loop */}
-              {[
-                "/static/big_laktanya.jpg",
-                "/static/big_nappali_falnezet2.jpg",
-                "/static/big_nappali2.jpg",
-                "/static/big_nappali3.jpg",
-                "/static/big_nappali4.jpg",
-                "/static/big_nappali6.jpg"
-              ].map((src, index) => (
-                <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full w-20 object-cover mx-0.5 border border-[#463730]" />
+      <div className="absolute bottom-0 left-0 right-0">
+        <div className="relative">
+          {/* Film strip background */}
+          <div className="bg-[#2A1A16] h-24 relative overflow-hidden">
+            {/* Left perforations */}
+            <div className="absolute left-1 top-2 bottom-2 w-2 flex flex-col justify-between z-10">
+              {[...Array(8)].map((_, i) => (
+                <div key={`left-perf-${i}`} className="w-2 h-2 bg-black rounded-full"></div>
               ))}
-              
-              {/* Duplicate for seamless loop */}
-              {[
-                "/static/big_laktanya.jpg",
-                "/static/big_nappali_falnezet2.jpg",
-                "/static/big_nappali2.jpg",
-                "/static/big_nappali3.jpg",
-                "/static/big_nappali4.jpg",
-                "/static/big_nappali6.jpg"
-              ].map((src, index) => (
-                <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full w-20 object-cover mx-0.5 border border-[#463730]" />
+            </div>
+            {/* Right perforations */}
+            <div className="absolute right-1 top-2 bottom-2 w-2 flex flex-col justify-between z-10">
+              {[...Array(8)].map((_, i) => (
+                <div key={`right-perf-${i}`} className="w-2 h-2 bg-black rounded-full"></div>
               ))}
+            </div>
+            
+            {/* Film strip images */}
+            <div className="flex overflow-hidden h-full px-6">
+              <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
+                {[
+                  "/static/big_laktanya.jpg",
+                  "/static/big_nappali_falnezet2.jpg",
+                  "/static/big_nappali2.jpg",
+                  "/static/big_nappali3.jpg",
+                  "/static/big_nappali4.jpg",
+                  "/static/big_nappali6.jpg"
+                ].map((src, index) => (
+                  <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full object-cover mx-1" />
+                ))}
+                
+                {/* Duplicate for seamless loop */}
+                {[
+                  "/static/big_laktanya.jpg",
+                  "/static/big_nappali_falnezet2.jpg",
+                  "/static/big_nappali2.jpg",
+                  "/static/big_nappali3.jpg",
+                  "/static/big_nappali4.jpg",
+                  "/static/big_nappali6.jpg"
+                ].map((src, index) => (
+                  <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full object-cover mx-1" />
+                ))}
+              </div>
             </div>
           </div>
         </div>
