@@ -97,7 +97,7 @@
   content: '';
   position: absolute;
   height: 100%;
-  width: 16px;
+  width: 20px;
   top: 0;
   background-image: 
     repeating-linear-gradient(
@@ -111,11 +111,11 @@
 }
 
 .film-frame::before {
-  left: -8px;
+  left: -10px;
 }
 
 .film-frame::after {
-  right: -8px;
+  right: -10px;
 }
 
 /* Film grain texture overlay */
