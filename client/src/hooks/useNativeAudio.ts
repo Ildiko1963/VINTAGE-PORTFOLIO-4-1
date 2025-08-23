@@ -16,61 +16,53 @@ export function useNativeAudio(): AudioControls {
   const [audioInitialized, setAudioInitialized] = useState(false);
 
   const initializeAudio = () => {
+    console.log('Audio context unlocked');
+    console.log('Starting audio initialization...');
+    
     if (!audioInitialized) {
       console.log('Initializing audio with native HTML5 Audio elements...');
       
-      // Create hard-coded audio elements for better browser compatibility
-      const projectorElement = new Audio('https://cdn.freesound.org/previews/459/459977_6142149-lq.mp3');
-      projectorElement.loop = true;
-      projectorElement.volume = state.volume;
-      projectorElement.preload = 'auto';
-      projectorSoundRef.current = projectorElement;
-      
-      // Add error handling
-      projectorElement.addEventListener('error', (e) => {
-        console.error('Error loading projector sound:', e);
-      });
-      
-      projectorElement.addEventListener('canplaythrough', () => {
-        console.log('Projector sound loaded successfully');
-      });
-      
-      // Eltávolítva a madárcsicsergés
-      const musicElement = new Audio();
-      musicElement.loop = true;
-      musicElement.volume = state.volume * 0.6; // Lower volume for background music
-      musicElement.preload = 'auto';
-      backgroundMusicRef.current = musicElement;
-      
-      // Add error handling
-      musicElement.addEventListener('error', (e) => {
-        console.error('Error loading background music:', e);
-      });
-      
-      musicElement.addEventListener('canplaythrough', () => {
-        console.log('Background music loaded successfully');
-      });
-      
-      // Create and play a test sound to verify audio is working
-      const testSound = new Audio();
-      testSound.volume = state.volume;
-      
-      // Try to play a short sound to test if audio is working
-      const playTest = () => {
-        testSound.play()
-          .then(() => {
-            console.log('Test sound playing successfully');
-            setTimeout(() => testSound.pause(), 1000);
-          })
-          .catch(err => {
-            console.error('Error playing test sound:', err);
-          });
-      };
-      
-      // Try to play after a short delay
-      setTimeout(playTest, 500);
-      
-      setAudioInitialized(true);
+      try {
+        // Create audio elements using local files
+        const projectorElement = new Audio();
+        projectorElement.src = '/audio/projector.mp3';
+        projectorElement.loop = true;
+        projectorElement.volume = state.volume;
+        projectorElement.preload = 'metadata';
+        projectorSoundRef.current = projectorElement;
+        
+        // Add error handling
+        projectorElement.addEventListener('error', (e) => {
+          console.error('Error loading projector sound:', e);
+        });
+        
+        projectorElement.addEventListener('loadeddata', () => {
+          console.log('Projector sound loaded successfully');
+        });
+        
+        // Background music
+        const musicElement = new Audio();
+        musicElement.src = '/audio/background.mp3';
+        musicElement.loop = true;
+        musicElement.volume = state.volume * 0.6;
+        musicElement.preload = 'metadata';
+        backgroundMusicRef.current = musicElement;
+        
+        // Add error handling
+        musicElement.addEventListener('error', (e) => {
+          console.error('Error loading background music:', e);
+        });
+        
+        musicElement.addEventListener('loadeddata', () => {
+          console.log('Background music loaded successfully');
+        });
+        
+        setAudioInitialized(true);
+        console.log('Audio initialization completed');
+        
+      } catch (error) {
+        console.error('Error during audio initialization:', error);
+      }
     }
   };
 
@@ -79,24 +71,27 @@ export function useNativeAudio(): AudioControls {
     if (!projectorSoundRef.current) return;
 
     const newState = !state.isProjectorPlaying;
+    console.log('Starting projector sound...');
     
     try {
       if (newState) {
         const playPromise = projectorSoundRef.current.play();
-        if (playPromise) {
-          playPromise.catch(err => {
-            console.error('Error playing projector sound:', err);
-            // Try once more with user interaction
-            document.addEventListener('click', () => {
-              projectorSoundRef.current?.play();
-            }, { once: true });
-          });
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Projector sound started successfully');
+              setState(prev => ({ ...prev, isProjectorPlaying: true }));
+            })
+            .catch(err => {
+              console.error('Error playing projector sound:', err);
+              setState(prev => ({ ...prev, isProjectorPlaying: false }));
+            });
         }
       } else {
         projectorSoundRef.current.pause();
+        setState(prev => ({ ...prev, isProjectorPlaying: false }));
       }
       
-      setState(prev => ({ ...prev, isProjectorPlaying: newState }));
     } catch (error) {
       console.error('Error toggling projector sound:', error);
     }
@@ -107,24 +102,27 @@ export function useNativeAudio(): AudioControls {
     if (!backgroundMusicRef.current) return;
 
     const newState = !state.isMusicPlaying;
+    console.log('Starting background music...');
     
     try {
       if (newState) {
         const playPromise = backgroundMusicRef.current.play();
-        if (playPromise) {
-          playPromise.catch(err => {
-            console.error('Error playing background music:', err);
-            // Try once more with user interaction
-            document.addEventListener('click', () => {
-              backgroundMusicRef.current?.play();
-            }, { once: true });
-          });
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Background music started successfully');
+              setState(prev => ({ ...prev, isMusicPlaying: true }));
+            })
+            .catch(err => {
+              console.error('Error playing background music:', err);
+              setState(prev => ({ ...prev, isMusicPlaying: false }));
+            });
         }
       } else {
         backgroundMusicRef.current.pause();
+        setState(prev => ({ ...prev, isMusicPlaying: false }));
       }
       
-      setState(prev => ({ ...prev, isMusicPlaying: newState }));
     } catch (error) {
       console.error('Error toggling background music:', error);
     }
