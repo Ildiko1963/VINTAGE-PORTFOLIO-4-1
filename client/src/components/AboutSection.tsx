@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { t } = useLanguage();
   const [currentPage, setCurrentPage] = useState(0);
   return (
-    <section id="about" className="py-16 bg-transparent relative">
+    <section id="about" className="pt-16 pb-8 bg-transparent relative">
       
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
@@ -120,10 +120,6 @@ export default function AboutSection() {
                   )}
                   
                   
-                  {/* Lapozási utalás */}
-                  <div className="text-center mt-6 text-[#D9BF77] text-sm opacity-75" style={{ fontFamily: '1942 Report, Special Elite, monospace' }}>
-                    → Lapozz a teljes történetért →
-                  </div>
                 </div>
                 
                 {/* Navigation */}
