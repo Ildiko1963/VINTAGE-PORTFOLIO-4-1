@@ -76,7 +76,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
       <div className="absolute bottom-0 left-0 right-0">
         <div className="relative">
           {/* Film strip background */}
-          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden border-t border-b border-[#2A1A16] border-opacity-30">
+          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden border-t-2 border-b-2 border-[#2A1A16] border-opacity-80">
             {/* Top perforations */}
             <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10 flex justify-around items-center">
               {[...Array(200)].map((_, i) => (
