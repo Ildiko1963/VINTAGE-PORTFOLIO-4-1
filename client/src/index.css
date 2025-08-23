@@ -168,7 +168,7 @@
 }
 
 .projector-flicker {
-  animation: flicker 8s infinite;
+  animation: flicker 8s infinite, subtle-movement 15s ease-in-out infinite alternate;
 }
 
 /* Background styles for different pages */

@@ -24,13 +24,13 @@ function PortfolioItemCard({ item, index, t }: PortfolioItemCardProps) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className="group relative overflow-hidden rounded-md bg-[#463730] bg-opacity-20"
+      className="group relative overflow-hidden film-frame projector-flicker"
     >
-      <div className="relative h-64 flex items-center justify-center">
+      <div className="relative h-64 flex items-center justify-center film-grain">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0 animate-subtle-float"
+          className="max-w-full max-h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
         />
         
         {hasAdditionalImages && (
