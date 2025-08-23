@@ -40,12 +40,12 @@ export function useNativeAudio(): AudioControls {
           console.log('Projector sound loaded successfully');
         });
         
-        // Background music - using zenegép.mp3
+        // Background music - using background-music.mp3 (copy of zenegép.mp3)
         const musicElement = new Audio();
-        musicElement.src = '/audio/zenegép.mp3';
+        musicElement.src = '/audio/background-music.mp3';
         musicElement.loop = true;
-        musicElement.volume = state.volume * 0.6;
-        musicElement.preload = 'metadata';
+        musicElement.volume = state.volume * 0.8; // Increase volume
+        musicElement.preload = 'auto'; // Preload the full file
         backgroundMusicRef.current = musicElement;
         
         // Add error handling
@@ -54,7 +54,11 @@ export function useNativeAudio(): AudioControls {
         });
         
         musicElement.addEventListener('loadeddata', () => {
-          console.log('Background music loaded successfully');
+          console.log('Background music (zenegép.mp3) loaded successfully');
+        });
+        
+        musicElement.addEventListener('canplaythrough', () => {
+          console.log('Background music ready to play');
         });
         
         setAudioInitialized(true);
@@ -99,26 +103,33 @@ export function useNativeAudio(): AudioControls {
 
   // Toggle background music
   const toggleMusic = () => {
-    if (!backgroundMusicRef.current) return;
+    console.log('toggleMusic called, backgroundMusicRef exists:', !!backgroundMusicRef.current);
+    if (!backgroundMusicRef.current) {
+      console.log('No background music ref available');
+      return;
+    }
 
     const newState = !state.isMusicPlaying;
-    console.log('Starting background music...');
+    console.log('Starting background music... Current state:', state.isMusicPlaying, 'New state:', newState);
     
     try {
       if (newState) {
+        console.log('Attempting to play zenegép.mp3...');
+        backgroundMusicRef.current.volume = state.isMuted ? 0 : state.volume * 0.8;
         const playPromise = backgroundMusicRef.current.play();
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Background music started successfully');
+              console.log('Zenegép.mp3 started successfully!');
               setState(prev => ({ ...prev, isMusicPlaying: true }));
             })
             .catch(err => {
-              console.error('Error playing background music:', err);
+              console.error('Error playing zenegép.mp3:', err);
               setState(prev => ({ ...prev, isMusicPlaying: false }));
             });
         }
       } else {
+        console.log('Pausing background music');
         backgroundMusicRef.current.pause();
         setState(prev => ({ ...prev, isMusicPlaying: false }));
       }

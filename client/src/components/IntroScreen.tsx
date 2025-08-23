@@ -111,7 +111,15 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     setTimeout(() => {
       console.log('Starting background music...');
       audioControls.toggleMusic();
-    }, 1500);
+    }, 500);
+    
+    // Try again if first attempt fails
+    setTimeout(() => {
+      if (!audioControls.state.isMusicPlaying) {
+        console.log('Retrying background music...');
+        audioControls.toggleMusic();
+      }
+    }, 2000);
     
     // Notify parent that intro is complete
     setTimeout(() => {
