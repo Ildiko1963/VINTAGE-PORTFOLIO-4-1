@@ -216,7 +216,25 @@ export class MemStorage implements IStorage {
         imageUrl: "/static/big_otthon.jpg",
         additionalImages: [
           "/static/big_napteto.jpg",
-          "/static/big_nappali.jpg"
+          "/static/big_nappali.jpg",
+          "/static/studio1.jpg",
+          "/static/studio2.jpg",
+          "/static/studio3.jpg",
+          "/static/studio4.jpg",
+          "/static/studio5.jpg",
+          "/static/studio6.jpg",
+          "/static/studio7.jpg",
+          "/static/studio8.jpg",
+          "/static/studio9.jpg",
+          "/static/studio10.jpg",
+          "/static/studio11.jpg",
+          "/static/studio12.jpg",
+          "/static/studio13.jpg",
+          "/static/studio14.jpg",
+          "/static/studio15.jpg",
+          "/static/studio16.jpg",
+          "/static/studio17.jpg",
+          "/static/studio18.jpg"
         ],
         category: "Residential",
         projectLink: "#"
