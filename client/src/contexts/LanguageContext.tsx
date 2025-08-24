@@ -17,6 +17,8 @@ const translations = {
     'nav.portfolio': 'Portfólió',
     'nav.services': 'Szolgáltatások',
     'nav.contact': 'Kapcsolat',
+    'nav.previous': 'Előző',
+    'nav.next': 'Következő',
     
     // Hero Section
     'hero.title': 'Ildikostyle Portfolio',
@@ -78,6 +80,8 @@ const translations = {
     'contact.form.subject.consulting': 'Tanácsadás',
     'contact.form.success': 'Köszönjük!',
     'contact.form.successMsg': 'Az üzeneted megérkezett. Hamarosan felvesszük veled a kapcsolatot.',
+    'contact.form.error': 'Hiba',
+    'contact.form.errorMsg': 'Az üzenet küldése sikertelen. Kérjük, próbálja újra.',
     
     // Common
     'loading': 'Betöltés...',
@@ -88,6 +92,8 @@ const translations = {
     'nav.portfolio': 'Portfolio',
     'nav.services': 'Services',
     'nav.contact': 'Contact',
+    'nav.previous': 'Previous',
+    'nav.next': 'Next',
     
     // Hero Section
     'hero.title': 'Ildikostyle Portfolio',
@@ -149,6 +155,8 @@ const translations = {
     'contact.form.subject.consulting': 'Consulting',
     'contact.form.success': 'Thank You!',
     'contact.form.successMsg': 'Your message has been received. We\'ll get back to you shortly.',
+    'contact.form.error': 'Error',
+    'contact.form.errorMsg': 'Failed to send message. Please try again.',
     
     // Common
     'loading': 'Loading...',
