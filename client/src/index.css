@@ -183,6 +183,11 @@
   box-shadow: 15px -10px 0 -3px rgba(42, 26, 22, 0.2);
 }
 
+/* Straight intro screen override */
+.intro-frame {
+  transform: none !important;
+}
+
 /* Film grain texture overlay */
 .film-grain {
   position: relative;
