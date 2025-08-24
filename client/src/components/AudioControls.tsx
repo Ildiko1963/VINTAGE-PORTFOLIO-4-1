@@ -18,7 +18,7 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-4 right-4 z-40 p-3 bg-[#2A1A16] bg-opacity-80 rounded-lg shadow-lg flex items-center space-x-3"
+      className="fixed bottom-4 right-4 z-[60] p-3 bg-[#2A1A16] bg-opacity-80 rounded-lg shadow-lg flex items-center space-x-3"
     >
       <button 
         onClick={toggleProjector}
