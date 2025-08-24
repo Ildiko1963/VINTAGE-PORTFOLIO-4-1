@@ -78,12 +78,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Film strip background */}
           <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
             {/* Top perforations */}
-            <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10"
+            <div className="absolute top-0 left-0 right-0 h-6 bg-transparent z-10"
                  style={{
                    backgroundImage: `repeating-linear-gradient(to right, transparent, transparent 8px, rgba(42, 26, 22, 0.6) 8px, rgba(42, 26, 22, 0.6) 18px)`
                  }}></div>
             {/* Bottom perforations */}
-            <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10"
+            <div className="absolute bottom-0 left-0 right-0 h-6 bg-transparent z-10"
                  style={{
                    backgroundImage: `repeating-linear-gradient(to right, transparent, transparent 8px, rgba(42, 26, 22, 0.6) 8px, rgba(42, 26, 22, 0.6) 18px)`
                  }}></div>
