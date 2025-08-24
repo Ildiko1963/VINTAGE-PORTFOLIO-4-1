@@ -250,7 +250,22 @@ export class MemStorage implements IStorage {
           "/static/indusztrial6.JPG",
           "/static/indusztrial7.JPG",
           "/static/indusztrial8.JPG",
-          "/static/indusztrial9.jpg"
+          "/static/indusztrial9.jpg",
+          "/static/indusztrial10.JPG",
+          "/static/indusztrial11.JPG",
+          "/static/indusztrial12.JPG",
+          "/static/indusztrial14.JPG",
+          "/static/indusztrial15.JPG",
+          "/static/indusztrial16 (2).JPG",
+          "/static/indusztrial16 (3).jpg",
+          "/static/indusztrial16 (4).JPG",
+          "/static/indusztrial16 (5).JPG",
+          "/static/indusztrial16 (6).JPG",
+          "/static/indusztrial16.jpg",
+          "/static/indusztrial17.JPG",
+          "/static/indusztrial19.JPG",
+          "/static/indusztrial20.JPG",
+          "/static/indusztrial21.JPG"
         ],
         category: "Industrial",
         projectLink: "#"
