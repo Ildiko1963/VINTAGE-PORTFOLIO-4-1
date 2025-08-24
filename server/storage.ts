@@ -240,10 +240,7 @@ export class MemStorage implements IStorage {
         title: "Modern Kitchen Design",
         description: "Contemporary kitchen space with functional elegance and style",
         imageUrl: "/static/big_rkonyha.jpg",
-        additionalImages: [
-          "/static/big_konyha.jpg",
-          "/static/big_konyhamontazs.jpg.jpg"
-        ],
+        additionalImages: null,
         category: "Contemporary",
         projectLink: "#"
       }
