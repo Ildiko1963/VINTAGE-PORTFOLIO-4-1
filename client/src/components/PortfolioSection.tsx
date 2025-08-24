@@ -33,7 +33,13 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       transition={{ duration: 0.3, delay: 0.1 * index }}
       onClick={handleCardClick}
       className={`group relative overflow-visible mt-8 cursor-pointer`}
-      style={{ zIndex: 10 }}
+      style={{ 
+        zIndex: 10,
+        width: '100%',
+        maxWidth: '280px',
+        minWidth: '280px',
+        height: 'auto'
+      }}
     >
       <div className="relative h-48 flex items-center justify-center vintage-frame">
         <img 
