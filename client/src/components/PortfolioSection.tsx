@@ -33,7 +33,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+          className="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover:grayscale-0"
         />
         
         {hasAdditionalImages && (
