@@ -131,7 +131,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     <AnimatePresence>
       {isVisible && (
         <motion.div 
-          className="fixed inset-0 z-50 flex items-center justify-center intro-frame"
+          className="fixed inset-0 z-50 flex items-center justify-center film-frame"
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
           style={{
