@@ -148,8 +148,16 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
                 alt="Portrait of interior designer" 
                 className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
                 initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
+                animate={{ 
+                  scale: 1, 
+                  opacity: [1, 0.85, 1],
+                  rotate: [0, 1, -1, 0]
+                }}
+                transition={{ 
+                  scale: { delay: 0.2, duration: 0.5 },
+                  opacity: { delay: 0.8, repeat: Infinity, duration: 2.5 },
+                  rotate: { delay: 1, repeat: Infinity, duration: 4, ease: "easeInOut" }
+                }}
               />
             </div>
             <motion.div
