@@ -26,14 +26,14 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       whileInView={{ y: 0, opacity: 1, scale: isLast ? 1.3 : isFirst ? 1.1 : 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`image-hover-container relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
+      className={`image-hover-container group relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
       style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
-      <div className="film-frame projector-flicker film-grain w-full max-w-xs hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer">
+      <div className="film-frame projector-flicker film-grain w-full max-w-xs hover:scale-105 hover:rotate-1 transition-all duration-300 ease-in-out cursor-pointer" style={{height: '192px'}}>
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
         />
         
         {hasAdditionalImages && (
