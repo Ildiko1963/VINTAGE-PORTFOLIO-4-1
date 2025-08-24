@@ -161,7 +161,10 @@ This is a vintage-themed film portfolio application built with a full-stack arch
 - June 27, 2025. Created multilingual interface with Hungarian/English language switcher
 - June 27, 2025. Added complete translation system for all sections (Hero, About, Portfolio, Services, Contact)
 - June 27, 2025. Dynamic language switching with translation context and language switcher button in top-right corner
-- August 24, 2025. PERFECT hover effect for About section photo (.vintage-photo-frame:hover): transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05), filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)), border: 10px solid rgba(42, 26, 22, 0.8), z-index: 10. Photo size: 300px width.
+- August 24, 2025. PERFECT and FINAL About section photo settings - DO NOT CHANGE: 
+  * Photo size: 320px width (min-width: 320px !important; width: 320px !important;)
+  * Hover effect (.vintage-photo-frame:hover): transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important; filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important; border: 10px solid rgba(42, 26, 22, 0.8) !important; z-index: 10 !important;
+  * USER CONFIRMED: "Tökéletes! ezt tartsd meg kérlek! a méretet és az effekteket is! ez ne változzon"
 
 ## User Preferences
 
