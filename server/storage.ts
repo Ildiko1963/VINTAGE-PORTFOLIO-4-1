@@ -157,9 +157,8 @@ export class MemStorage implements IStorage {
       {
         title: "Bold Design",
         description: "Daring interior concepts with unique character",
-        imageUrl: "/static/big_vakmero4.jpg",
+        imageUrl: "/static/big_nappali2.jpg",
         additionalImages: [
-          "/static/big_nappali2.jpg",
           "/static/big_nappali3.jpg", 
           "/static/big_nappali4.jpg",
           "/static/big_nappali6.jpg",
