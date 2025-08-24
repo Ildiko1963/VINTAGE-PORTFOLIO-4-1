@@ -149,14 +149,18 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
                 className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ 
-                  scale: 1, 
-                  opacity: [1, 0.85, 1],
-                  rotate: [0, 1, -1, 0]
+                  scale: [1, 1.05, 1], 
+                  opacity: [0.8, 1, 0.8],
+                  rotate: [0, 2, -2, 0],
+                  x: [0, 2, -2, 0],
+                  y: [0, -1, 1, 0]
                 }}
                 transition={{ 
                   scale: { delay: 0.2, duration: 0.5 },
-                  opacity: { delay: 0.8, repeat: Infinity, duration: 2.5 },
-                  rotate: { delay: 1, repeat: Infinity, duration: 4, ease: "easeInOut" }
+                  opacity: { delay: 0.8, repeat: Infinity, duration: 3, ease: "easeInOut" },
+                  rotate: { delay: 1, repeat: Infinity, duration: 5, ease: "easeInOut" },
+                  x: { delay: 1.5, repeat: Infinity, duration: 4, ease: "easeInOut" },
+                  y: { delay: 2, repeat: Infinity, duration: 6, ease: "easeInOut" }
                 }}
               />
             </div>
