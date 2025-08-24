@@ -104,12 +104,12 @@
   transition: all 0.4s ease-in-out !important;
 }
 
-/* Hover state - Same perfect effect as About section photo */
+/* Hover state - EXACT same effect as About section photo */
 .vintage-frame:hover,
 .group:hover .vintage-frame {
   transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
   filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
-  border: 8px solid rgba(42, 26, 22, 0.8) !important;
+  border: 10px solid rgba(42, 26, 22, 0.8) !important;
   z-index: 10 !important;
 }
 
