@@ -66,7 +66,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             className="mt-8 mb-24 max-w-2xl mx-auto p-6 bg-[#463730] bg-opacity-30 rounded-lg border border-[#2A1A16] border-opacity-60"
           >
             <blockquote className="text-[#D9BF77] font-lora italic text-lg leading-relaxed text-center">
-              "The only real luxury is style which anybody can afford independent from amount of money they have. This is the kind of thing that was born with us but it can be learnt supposing one has the proper intelligence for it..."
+              "{t('about.armani')}"
             </blockquote>
             <p className="text-[#D9BF77] font-typewriter text-right mt-4">— Giorgio Armani</p>
           </motion.div>
