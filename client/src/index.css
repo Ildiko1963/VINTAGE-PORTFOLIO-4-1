@@ -168,70 +168,7 @@
 }
 
 
-/* Vintage portfolio frames */
-.vintage-frame {
-  border: 8px solid rgba(42, 26, 22, 0.6);
-  border-left: 12px solid rgba(42, 26, 22, 0.8);
-  border-right: 6px solid rgba(42, 26, 22, 0.7);
-  border-top: 10px solid rgba(42, 26, 22, 0.75);
-  border-bottom: 14px solid rgba(42, 26, 22, 0.65);
-  border-radius: 25px 5px 18px 8px;
-  box-shadow: 
-    0 6px 20px rgba(0,0,0,0.5),
-    inset -8px -12px 15px rgba(0,0,0,0.4),
-    inset 6px 8px 12px rgba(255,255,255,0.08),
-    inset -15px 10px 20px rgba(101, 67, 33, 0.3),
-    inset 12px -8px 18px rgba(0,0,0,0.25),
-    0 0 0 2px rgba(139, 69, 19, 0.4);
-  overflow: visible;
-  filter: drop-shadow(8px 12px 15px rgba(0,0,0,0.4)) contrast(1.1);
-  transform: none;
-  background: 
-    radial-gradient(circle at 25% 30%, rgba(0,0,0,0.2) 2px, transparent 3px),
-    radial-gradient(circle at 75% 60%, rgba(0,0,0,0.15) 3px, transparent 4px),
-    linear-gradient(125deg, rgba(255,255,255,0.12) 0%, transparent 45%, rgba(0,0,0,0.18) 100%);
-}
-
-.vintage-frame::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 35px;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(0,0,0,0.6) 20%, 
-    rgba(0,0,0,0.8) 50%, 
-    rgba(0,0,0,0.4) 80%, 
-    transparent 100%);
-  transform: rotate(-25deg);
-  border-radius: 50%;
-  box-shadow: 
-    15px 25px 0 -1px rgba(0,0,0,0.5),
-    -10px 40px 0 -2px rgba(0,0,0,0.3),
-    25px -15px 0 1px rgba(0,0,0,0.4);
-  pointer-events: none;
-}
-
-.vintage-frame::after {
-  content: '';
-  position: absolute;
-  bottom: 20%;
-  right: 15%;
-  width: 25px;
-  height: 25px;
-  background: radial-gradient(ellipse at center, 
-    rgba(0,0,0,0.7) 0%, 
-    rgba(0,0,0,0.4) 40%, 
-    transparent 70%);
-  border-radius: 60% 40% 70% 30%;
-  transform: rotate(75deg) skew(-15deg, 8deg);
-  box-shadow: 
-    -18px -8px 0 -8px rgba(0,0,0,0.3),
-    12px 18px 0 -6px rgba(0,0,0,0.25),
-    -5px 25px 0 -10px rgba(0,0,0,0.2);
-}
+/* Removed vintage-frame - now using film-frame everywhere */
 
 /* Film grain texture overlay */
 .film-grain {
