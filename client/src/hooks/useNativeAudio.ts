@@ -23,9 +23,9 @@ export function useNativeAudio(): AudioControls {
       console.log('Initializing audio with native HTML5 Audio elements...');
       
       try {
-        // Create audio elements using local files
+        // Create projector audio element using zenegép.mp3 as projector sound
         const projectorElement = new Audio();
-        projectorElement.src = '/audio/projector.mp3';
+        projectorElement.src = '/audio/zenegép.mp3';
         projectorElement.loop = true;
         projectorElement.volume = state.volume;
         projectorElement.preload = 'metadata';
@@ -40,12 +40,12 @@ export function useNativeAudio(): AudioControls {
           console.log('Projector sound loaded successfully');
         });
         
-        // Background music - using background-music.mp3 (copy of zenegép.mp3)
+        // Background music - using background-music.mp3
         const musicElement = new Audio();
         musicElement.src = '/audio/background-music.mp3';
         musicElement.loop = true;
-        musicElement.volume = state.volume * 0.8; // Increase volume
-        musicElement.preload = 'auto'; // Preload the full file
+        musicElement.volume = state.volume * 0.8;
+        musicElement.preload = 'auto';
         backgroundMusicRef.current = musicElement;
         
         // Add error handling
@@ -54,7 +54,7 @@ export function useNativeAudio(): AudioControls {
         });
         
         musicElement.addEventListener('loadeddata', () => {
-          console.log('Background music (zenegép.mp3) loaded successfully');
+          console.log('Background music loaded successfully');
         });
         
         musicElement.addEventListener('canplaythrough', () => {
@@ -72,13 +72,18 @@ export function useNativeAudio(): AudioControls {
 
   // Toggle projector sound
   const toggleProjector = () => {
-    if (!projectorSoundRef.current) return;
+    if (!projectorSoundRef.current) {
+      console.log('Projector sound not initialized, attempting to initialize...');
+      initializeAudio();
+      return;
+    }
 
     const newState = !state.isProjectorPlaying;
-    console.log('Starting projector sound...');
+    console.log('Toggling projector sound... Current state:', state.isProjectorPlaying, 'New state:', newState);
     
     try {
       if (newState) {
+        projectorSoundRef.current.volume = state.isMuted ? 0 : state.volume;
         const playPromise = projectorSoundRef.current.play();
         if (playPromise !== undefined) {
           playPromise
@@ -105,26 +110,27 @@ export function useNativeAudio(): AudioControls {
   const toggleMusic = () => {
     console.log('toggleMusic called, backgroundMusicRef exists:', !!backgroundMusicRef.current);
     if (!backgroundMusicRef.current) {
-      console.log('No background music ref available');
+      console.log('Background music not initialized, attempting to initialize...');
+      initializeAudio();
       return;
     }
 
     const newState = !state.isMusicPlaying;
-    console.log('Starting background music... Current state:', state.isMusicPlaying, 'New state:', newState);
+    console.log('Toggling background music... Current state:', state.isMusicPlaying, 'New state:', newState);
     
     try {
       if (newState) {
-        console.log('Attempting to play zenegép.mp3...');
+        console.log('Attempting to play background music...');
         backgroundMusicRef.current.volume = state.isMuted ? 0 : state.volume * 0.8;
         const playPromise = backgroundMusicRef.current.play();
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Zenegép.mp3 started successfully!');
+              console.log('Background music started successfully!');
               setState(prev => ({ ...prev, isMusicPlaying: true }));
             })
             .catch(err => {
-              console.error('Error playing zenegép.mp3:', err);
+              console.error('Error playing background music:', err);
               setState(prev => ({ ...prev, isMusicPlaying: false }));
             });
         }
@@ -141,31 +147,41 @@ export function useNativeAudio(): AudioControls {
 
   // Set volume for both sounds
   const setVolume = (value: number) => {
+    setState(prev => ({ ...prev, volume: value }));
+    
     if (projectorSoundRef.current) {
       projectorSoundRef.current.volume = state.isMuted ? 0 : value;
     }
     
     if (backgroundMusicRef.current) {
-      backgroundMusicRef.current.volume = state.isMuted ? 0 : value * 0.6;
+      backgroundMusicRef.current.volume = state.isMuted ? 0 : value * 0.8;
     }
-    
-    setState(prev => ({ ...prev, volume: value }));
   };
 
   // Toggle mute for both sounds
   const toggleMute = () => {
     const newMuteState = !state.isMuted;
+    setState(prev => ({ ...prev, isMuted: newMuteState }));
     
     if (projectorSoundRef.current) {
       projectorSoundRef.current.volume = newMuteState ? 0 : state.volume;
     }
     
     if (backgroundMusicRef.current) {
-      backgroundMusicRef.current.volume = newMuteState ? 0 : state.volume * 0.6;
+      backgroundMusicRef.current.volume = newMuteState ? 0 : state.volume * 0.8;
+    }
+  };
+
+  // Sync volume changes to audio elements
+  useEffect(() => {
+    if (projectorSoundRef.current) {
+      projectorSoundRef.current.volume = state.isMuted ? 0 : state.volume;
     }
     
-    setState(prev => ({ ...prev, isMuted: newMuteState }));
-  };
+    if (backgroundMusicRef.current) {
+      backgroundMusicRef.current.volume = state.isMuted ? 0 : state.volume * 0.8;
+    }
+  }, [state.volume, state.isMuted]);
 
   // Cleanup when component unmounts
   useEffect(() => {
