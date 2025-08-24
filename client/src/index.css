@@ -176,6 +176,10 @@
     0% 42%, 1% 28%, 0% 15%, 2% 5%
   );
   transition: all 0.4s ease-in-out !important;
+}
+
+/* About section specific sizing */
+#about .vintage-photo-frame {
   min-width: 320px !important;
   width: 320px !important;
 }
