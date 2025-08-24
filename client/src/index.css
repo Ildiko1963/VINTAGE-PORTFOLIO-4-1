@@ -105,37 +105,14 @@
 }
 
 /* Hover state - Same perfect effect as About section photo */
-.vintage-frame:hover {
+.vintage-frame:hover,
+.group:hover .vintage-frame {
   transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
   filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
   border: 8px solid rgba(42, 26, 22, 0.8) !important;
   z-index: 10 !important;
 }
 
-.vintage-frame:hover::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  border: 1px dotted rgba(42, 26, 22, 0.4);
-  border-radius: 15px 9px 19px 12px;
-  pointer-events: none;
-}
-
-.vintage-frame:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  width: 12px;
-  height: 12px;
-  background: rgba(42, 26, 22, 0.3);
-  border-radius: 30% 60% 30% 60%;
-  transform: rotate(-15deg);
-  box-shadow: 15px -10px 0 -3px rgba(42, 26, 22, 0.2);
-}
 
 /* Vintage torn photo frame for About section only */
 .vintage-photo-frame {
