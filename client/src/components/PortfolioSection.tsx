@@ -16,17 +16,19 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
-  // All boxes are the same size now
+  const isLast = index === totalItems - 1;
+  const isStudioApartment = item.title === "Studió lakás";
+  const shouldBeLarger = isLast || isStudioApartment;
 
   return (
     <motion.div 
       key={item.id}
-      initial={{ y: 30, opacity: 0, scale: 1.3 }}
-      whileInView={{ y: 0, opacity: 1, scale: 1.3 }}
+      initial={{ y: 30, opacity: 0, scale: shouldBeLarger ? 1.3 : 1 }}
+      whileInView={{ y: 0, opacity: 1, scale: shouldBeLarger ? 1.3 : 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`group relative overflow-visible mt-8`}
-      style={{ zIndex: 10 }}
+      className={`group relative overflow-visible ${shouldBeLarger ? 'mt-8' : 'mt-4'}`}
+      style={{ zIndex: shouldBeLarger ? 15 : 10 }}
     >
       <div className="relative h-48 flex items-center justify-center vintage-frame">
         <img 
