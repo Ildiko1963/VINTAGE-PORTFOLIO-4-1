@@ -93,26 +93,18 @@
 }
 
 
-/* Vintage portfolio frames with torn effect */
+/* Vintage portfolio frames - same style as About photo */
 .vintage-frame {
-  border: 6px solid rgba(42, 26, 22, 0.6);
-  border-radius: 12px 6px 14px 8px;
+  border: 9px solid rgba(42, 26, 22, 0.7);
+  border-radius: 15px 8px 20px 12px;
   box-shadow: 
-    0 3px 8px rgba(0,0,0,0.3),
-    inset -2px -2px 4px rgba(0,0,0,0.2),
-    inset 2px 2px 4px rgba(255,255,255,0.1);
-  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-  transform: none;
-  background: linear-gradient(135deg, 
-    rgba(255,255,255,0.05) 0%, 
-    transparent 50%, 
-    rgba(0,0,0,0.05) 100%);
-  clip-path: polygon(
-    2% 1%, 96% 0%, 98% 2%, 97% 8%, 99% 20%, 
-    96% 35%, 98% 50%, 97% 65%, 95% 80%, 98% 95%, 
-    85% 97%, 70% 98%, 50% 96%, 30% 98%, 15% 96%, 
-    5% 97%, 1% 85%, 0% 70%, 2% 50%, 1% 30%, 2% 15%
-  );
+    0 4px 12px rgba(0,0,0,0.4),
+    inset -3px -3px 8px rgba(0,0,0,0.3),
+    inset 3px 3px 8px rgba(255,255,255,0.1),
+    0 0 0 3px rgba(101, 67, 33, 0.3);
+  overflow: visible;
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  transform: rotate(-1.2deg) skew(0.5deg, -0.3deg);
   transition: all 0.4s ease-in-out !important;
 }
 
@@ -127,31 +119,7 @@
   overflow: visible !important;
 }
 
-/* Add torn paper effects to portfolio frames */
-.vintage-frame::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 1px dashed rgba(42, 26, 22, 0.2);
-  border-radius: 14px 8px 16px 10px;
-  pointer-events: none;
-}
-
-.vintage-frame::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  width: 8px;
-  height: 8px;
-  background: rgba(42, 26, 22, 0.3);
-  border-radius: 40% 60% 40% 60%;
-  transform: rotate(25deg);
-  box-shadow: -12px 6px 0 -2px rgba(42, 26, 22, 0.15);
-}
+/* Remove extra effects for cleaner look matching About photo */
 
 
 /* Vintage torn photo frame for About section only */
