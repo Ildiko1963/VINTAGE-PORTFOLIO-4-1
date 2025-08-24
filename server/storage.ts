@@ -237,11 +237,22 @@ export class MemStorage implements IStorage {
         projectLink: "#"
       },
       {
-        title: "Modern Kitchen Design",
-        description: "Contemporary kitchen space with functional elegance and style",
-        imageUrl: "/static/big_rkonyha.jpg",
-        additionalImages: null,
-        category: "Contemporary",
+        title: "Indusztrális legénylakás",
+        description: "Rero, ipari stilus a funkcionalitás jegyében",
+        imageUrl: "/static/indusztrial.jpg",
+        additionalImages: [
+          "/static/indusztrial.JPEG",
+          "/static/indusztrial1.JPEG",
+          "/static/indusztrial2.JPG",
+          "/static/indusztrial3.JPG",
+          "/static/indusztrial4.JPG",
+          "/static/indusztrial5.JPG",
+          "/static/indusztrial6.JPG",
+          "/static/indusztrial7.JPG",
+          "/static/indusztrial8.JPG",
+          "/static/indusztrial9.jpg"
+        ],
+        category: "Industrial",
         projectLink: "#"
       }
     ];
