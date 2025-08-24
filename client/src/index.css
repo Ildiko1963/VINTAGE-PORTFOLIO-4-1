@@ -175,6 +175,7 @@
     15% 97%, 5% 98%, 2% 88%, 0% 75%, 2% 58%, 
     0% 42%, 1% 28%, 0% 15%, 2% 5%
   );
+  transition: all 0.4s ease-in-out !important;
 }
 
 .vintage-photo-frame::before {
@@ -203,13 +204,11 @@
 }
 
 /* Hover effects for vintage photo frame */
-.vintage-photo-frame {
-  transition: all 0.3s ease-in-out;
-}
-
 .vintage-photo-frame:hover {
-  transform: rotate(1deg) skew(0.7deg, -0.1deg) scale(1.08);
-  filter: drop-shadow(8px 10px 16px rgba(0,0,0,0.7));
+  transform: rotate(3deg) skew(1deg, -0.3deg) scale(1.15) !important;
+  filter: drop-shadow(12px 15px 20px rgba(0,0,0,0.8)) !important;
+  border: 12px solid rgba(42, 26, 22, 0.9) !important;
+  z-index: 10 !important;
 }
 
 /* Film grain texture overlay */
