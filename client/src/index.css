@@ -205,9 +205,9 @@
 
 /* Hover effects for vintage photo frame */
 .vintage-photo-frame:hover {
-  transform: rotate(3deg) skew(1deg, -0.3deg) scale(1.15) !important;
-  filter: drop-shadow(12px 15px 20px rgba(0,0,0,0.8)) !important;
-  border: 12px solid rgba(42, 26, 22, 0.9) !important;
+  transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
+  filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
+  border: 10px solid rgba(42, 26, 22, 0.8) !important;
   z-index: 10 !important;
 }
 
