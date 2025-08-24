@@ -19,7 +19,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const isFirst = index === 0;
   const isLast = index === totalItems - 1;
   const isPublications = item.title === "Publications";
-  const isCozyLiving = item.title === "Cozy Living Space";
+  const isCozyLiving = item.title === "Studió lakás";
 
   return (
     <motion.div 
