@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioControls } from '@/lib/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface IntroScreenProps {
   audioControls: AudioControls;
@@ -12,6 +13,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
   const [isVisible, setIsVisible] = useState(true);
   const [audioPreloaded, setAudioPreloaded] = useState(false);
   const instrumentalRef = useRef<HTMLAudioElement | null>(null);
+  const { t } = useLanguage();
   
   // Pre-initialize audio when component mounts to ensure proper loading
   useEffect(() => {
@@ -205,7 +207,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
               onClick={handleEnterSite}
               disabled={progress < 100}
             >
-              Start Projection
+{t('intro.startProjection')}
             </motion.button>
           </div>
         </motion.div>

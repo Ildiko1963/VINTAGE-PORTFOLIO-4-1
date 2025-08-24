@@ -13,6 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations = {
   hu: {
     // Navigation
+    'nav.home': 'Főoldal',
     'nav.about': 'Rólam',
     'nav.portfolio': 'Portfólió',
     'nav.services': 'Szolgáltatások',
@@ -41,6 +42,7 @@ const translations = {
     // Portfolio Section
     'portfolio.title': 'Portfólió',
     'portfolio.viewGallery': 'Galéria megtekintése',
+    'portfolio.viewFull': 'Teljes portfólió megtekintése',
     'portfolio.closeModal': 'Bezárás',
     
     // Services Section
@@ -81,9 +83,11 @@ const translations = {
     
     // Common
     'loading': 'Betöltés...',
+    'intro.startProjection': 'Indítsd a vetítőt',
   },
   en: {
     // Navigation
+    'nav.home': 'Home',
     'nav.about': 'About',
     'nav.portfolio': 'Portfolio',
     'nav.services': 'Services',
@@ -112,6 +116,7 @@ const translations = {
     // Portfolio Section
     'portfolio.title': 'Portfolio',
     'portfolio.viewGallery': 'View Gallery',
+    'portfolio.viewFull': 'View Full Portfolio',
     'portfolio.closeModal': 'Close',
     
     // Services Section
@@ -152,6 +157,7 @@ const translations = {
     
     // Common
     'loading': 'Loading...',
+    'intro.startProjection': 'Start Projection',
   }
 };
 
