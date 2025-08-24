@@ -176,8 +176,8 @@
     0% 42%, 1% 28%, 0% 15%, 2% 5%
   );
   transition: all 0.4s ease-in-out !important;
-  min-width: 330px !important;
-  width: 330px !important;
+  min-width: 320px !important;
+  width: 320px !important;
 }
 
 .vintage-photo-frame::before {
