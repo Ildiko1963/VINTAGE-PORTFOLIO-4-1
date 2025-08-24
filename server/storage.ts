@@ -209,6 +209,28 @@ export class MemStorage implements IStorage {
         ],
         category: "publikációk",
         projectLink: "#"
+      },
+      {
+        title: "Cozy Living Space",
+        description: "Warm and inviting living room with comfortable seating arrangements",
+        imageUrl: "/static/big_otthon.jpg",
+        additionalImages: [
+          "/static/big_napteto.jpg",
+          "/static/big_nappali.jpg"
+        ],
+        category: "Residential",
+        projectLink: "#"
+      },
+      {
+        title: "Modern Kitchen Design",
+        description: "Contemporary kitchen space with functional elegance and style",
+        imageUrl: "/static/big_rkonyha.jpg",
+        additionalImages: [
+          "/static/big_konyha.jpg",
+          "/static/big_konyhamontazs.jpg.jpg"
+        ],
+        category: "Contemporary",
+        projectLink: "#"
       }
     ];
     
