@@ -98,7 +98,7 @@ export default function PortfolioDetail() {
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full h-96 object-cover mx-auto block cursor-pointer filter grayscale sepia-[0.7] brightness-[0.85] contrast-[0.7] hover:grayscale-0 hover:sepia-0 hover:brightness-100 hover:contrast-100 transition-all duration-500"
+                  className="w-full h-96 object-cover mx-auto block cursor-pointer transition-all duration-500"
                   onClick={() => setIsFullscreen(true)}
                 />
                 <button
@@ -150,7 +150,7 @@ export default function PortfolioDetail() {
                         <img
                           src={image}
                           alt={`Image ${index + 1}`}
-                          className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
+                          className="w-full h-full object-cover transition-all duration-300"
                         />
                       </button>
                     ))}
