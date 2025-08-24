@@ -203,10 +203,13 @@
 }
 
 /* Hover effects for vintage photo frame */
-.vintage-photo-frame:hover {
-  transform: rotate(-0.5deg) skew(0.2deg, -0.1deg) scale(1.05);
-  filter: drop-shadow(6px 8px 12px rgba(0,0,0,0.6));
+.vintage-photo-frame {
   transition: all 0.3s ease-in-out;
+}
+
+.vintage-photo-frame:hover {
+  transform: rotate(1deg) skew(0.7deg, -0.1deg) scale(1.08);
+  filter: drop-shadow(8px 10px 16px rgba(0,0,0,0.7));
 }
 
 /* Film grain texture overlay */
