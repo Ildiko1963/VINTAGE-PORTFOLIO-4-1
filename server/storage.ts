@@ -238,7 +238,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Indusztrális legénylakás",
-        description: "Rero, ipari stilus a funkcionalitás jegyében",
+        description: "Retro, ipari stilus a funkcionalitás jegyében",
         imageUrl: "/static/indusztrial.jpg",
         additionalImages: [
           "/static/indusztrial.JPEG",
