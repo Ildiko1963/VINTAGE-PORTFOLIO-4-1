@@ -101,30 +101,15 @@
   filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
   transform: none;
   background: transparent;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out !important;
 }
 
-/* Hover state - hanyag vintage szétdobált hatás */
+/* Hover state - ugyanaz az effekt mint About section képén */
 .vintage-frame:hover {
-  border: 6px solid rgba(42, 26, 22, 0.8);
-  border-radius: 12px 6px 16px 9px;
-  box-shadow: 
-    0 6px 15px rgba(0,0,0,0.5),
-    inset -2px -2px 6px rgba(0,0,0,0.4),
-    inset 2px 2px 6px rgba(255,255,255,0.15),
-    0 0 0 2px rgba(101, 67, 33, 0.4);
-  filter: drop-shadow(5px 7px 10px rgba(0,0,0,0.3));
-  transform: rotate(1.5deg) skew(-0.4deg, 0.6deg) translateX(3px) translateY(-2px);
-  background: linear-gradient(45deg, 
-    rgba(255,255,255,0.08) 0%, 
-    transparent 40%, 
-    rgba(0,0,0,0.08) 100%);
-  clip-path: polygon(
-    2% 0%, 98% 1%, 99% 8%, 97% 25%, 99% 45%, 
-    98% 70%, 99% 85%, 97% 99%, 85% 98%, 70% 99%, 
-    45% 97%, 25% 99%, 8% 98%, 1% 95%, 0% 75%, 
-    2% 55%, 0% 35%, 1% 15%
-  );
+  transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
+  filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
+  border: 8px solid rgba(42, 26, 22, 0.8) !important;
+  z-index: 10 !important;
 }
 
 .vintage-frame:hover::before {
@@ -176,8 +161,10 @@
     0% 42%, 1% 28%, 0% 15%, 2% 5%
   );
   transition: all 0.4s ease-in-out !important;
-  min-width: 450px !important;
-  width: 450px !important;
+  min-height: 480px !important;
+  height: 480px !important;
+  width: auto !important;
+  max-width: none !important;
 }
 
 .vintage-photo-frame::before {
