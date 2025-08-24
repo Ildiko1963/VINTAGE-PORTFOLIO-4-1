@@ -83,55 +83,13 @@
   50% { border-color: currentColor; }
 }
 
-/* Vintage film-strip frames */
+/* Vintage film-strip frames - ORIGINAL SIMPLE VERSION */
 .film-frame {
   position: relative;
-  border: 8px solid rgba(42, 26, 22, 0.7);
-  border-radius: 15px 8px 20px 12px;
-  box-shadow: 
-    0 4px 12px rgba(0,0,0,0.4),
-    inset -3px -3px 8px rgba(0,0,0,0.3),
-    inset 3px 3px 8px rgba(255,255,255,0.1),
-    0 0 0 3px rgba(101, 67, 33, 0.3);
+  border: 9px solid rgba(42, 26, 22, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   overflow: visible;
-  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
-  transform: rotate(-1.2deg) skew(0.5deg, -0.3deg);
-  background: linear-gradient(135deg, 
-    rgba(255,255,255,0.1) 0%, 
-    transparent 50%, 
-    rgba(0,0,0,0.1) 100%);
-  clip-path: polygon(
-    1% 2%, 97% 0%, 99% 3%, 98% 12%, 99% 28%, 
-    97% 45%, 99% 62%, 98% 78%, 96% 88%, 99% 97%, 
-    88% 99%, 75% 97%, 58% 99%, 42% 98%, 28% 99%, 
-    15% 97%, 5% 98%, 2% 88%, 0% 75%, 2% 58%, 
-    0% 42%, 1% 28%, 0% 15%, 2% 5%
-  );
-}
-
-.film-frame::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border: 2px dashed rgba(42, 26, 22, 0.3);
-  border-radius: 18px 12px 25px 15px;
-  pointer-events: none;
-}
-
-.film-frame::after {
-  content: '';
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 15px;
-  height: 15px;
-  background: rgba(42, 26, 22, 0.4);
-  border-radius: 50% 20% 50% 20%;
-  transform: rotate(45deg);
-  box-shadow: -20px 10px 0 -5px rgba(42, 26, 22, 0.2);
 }
 
 
@@ -183,9 +141,54 @@
   box-shadow: 15px -10px 0 -3px rgba(42, 26, 22, 0.2);
 }
 
-/* Straight intro screen override */
-.intro-frame {
-  transform: none !important;
+/* Vintage torn photo frame for About section only */
+.vintage-photo-frame {
+  border: 9px solid rgba(42, 26, 22, 0.7);
+  border-radius: 15px 8px 20px 12px;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.4),
+    inset -3px -3px 8px rgba(0,0,0,0.3),
+    inset 3px 3px 8px rgba(255,255,255,0.1),
+    0 0 0 3px rgba(101, 67, 33, 0.3);
+  overflow: visible;
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  transform: rotate(-1.2deg) skew(0.5deg, -0.3deg);
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 50%, 
+    rgba(0,0,0,0.1) 100%);
+  clip-path: polygon(
+    1% 2%, 97% 0%, 99% 3%, 98% 12%, 99% 28%, 
+    97% 45%, 99% 62%, 98% 78%, 96% 88%, 99% 97%, 
+    88% 99%, 75% 97%, 58% 99%, 42% 98%, 28% 99%, 
+    15% 97%, 5% 98%, 2% 88%, 0% 75%, 2% 58%, 
+    0% 42%, 1% 28%, 0% 15%, 2% 5%
+  );
+}
+
+.vintage-photo-frame::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed rgba(42, 26, 22, 0.3);
+  border-radius: 18px 12px 25px 15px;
+  pointer-events: none;
+}
+
+.vintage-photo-frame::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: rgba(42, 26, 22, 0.4);
+  border-radius: 50% 20% 50% 20%;
+  transform: rotate(45deg);
+  box-shadow: -20px 10px 0 -5px rgba(42, 26, 22, 0.2);
 }
 
 /* Film grain texture overlay */
