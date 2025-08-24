@@ -211,7 +211,7 @@ export class MemStorage implements IStorage {
         projectLink: "#"
       },
       {
-        title: "Cozy Living Space",
+        title: "Studió lakás",
         description: "Warm and inviting living room with comfortable seating arrangements",
         imageUrl: "/static/big_otthon.jpg",
         additionalImages: [
