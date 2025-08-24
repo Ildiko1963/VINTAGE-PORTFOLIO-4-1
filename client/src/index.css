@@ -202,6 +202,13 @@
   box-shadow: -20px 10px 0 -5px rgba(42, 26, 22, 0.2);
 }
 
+/* Hover effects for vintage photo frame */
+.vintage-photo-frame:hover {
+  transform: rotate(-0.5deg) skew(0.2deg, -0.1deg) scale(1.05);
+  filter: drop-shadow(6px 8px 12px rgba(0,0,0,0.6));
+  transition: all 0.3s ease-in-out;
+}
+
 /* Film grain texture overlay */
 .film-grain {
   position: relative;
