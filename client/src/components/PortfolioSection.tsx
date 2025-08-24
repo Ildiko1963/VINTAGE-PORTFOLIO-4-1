@@ -24,12 +24,12 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   return (
     <motion.div 
       key={item.id}
-      initial={{ y: 30, opacity: 0, scale: isLast ? 1.3 : isFirst ? 1.1 : isPublications ? 1.3 : isCozyLiving ? 1.3 : 1 }}
-      whileInView={{ y: 0, opacity: 1, scale: isLast ? 1.3 : isFirst ? 1.1 : isPublications ? 1.3 : isCozyLiving ? 1.3 : 1 }}
+      initial={{ y: 30, opacity: 0, scale: 1.3 }}
+      whileInView={{ y: 0, opacity: 1, scale: 1.3 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`group relative overflow-visible ${isLast || isPublications || isCozyLiving ? 'mt-8' : ''}`}
-      style={{ zIndex: isLast ? 15 : isFirst ? 10 : isPublications ? 12 : isCozyLiving ? 11 : 0 }}
+      className={`group relative overflow-visible mt-8`}
+      style={{ zIndex: 10 }}
     >
       <div className="relative h-48 flex items-center justify-center vintage-frame">
         <img 
