@@ -29,11 +29,11 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       className={`group relative overflow-hidden ${isLast ? 'mt-8' : ''}`}
       style={{ zIndex: isLast ? 15 : isFirst ? 10 : 0 }}
     >
-      <div className="relative h-48 flex items-center justify-center vintage-photo-frame projector-flicker film-grain cursor-pointer">
+      <div className="relative h-48 flex items-center justify-center vintage-frame">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-auto object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
         />
         
         {hasAdditionalImages && (
