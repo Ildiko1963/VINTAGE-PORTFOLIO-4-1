@@ -82,7 +82,7 @@ export default function ServicesSection() {
   });
   
   return (
-    <section id="services" className="py-16 bg-transparent relative">
+    <section id="services" className="py-8 bg-transparent relative">
       
       <div className="container mx-auto px-4">
         <motion.h2 
