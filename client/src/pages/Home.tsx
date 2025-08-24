@@ -71,20 +71,6 @@ export default function Home() {
           />
         )}
         
-        <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-2">
-          <button 
-            onClick={() => setShowIntro(true)}
-            className="bg-[#D9BF77] text-[#463730] px-3 py-1 rounded-md text-sm hover:bg-[#C8B28E] transition-colors"
-          >
-            Show Intro Again
-          </button>
-          <button 
-            onClick={() => audioControls.initializeAudio()}
-            className="bg-[#D9BF77] text-[#463730] px-3 py-1 rounded-md text-sm hover:bg-[#2A1A16] transition-colors"
-          >
-            Initialize Audio
-          </button>
-        </div>
         
         <AudioControls audioControls={audioControls} />
         
