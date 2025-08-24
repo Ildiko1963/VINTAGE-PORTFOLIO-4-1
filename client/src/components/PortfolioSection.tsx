@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { PortfolioItem } from '@/lib/types';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -13,10 +14,15 @@ interface PortfolioItemCardProps {
 
 function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProps) {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [, setLocation] = useLocation();
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   // All boxes are the same size now
+
+  const handleCardClick = () => {
+    setLocation(`/portfolio/${item.id}`);
+  };
 
   return (
     <motion.div 
@@ -25,7 +31,8 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       whileInView={{ y: 0, opacity: 1, scale: 1.3 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
-      className={`group relative overflow-visible mt-8`}
+      onClick={handleCardClick}
+      className={`group relative overflow-visible mt-8 cursor-pointer`}
       style={{ zIndex: 10 }}
     >
       <div className="relative h-48 flex items-center justify-center vintage-frame">
