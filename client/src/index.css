@@ -104,71 +104,109 @@
 /* Vintage film-strip frames */
 .film-frame {
   position: relative;
-  border: 8px solid rgba(42, 26, 22, 0.6);
-  border-left: 12px solid rgba(42, 26, 22, 0.8);
-  border-right: 6px solid rgba(42, 26, 22, 0.7);
-  border-top: 10px solid rgba(42, 26, 22, 0.75);
-  border-bottom: 14px solid rgba(42, 26, 22, 0.65);
-  border-radius: 25px 5px 18px 8px;
+  border: 10px solid rgba(42, 26, 22, 0.7);
+  border-radius: 15px 8px 20px 12px;
   box-shadow: 
-    0 6px 20px rgba(0,0,0,0.5),
-    inset -8px -12px 15px rgba(0,0,0,0.4),
-    inset 6px 8px 12px rgba(255,255,255,0.08),
-    inset -15px 10px 20px rgba(101, 67, 33, 0.3),
-    inset 12px -8px 18px rgba(0,0,0,0.25),
-    0 0 0 2px rgba(139, 69, 19, 0.4);
+    0 4px 12px rgba(0,0,0,0.4),
+    inset -3px -3px 8px rgba(0,0,0,0.3),
+    inset 3px 3px 8px rgba(255,255,255,0.1),
+    0 0 0 3px rgba(101, 67, 33, 0.3);
   overflow: visible;
-  filter: drop-shadow(8px 12px 15px rgba(0,0,0,0.4)) contrast(1.1);
-  transform: none;
-  background: 
-    radial-gradient(circle at 25% 30%, rgba(0,0,0,0.2) 2px, transparent 3px),
-    radial-gradient(circle at 75% 60%, rgba(0,0,0,0.15) 3px, transparent 4px),
-    linear-gradient(125deg, rgba(255,255,255,0.12) 0%, transparent 45%, rgba(0,0,0,0.18) 100%);
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  transform: rotate(-2.7deg) skew(1.8deg, -1.3deg) scaleY(0.98) scaleX(1.02);
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 50%, 
+    rgba(0,0,0,0.1) 100%);
+  clip-path: polygon(
+    0% 8%, 2% 0%, 7% 4%, 11% 1%, 18% 0%, 23% 5%, 29% 2%, 35% 0%, 
+    42% 3%, 48% 0%, 54% 2%, 61% 0%, 68% 4%, 74% 1%, 80% 0%, 87% 3%, 
+    93% 1%, 97% 0%, 100% 6%, 98% 13%, 100% 19%, 97% 26%, 100% 33%, 
+    98% 40%, 100% 47%, 96% 53%, 100% 60%, 97% 67%, 100% 74%, 98% 81%, 
+    100% 87%, 96% 94%, 100% 100%, 89% 98%, 82% 100%, 75% 97%, 68% 100%, 
+    61% 98%, 54% 100%, 47% 96%, 40% 100%, 33% 98%, 26% 100%, 19% 97%, 
+    12% 100%, 6% 98%, 2% 92%, 0% 85%, 3% 78%, 0% 71%, 2% 64%, 
+    0% 57%, 3% 50%, 0% 43%, 2% 36%, 0% 29%, 3% 22%, 0% 15%
+  );
 }
 
 .film-frame::before {
   content: '';
   position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 35px;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    rgba(0,0,0,0.6) 20%, 
-    rgba(0,0,0,0.8) 50%, 
-    rgba(0,0,0,0.4) 80%, 
-    transparent 100%);
-  transform: rotate(-25deg);
-  border-radius: 50%;
-  box-shadow: 
-    15px 25px 0 -1px rgba(0,0,0,0.5),
-    -10px 40px 0 -2px rgba(0,0,0,0.3),
-    25px -15px 0 1px rgba(0,0,0,0.4);
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed rgba(42, 26, 22, 0.3);
+  border-radius: 18px 12px 25px 15px;
   pointer-events: none;
 }
 
 .film-frame::after {
   content: '';
   position: absolute;
-  bottom: 20%;
-  right: 15%;
-  width: 25px;
-  height: 25px;
-  background: radial-gradient(ellipse at center, 
-    rgba(0,0,0,0.7) 0%, 
-    rgba(0,0,0,0.4) 40%, 
-    transparent 70%);
-  border-radius: 60% 40% 70% 30%;
-  transform: rotate(75deg) skew(-15deg, 8deg);
-  box-shadow: 
-    -18px -8px 0 -8px rgba(0,0,0,0.3),
-    12px 18px 0 -6px rgba(0,0,0,0.25),
-    -5px 25px 0 -10px rgba(0,0,0,0.2);
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: rgba(42, 26, 22, 0.4);
+  border-radius: 50% 20% 50% 20%;
+  transform: rotate(45deg);
+  box-shadow: -20px 10px 0 -5px rgba(42, 26, 22, 0.2);
 }
 
 
-/* Removed vintage-frame - now using film-frame everywhere */
+/* Vintage portfolio frames */
+.vintage-frame {
+  border: 8px solid rgba(42, 26, 22, 0.8);
+  border-radius: 12px 6px 16px 9px;
+  box-shadow: 
+    0 6px 15px rgba(0,0,0,0.5),
+    inset -2px -2px 6px rgba(0,0,0,0.4),
+    inset 2px 2px 6px rgba(255,255,255,0.15),
+    0 0 0 2px rgba(101, 67, 33, 0.4);
+  filter: drop-shadow(5px 7px 10px rgba(0,0,0,0.3));
+  transform: rotate(2.3deg) skew(-1.4deg, 1.6deg) scaleY(1.03) scaleX(0.97);
+  background: linear-gradient(45deg, 
+    rgba(255,255,255,0.08) 0%, 
+    transparent 40%, 
+    rgba(0,0,0,0.08) 100%);
+  clip-path: polygon(
+    0% 4%, 6% 0%, 13% 5%, 21% 1%, 29% 0%, 36% 4%, 44% 2%, 
+    52% 0%, 60% 3%, 68% 1%, 76% 0%, 83% 4%, 91% 2%, 98% 0%, 
+    100% 7%, 96% 15%, 100% 23%, 97% 31%, 100% 39%, 94% 46%, 
+    100% 54%, 97% 62%, 100% 70%, 95% 77%, 100% 85%, 96% 92%, 
+    100% 99%, 88% 100%, 80% 96%, 72% 100%, 64% 97%, 56% 100%, 
+    48% 95%, 40% 100%, 32% 97%, 24% 100%, 16% 96%, 8% 100%, 
+    2% 95%, 0% 87%, 4% 79%, 0% 71%, 3% 63%, 0% 55%, 
+    4% 47%, 0% 39%, 3% 31%, 0% 23%, 4% 15%, 0% 7%
+  );
+}
+
+.vintage-frame::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px dotted rgba(42, 26, 22, 0.4);
+  border-radius: 15px 9px 19px 12px;
+  pointer-events: none;
+}
+
+.vintage-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 12px;
+  height: 12px;
+  background: rgba(42, 26, 22, 0.3);
+  border-radius: 30% 60% 30% 60%;
+  transform: rotate(-15deg);
+  box-shadow: 15px -10px 0 -3px rgba(42, 26, 22, 0.2);
+}
 
 /* Film grain texture overlay */
 .film-grain {
