@@ -16,10 +16,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
-  const isFirst = index === 0;
-  const isLast = index === totalItems - 1;
-  const isPublications = item.title === "Publications";
-  const isCozyLiving = item.title === "Studió lakás";
+  // All boxes are the same size now
 
   return (
     <motion.div 
