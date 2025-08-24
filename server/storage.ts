@@ -213,9 +213,8 @@ export class MemStorage implements IStorage {
       {
         title: "Studió lakás",
         description: "luxus és kényelem 27m2-en",
-        imageUrl: "/static/big_otthon.jpg",
+        imageUrl: "/static/studio1.jpg",
         additionalImages: [
-          "/static/studio1.jpg",
           "/static/studio2.jpg",
           "/static/studio3.jpg",
           "/static/studio4.jpg",
