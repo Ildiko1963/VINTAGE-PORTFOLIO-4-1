@@ -36,17 +36,27 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
         <i className="fas fa-music text-xl"></i>
       </button>
       
-      <div className="relative group">
+      <div className="relative">
         <button 
+          onClick={() => {
+            const slider = document.getElementById('volume-slider');
+            if (slider) {
+              slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
+            }
+          }}
           className="text-[#463730] hover:text-[#D9BF77] transition-colors" 
           aria-label="Volume control"
         >
-          <i className="fas fa-volume-up text-xl"></i>
+          🔊
         </button>
-        <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block">
+        <div 
+          id="volume-slider"
+          className="absolute bottom-full right-0 mb-2 bg-[#2A1A16] bg-opacity-90 p-2 rounded"
+          style={{ display: 'none' }}
+        >
           <input 
             type="range" 
-            className="w-24 appearance-none h-2 bg-[#2A1A16] rounded-lg outline-none [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-[#D9BF77] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:bg-[#D9BF77] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+            className="w-24 appearance-none h-2 bg-[#463730] rounded-lg outline-none slider"
             min="0" 
             max="1" 
             step="0.1" 

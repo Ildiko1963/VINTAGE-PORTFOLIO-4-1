@@ -38,7 +38,7 @@ export default function AboutSection() {
                   repeat: Infinity, 
                   duration: 3,
                 }}
-                className="vintage-photo-frame projector-flicker film-grain w-full max-w-md cursor-pointer"
+                className="vintage-photo-frame film-grain w-full max-w-md cursor-pointer"
               >
                 <img 
                   src="/static/23358_ildiko.jpg" 

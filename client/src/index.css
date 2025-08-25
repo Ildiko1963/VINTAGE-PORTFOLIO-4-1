@@ -63,6 +63,24 @@
   .animate-subtle-float {
     animation: subtle-float 4s ease-in-out infinite;
   }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #D9BF77;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #D9BF77;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 /* Typewriter animation for text */
