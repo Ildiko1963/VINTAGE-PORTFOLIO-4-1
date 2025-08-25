@@ -109,6 +109,8 @@ export default function PortfolioSection() {
   const { t } = useLanguage();
   const { data: portfolioItems, isLoading } = useQuery<PortfolioItem[]>({
     queryKey: ['/api/portfolio'],
+    staleTime: 0,
+    cacheTime: 0,
   });
   
   return (
