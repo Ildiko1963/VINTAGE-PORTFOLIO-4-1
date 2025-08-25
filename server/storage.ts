@@ -116,6 +116,30 @@ export class MemStorage implements IStorage {
   // Initialize data
   private initializePortfolioItems() {
     const items: InsertPortfolioItem[] = [
+      {title: "Publications",
+          description: "Publications",
+          imageUrl: "/static/big_otthon2.jpg",
+          additionalImages: [
+            "/static/big_otthonnap2.jpg",
+            "/static/big_otthonnap.jpg",
+            "/static/big_otthonfurdo.jpg"
+          ],
+          category: "publikációk",
+          projectLink: "#"
+
+      },
+      {title: "Publications",
+          description: "Publications",
+          imageUrl: "/static/big_otthon2.jpg",
+          additionalImages: [
+            "/static/big_otthonnap2.jpg",
+            "/static/big_otthonnap.jpg",
+            "/static/big_otthonfurdo.jpg"
+          ],
+          category: "publikációk",
+          projectLink: "#"
+
+      },
       {
         title: "Commercial building with attic and apartment design",
         description: "Contemporary interior design with warm family atmosphere",
