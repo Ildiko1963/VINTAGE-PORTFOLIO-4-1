@@ -19,9 +19,10 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   
-  // Minden doboz egyforma méret
-  const boxMaxWidth = '280px';
-  const boxMinWidth = '240px';
+  // Kisebb dobozméret mobilon a kért projektekhez
+  const isSmallerProject = item.title === "Publications" || item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
+  const boxMaxWidth = isSmallerProject ? '240px' : '280px';
+  const boxMinWidth = isSmallerProject ? '200px' : '240px';
 
   // Portfolio projekt fordítások mappingelése
   const getPortfolioTranslation = (title: string, type: 'title' | 'desc') => {
