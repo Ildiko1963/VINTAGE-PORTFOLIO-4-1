@@ -96,10 +96,10 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
         )}
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto" style={{ zIndex: 20 }}>
-        <div className="bg-[#2A1A16] bg-opacity-90 px-3 py-1 mx-0 mb-0 rounded-none border-t border-[#D9BF77] border-opacity-30">
+      <div className="opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto mt-1" style={{ zIndex: 20 }}>
+        <div className="bg-[#2A1A16] bg-opacity-90 px-3 py-1 rounded-sm border border-[#D9BF77] border-opacity-30">
           <h3 className="text-sm font-bold text-[#D9BF77] text-center" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{displayTitle}</h3>
-          <p className="text-center text-xs font-typewriter mt-1">{displayDescription}</p>
+          <p className="text-center text-xs font-typewriter mt-1 text-[#D9BF77]">{displayDescription}</p>
         </div>
       </div>
     </motion.div>
