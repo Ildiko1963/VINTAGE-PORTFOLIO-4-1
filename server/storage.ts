@@ -116,69 +116,24 @@ export class MemStorage implements IStorage {
   // Initialize data
   private initializePortfolioItems() {
     const items: InsertPortfolioItem[] = [
-      {title: "Publications",
-          description: "Publications",
-          imageUrl: "/static/big_otthon2.jpg",
-          additionalImages: [
-            "/static/big_otthonnap2.jpg",
-            "/static/big_otthonnap.jpg",
-            "/static/big_otthonfurdo.jpg"
-          ],
-          category: "publikációk",
-          projectLink: "#"
-
+      {
+        title: "Publications",
+        description: "Publications",
+        imageUrl: "/static/big_otthon2.jpg",
+        additionalImages: [
+          "/static/big_otthonnap2.jpg",
+          "/static/big_otthonnap.jpg",
+          "/static/big_otthonfurdo.jpg"
+        ],
+        category: "publikációk",
+        projectLink: "#"
       },
       {
-        title: "Commercial building with attic and apartment design",
+        title: "Tervek",
         description: "Contemporary interior design with warm family atmosphere",
         imageUrl: "/static/big_haz.jpg",
         additionalImages: null,
         category: "Residential",
-        projectLink: "#"
-      },
-      {
-        title: "Ancient design",
-        description: "Classic interior design with sophisticated touches",
-        imageUrl: "/static/big_zebra.jpg",
-        additionalImages: null,
-        category: "Classic",
-        projectLink: "#"
-      },
-      {
-        title: "Historic Renovation",
-        description: "Transforming historic spaces with modern functionality",
-        imageUrl: "/static/big_laktanya.jpg",
-        additionalImages: [
-          "/static/big_furdo2.jpg"
-        ],
-        category: "Renovation",
-        projectLink: "#"
-      },
-      {
-        title: "Provence Style",
-        description: "French countryside charm with rustic elegance",
-        imageUrl: "/static/big_myaraloterasz.jpg.jpg",
-        additionalImages: [
-          "/static/big_nyaralo2.jpg",
-          "/static/big_nyaralokert.jpg",
-          "/static/big_nyaralonappali.jpg"
-        ],
-        category: "Rustic",
-        projectLink: "#"
-      },
-      {
-        title: "Bold Design",
-        description: "Daring interior concepts with unique character",
-        imageUrl: "/static/big_nappali2.jpg",
-        additionalImages: [
-          "/static/big_nappali3.jpg", 
-          "/static/big_nappali4.jpg",
-          "/static/big_nappali6.jpg",
-          "/static/big_napteto.jpg",
-          "/static/big_rfurdo.jpg",
-          "/static/big_rkonyha.jpg"
-        ],
-        category: "Contemporary",
         projectLink: "#"
       },
       {
@@ -238,6 +193,51 @@ export class MemStorage implements IStorage {
           "/static/indusztrial.JPEG"
         ],
         category: "Industrial",
+        projectLink: "#"
+      },
+      {
+        title: "Vakmerő színpompa",
+        description: "Daring interior concepts with unique character",
+        imageUrl: "/static/big_nappali2.jpg",
+        additionalImages: [
+          "/static/big_nappali3.jpg", 
+          "/static/big_nappali4.jpg",
+          "/static/big_nappali6.jpg",
+          "/static/big_napteto.jpg",
+          "/static/big_rfurdo.jpg",
+          "/static/big_rkonyha.jpg"
+        ],
+        category: "Contemporary",
+        projectLink: "#"
+      },
+      {
+        title: "A jó öreg laktanya",
+        description: "Transforming historic spaces with modern functionality",
+        imageUrl: "/static/big_laktanya.jpg",
+        additionalImages: [
+          "/static/big_furdo2.jpg"
+        ],
+        category: "Renovation",
+        projectLink: "#"
+      },
+      {
+        title: "Provence Style",
+        description: "French countryside charm with rustic elegance",
+        imageUrl: "/static/big_myaraloterasz.jpg.jpg",
+        additionalImages: [
+          "/static/big_nyaralo2.jpg",
+          "/static/big_nyaralokert.jpg",
+          "/static/big_nyaralonappali.jpg"
+        ],
+        category: "Rustic",
+        projectLink: "#"
+      },
+      {
+        title: "Ókori design",
+        description: "Cipőbolt Vasarelyvel",
+        imageUrl: "/static/big_zebra.jpg",
+        additionalImages: null,
+        category: "Classic",
         projectLink: "#"
       }
     ];

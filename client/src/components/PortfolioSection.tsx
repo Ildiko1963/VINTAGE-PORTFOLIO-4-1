@@ -19,23 +19,22 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   
-  // Kisebb box méret a nagy galériás projektekhez + Publications
-  const isLargeGalleryProject = item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
-  const isPublicationsProject = item.title === "Publications";
-  const boxMaxWidth = (isLargeGalleryProject || isPublicationsProject) ? '240px' : '280px';
-  const boxMinWidth = (isLargeGalleryProject || isPublicationsProject) ? '200px' : '240px';
+  // Kisebb box méret a kért projektekhez
+  const isSmallerBoxProject = item.title === "Publications" || item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
+  const boxMaxWidth = isSmallerBoxProject ? '240px' : '280px';
+  const boxMinWidth = isSmallerBoxProject ? '200px' : '240px';
 
   // Portfolio projekt fordítások mappingelése
   const getPortfolioTranslation = (title: string, type: 'title' | 'desc') => {
     const translationMap: Record<string, string> = {
       'Publications': `portfolio.publications.${type}`,
-      'Plans': `portfolio.plans.${type}`,
+      'Tervek': `portfolio.plans.${type}`,
       'Studió lakás': `portfolio.studio.${type}`,
       'Indusztrális legénylakás': `portfolio.industrial.${type}`,
-      'Historic Renovation': `portfolio.historic.${type}`,
-      'Bold Design': `portfolio.bold.${type}`,
+      'A jó öreg laktanya': `portfolio.historic.${type}`,
+      'Vakmerő színpompa': `portfolio.bold.${type}`,
       'Provence Style': `portfolio.provence.${type}`,
-      'Commercial building with attic and apartment design': `portfolio.commercial.${type}`
+      'Ókori design': `portfolio.ancient.${type}`
     };
     return translationMap[title] || title;
   };
