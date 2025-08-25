@@ -198,6 +198,13 @@ export default function AboutSection() {
                     <ChevronRight size={20} />
                   </button>
                 </div>
+                
+                {/* Lapozási segítség */}
+                <div className="text-center mt-4 mb-2">
+                  <p className="text-[#D9BF77] text-sm font-typewriter opacity-70 italic">
+                    💡 Lapozz <ChevronRight size={16} className="inline mx-1" /> a teljes történetért!
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
