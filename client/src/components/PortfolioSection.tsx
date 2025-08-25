@@ -19,8 +19,8 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   
-  // Kisebb box méret a kért projektekhez
-  const isSmallerBoxProject = item.title === "Publications" || item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
+  // Kisebb box méret csak a Publications projekthez
+  const isSmallerBoxProject = item.title === "Publications";
   const boxMaxWidth = isSmallerBoxProject ? '240px' : '280px';
   const boxMinWidth = isSmallerBoxProject ? '200px' : '240px';
 
@@ -34,7 +34,8 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       'A jó öreg laktanya': `portfolio.historic.${type}`,
       'Vakmerő színpompa': `portfolio.bold.${type}`,
       'Provence Style': `portfolio.provence.${type}`,
-      'Ókori design': `portfolio.ancient.${type}`
+      'Ókori design': `portfolio.ancient.${type}`,
+      'Commercial building with attic and apartment design': `portfolio.commercial.${type}`
     };
     return translationMap[title] || title;
   };

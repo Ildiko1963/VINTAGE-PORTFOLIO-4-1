@@ -62,6 +62,8 @@ const translations = {
     'portfolio.provence.desc': 'Francia vidéki báj rusztikus eleganciával',
     'portfolio.ancient.title': 'Ókori design',
     'portfolio.ancient.desc': 'Cipőbolt Vasarelyvel',
+    'portfolio.commercial.title': 'Üzleti épület tetőtérrel és lakás tervezéssel',
+    'portfolio.commercial.desc': 'Kortárs belső tervezés meleg családi légkörrel',
     
     // Services Section
     'services.title': 'Szolgáltatások',
@@ -154,6 +156,8 @@ const translations = {
     'portfolio.provence.desc': 'French countryside charm with rustic elegance',
     'portfolio.ancient.title': 'Ancient Design',
     'portfolio.ancient.desc': 'Shoe Store with Vasarely',
+    'portfolio.commercial.title': 'Commercial building with attic and apartment design',
+    'portfolio.commercial.desc': 'Contemporary interior design with warm family atmosphere',
     
     // Services Section
     'services.title': 'Services',

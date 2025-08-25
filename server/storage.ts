@@ -131,9 +131,9 @@ export class MemStorage implements IStorage {
       {
         title: "Tervek",
         description: "Építészeti tervek és tervezési koncepciók",
-        imageUrl: "/static/big_haz.jpg",
+        imageUrl: "/static/tervek1.jpg",
         additionalImages: null,
-        category: "Residential",
+        category: "Plans",
         projectLink: "#"
       },
       {
@@ -238,6 +238,14 @@ export class MemStorage implements IStorage {
         imageUrl: "/static/big_zebra.jpg",
         additionalImages: null,
         category: "Classic",
+        projectLink: "#"
+      },
+      {
+        title: "Commercial building with attic and apartment design",
+        description: "Contemporary interior design with warm family atmosphere",
+        imageUrl: "/static/big_haz.jpg",
+        additionalImages: null,
+        category: "Residential",
         projectLink: "#"
       }
     ];
