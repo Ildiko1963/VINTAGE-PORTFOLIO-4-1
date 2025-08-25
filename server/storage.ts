@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Tervek",
-        description: "Contemporary interior design with warm family atmosphere",
+        description: "Építészeti tervek és tervezési koncepciók",
         imageUrl: "/static/big_haz.jpg",
         additionalImages: null,
         category: "Residential",
