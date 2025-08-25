@@ -165,10 +165,20 @@ export function useNativeAudio(): AudioControls {
     
     if (projectorSoundRef.current) {
       projectorSoundRef.current.volume = newMuteState ? 0 : state.volume;
+      if (newMuteState) {
+        projectorSoundRef.current.pause();
+      } else if (state.isProjectorPlaying) {
+        projectorSoundRef.current.play().catch(console.error);
+      }
     }
     
     if (backgroundMusicRef.current) {
       backgroundMusicRef.current.volume = newMuteState ? 0 : state.volume * 0.8;
+      if (newMuteState) {
+        backgroundMusicRef.current.pause();
+      } else if (state.isMusicPlaying) {
+        backgroundMusicRef.current.play().catch(console.error);
+      }
     }
   };
 

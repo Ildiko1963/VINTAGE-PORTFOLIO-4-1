@@ -67,6 +67,7 @@ export default function IntroScreen({ audioControls, onComplete }: IntroScreenPr
     if (instrumentalRef.current) {
       instrumentalRef.current.pause();
       console.log('Instrumental music stopped');
+      audioControls.initializeAudio();
     }
     
     // Mark site as entering

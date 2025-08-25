@@ -33,10 +33,13 @@ export default function AboutSection() {
               <motion.div 
                 animate={{ 
                   opacity: [0.8, 1, 0.8],
+                  y: [0, -2, 0, 2, 0],
+                  x: [0, 1, 0, -1, 0]
                 }}
                 transition={{ 
                   repeat: Infinity, 
                   duration: 3,
+                  ease: "easeInOut"
                 }}
                 className="vintage-photo-frame film-grain w-full max-w-md cursor-pointer"
               >

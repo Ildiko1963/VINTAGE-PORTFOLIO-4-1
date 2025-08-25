@@ -68,10 +68,10 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
       
       <button 
         onClick={toggleMute}
-        className={`text-[#463730] hover:text-[#D9BF77] transition-colors ${state.isMuted ? 'text-[#D9BF77]' : ''}`} 
+        className={`hover:text-[#D9BF77] transition-colors ${state.isMuted ? 'text-red-500' : 'text-[#463730]'}`} 
         aria-label="Mute all sounds"
       >
-        <i className="fas fa-volume-mute text-xl"></i>
+        {state.isMuted ? '🔇' : '🔊'}
       </button>
     </motion.div>
   );
