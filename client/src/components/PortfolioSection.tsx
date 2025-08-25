@@ -18,7 +18,11 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const additionalImages = item.additionalImages || [];
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
-  // All boxes are the same size now
+  
+  // Kisebb box méret a nagy galériás projektekhez
+  const isLargeGalleryProject = item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
+  const boxMaxWidth = isLargeGalleryProject ? '240px' : '280px';
+  const boxMinWidth = isLargeGalleryProject ? '200px' : '240px';
 
   const handleCardClick = () => {
     setLocation(`/portfolio/${item.id}`);
@@ -36,8 +40,8 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       style={{ 
         zIndex: 10,
         width: '100%',
-        maxWidth: '280px',
-        minWidth: '240px',
+        maxWidth: boxMaxWidth,
+        minWidth: boxMinWidth,
         height: 'auto'
       }}
     >
