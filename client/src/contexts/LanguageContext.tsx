@@ -45,6 +45,24 @@ const translations = {
     'portfolio.viewFull': 'Teljes portfólió megtekintése',
     'portfolio.closeModal': 'Bezárás',
     
+    // Portfolio Projects
+    'portfolio.publications.title': 'Publikációk',
+    'portfolio.publications.desc': 'Publikációk',
+    'portfolio.plans.title': 'Tervek',
+    'portfolio.plans.desc': 'Építészeti tervek és tervezési koncepciók',
+    'portfolio.studio.title': 'Stúdió lakás',
+    'portfolio.studio.desc': 'luxus és kényelem 27m2-en',
+    'portfolio.industrial.title': 'Indusztrális legénylakás',
+    'portfolio.industrial.desc': 'Retro, ipari stílus a funkcionalitás jegyében',
+    'portfolio.historic.title': 'Történelmi felújítás',
+    'portfolio.historic.desc': 'Történelmi terek átalakítása modern funkcionalitással',
+    'portfolio.bold.title': 'Merész tervezés',
+    'portfolio.bold.desc': 'Merész belső terek egyedi karakterrel',
+    'portfolio.provence.title': 'Provence stílus',
+    'portfolio.provence.desc': 'Francia vidéki báj rusztikus eleganciával',
+    'portfolio.commercial.title': 'Üzleti épület tetőtérrel és lakás tervezéssel',
+    'portfolio.commercial.desc': 'Kortárs belső tervezés meleg családi légkörrel',
+    
     // Services Section
     'services.title': 'Szolgáltatások',
     'services.design.title': 'Tervezés',
@@ -118,6 +136,24 @@ const translations = {
     'portfolio.viewGallery': 'View Gallery',
     'portfolio.viewFull': 'View Full Portfolio',
     'portfolio.closeModal': 'Close',
+    
+    // Portfolio Projects
+    'portfolio.publications.title': 'Publications',
+    'portfolio.publications.desc': 'Publications',
+    'portfolio.plans.title': 'Plans',
+    'portfolio.plans.desc': 'Architectural plans and design concepts',
+    'portfolio.studio.title': 'Studio apartment',
+    'portfolio.studio.desc': 'luxury and comfort in 27m2',
+    'portfolio.industrial.title': 'Industrial bachelor pad',
+    'portfolio.industrial.desc': 'Retro, industrial style in the spirit of functionality',
+    'portfolio.historic.title': 'Historic Renovation',
+    'portfolio.historic.desc': 'Transforming historic spaces with modern functionality',
+    'portfolio.bold.title': 'Bold Design',
+    'portfolio.bold.desc': 'Daring interior concepts with unique character',
+    'portfolio.provence.title': 'Provence Style',
+    'portfolio.provence.desc': 'French countryside charm with rustic elegance',
+    'portfolio.commercial.title': 'Commercial building with attic and apartment design',
+    'portfolio.commercial.desc': 'Contemporary interior design with warm family atmosphere',
     
     // Services Section
     'services.title': 'Services',

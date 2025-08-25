@@ -19,10 +19,29 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   
-  // Kisebb box méret a nagy galériás projektekhez
+  // Kisebb box méret a nagy galériás projektekhez + Publications
   const isLargeGalleryProject = item.title === "Studió lakás" || item.title === "Indusztrális legénylakás";
-  const boxMaxWidth = isLargeGalleryProject ? '240px' : '280px';
-  const boxMinWidth = isLargeGalleryProject ? '200px' : '240px';
+  const isPublicationsProject = item.title === "Publications";
+  const boxMaxWidth = (isLargeGalleryProject || isPublicationsProject) ? '240px' : '280px';
+  const boxMinWidth = (isLargeGalleryProject || isPublicationsProject) ? '200px' : '240px';
+
+  // Portfolio projekt fordítások mappingelése
+  const getPortfolioTranslation = (title: string, type: 'title' | 'desc') => {
+    const translationMap: Record<string, string> = {
+      'Publications': `portfolio.publications.${type}`,
+      'Plans': `portfolio.plans.${type}`,
+      'Studió lakás': `portfolio.studio.${type}`,
+      'Indusztrális legénylakás': `portfolio.industrial.${type}`,
+      'Historic Renovation': `portfolio.historic.${type}`,
+      'Bold Design': `portfolio.bold.${type}`,
+      'Provence Style': `portfolio.provence.${type}`,
+      'Commercial building with attic and apartment design': `portfolio.commercial.${type}`
+    };
+    return translationMap[title] || title;
+  };
+
+  const displayTitle = t(getPortfolioTranslation(item.title, 'title'));
+  const displayDescription = t(getPortfolioTranslation(item.title, 'desc'));
 
   const handleCardClick = () => {
     setLocation(`/portfolio/${item.id}`);
@@ -48,7 +67,7 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       <div className="relative vintage-frame" style={{ width: '100%', height: 'auto', overflow: 'visible' }}>
         <img 
           src={allImages[selectedImage]} 
-          alt={item.title} 
+          alt={displayTitle} 
           className="w-full h-auto object-contain transition-all duration-500 filter grayscale group-hover:grayscale-0"
           style={{ width: '100%', height: 'auto', maxHeight: 'none' }}
         />
@@ -79,8 +98,8 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       
       <div className="absolute bottom-0 left-0 right-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto" style={{ zIndex: 20 }}>
         <div className="bg-[#2A1A16] bg-opacity-80 px-3 py-2 mx-2 mb-2 rounded">
-          <h3 className="text-sm font-bold text-[#D9BF77] text-center" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{item.title}</h3>
-          <p className="text-center text-xs font-typewriter mt-1">{item.description}</p>
+          <h3 className="text-sm font-bold text-[#D9BF77] text-center" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.1em' }}>{displayTitle}</h3>
+          <p className="text-center text-xs font-typewriter mt-1">{displayDescription}</p>
         </div>
       </div>
     </motion.div>
