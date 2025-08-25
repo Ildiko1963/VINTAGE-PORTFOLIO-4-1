@@ -36,43 +36,25 @@ export default function AudioControls({ audioControls }: AudioControlsProps) {
         <i className="fas fa-music text-xl"></i>
       </button>
       
-      <div className="relative">
+      <div className="flex flex-col gap-1 items-center">
         <button 
-          onClick={() => {
-            const slider = document.getElementById('volume-slider');
-            if (slider) {
-              slider.style.display = slider.style.display === 'block' ? 'none' : 'block';
-            }
-          }}
-          className="text-[#463730] hover:text-[#D9BF77] transition-colors" 
-          aria-label="Volume control"
+          onClick={toggleMute}
+          className={`hover:text-[#D9BF77] transition-colors text-lg ${state.isMuted ? 'text-red-500' : 'text-[#463730]'}`} 
+          aria-label="Mute all sounds"
         >
-          🔊
+          {state.isMuted ? '🔇' : '🔊'}
         </button>
-        <div 
-          id="volume-slider"
-          className="absolute bottom-full right-0 mb-2 bg-[#2A1A16] bg-opacity-90 p-2 rounded"
-          style={{ display: 'none' }}
-        >
-          <input 
-            type="range" 
-            className="w-24 appearance-none h-2 bg-[#463730] rounded-lg outline-none slider"
-            min="0" 
-            max="1" 
-            step="0.1" 
-            value={state.volume} 
-            onChange={handleVolumeChange}
-          />
-        </div>
+        
+        <input 
+          type="range" 
+          className="w-16 h-1 appearance-none bg-[#463730] rounded-lg outline-none slider transform -rotate-90 origin-center"
+          min="0" 
+          max="1" 
+          step="0.1" 
+          value={state.volume} 
+          onChange={handleVolumeChange}
+        />
       </div>
-      
-      <button 
-        onClick={toggleMute}
-        className={`hover:text-[#D9BF77] transition-colors ${state.isMuted ? 'text-red-500' : 'text-[#463730]'}`} 
-        aria-label="Mute all sounds"
-      >
-        {state.isMuted ? '🔇' : '🔊'}
-      </button>
     </motion.div>
   );
 }

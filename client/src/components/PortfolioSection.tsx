@@ -41,11 +41,12 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
         height: 'auto'
       }}
     >
-      <div className="relative aspect-[4/3] flex items-center justify-center vintage-frame">
+      <div className="relative flex items-center justify-center vintage-frame" style={{ aspectRatio: 'auto' }}>
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover:grayscale-0"
+          className="max-w-full max-h-full object-contain transition-all duration-500 filter grayscale group-hover:grayscale-0"
+          style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '280px' }}
         />
         
         {hasAdditionalImages && (
