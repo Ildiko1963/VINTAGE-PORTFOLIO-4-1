@@ -131,8 +131,24 @@ export class MemStorage implements IStorage {
       {
         title: "Tervek",
         description: "Építészeti tervek és tervezési koncepciók",
-        imageUrl: "/static/tervek1.jpg",
-        additionalImages: null,
+        imageUrl: "/static/big_nappali_falnezet2.jpg",
+        additionalImages: [
+          "/static/big_emelet_falnezet.jpg",
+          "/static/big_emeletalaprajz.jpg",
+          "/static/big_emelethalo_falnezet.jpg",
+          "/static/big_fodszintialaprajz.jpg",
+          "/static/big_furdo.jpg",
+          "/static/big_halo_falnezet.jpg",
+          "/static/big_halo.jpg",
+          "/static/big_konyha.jpg",
+          "/static/big_nappali_falnezet.jpg",
+          "/static/big_nappali_falnezet3.jpg",
+          "/static/big_nappali.jpg",
+          "/static/big_furdo_montazs.jpg",
+          "/static/big_halo_montazs.jpg.jpg",
+          "/static/big_konyhamontazs.jpg.jpg",
+          "/static/big_nappali_montazs.jpg"
+        ],
         category: "Plans",
         projectLink: "#"
       },

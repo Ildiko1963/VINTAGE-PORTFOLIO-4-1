@@ -19,10 +19,9 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
   const hasAdditionalImages = additionalImages.length > 0;
   const allImages = hasAdditionalImages ? [item.imageUrl, ...additionalImages] : [item.imageUrl];
   
-  // Kisebb box méret csak a Publications projekthez
-  const isSmallerBoxProject = item.title === "Publications";
-  const boxMaxWidth = isSmallerBoxProject ? '240px' : '280px';
-  const boxMinWidth = isSmallerBoxProject ? '200px' : '240px';
+  // Minden doboz egyforma méret
+  const boxMaxWidth = '280px';
+  const boxMinWidth = '240px';
 
   // Portfolio projekt fordítások mappingelése
   const getPortfolioTranslation = (title: string, type: 'title' | 'desc') => {
