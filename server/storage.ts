@@ -155,9 +155,9 @@ export class MemStorage implements IStorage {
       {
         title: "Studió lakás",
         description: "luxus és kényelem 27m2-en",
-        imageUrl: "/static/studio1.jpg",
+        imageUrl: "/static/studio2.jpg",
         additionalImages: [
-          "/static/studio2.jpg",
+          "/static/studio1.jpg",
           "/static/studio3.jpg",
           "/static/studio4.jpg",
           "/static/studio5.jpg",
@@ -181,8 +181,9 @@ export class MemStorage implements IStorage {
       {
         title: "Indusztrális legénylakás",
         description: "Retro, ipari stilus a funkcionalitás jegyében",
-        imageUrl: "/static/indusztrial1.JPEG",
+        imageUrl: "/static/indusztrial10.JPG",
         additionalImages: [        
+          "/static/indusztrial1.JPEG",
           "/static/indusztrial2.JPG",
           "/static/indusztrial3.JPG",
           "/static/indusztrial4.JPG",
@@ -191,7 +192,6 @@ export class MemStorage implements IStorage {
           "/static/indusztrial7.JPG",
           "/static/indusztrial8.JPG",
           "/static/indusztrial9.jpg",
-          "/static/indusztrial10.JPG",
           "/static/indusztrial11.JPG",
           "/static/indusztrial12.JPG",
           "/static/indusztrial14.JPG",
