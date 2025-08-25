@@ -36,10 +36,13 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
             <motion.img 
               animate={{ 
                 opacity: [0.8, 1, 0.8],
+                y: [0, -3, 0, 3, 0],
+                x: [0, 2, 0, -2, 0]
               }}
               transition={{ 
                 repeat: Infinity, 
                 duration: 3,
+                ease: "easeInOut"
               }}
               src="/static/23358_ildiko.jpg" 
               alt="Portrait of interior designer" 

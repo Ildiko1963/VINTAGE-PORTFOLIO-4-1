@@ -32,9 +32,7 @@ export default function AboutSection() {
             >
               <motion.div 
                 animate={{ 
-                  opacity: [0.8, 1, 0.8],
-                  y: [0, -2, 0, 2, 0],
-                  x: [0, 1, 0, -1, 0]
+                  opacity: [0.8, 1, 0.8]
                 }}
                 transition={{ 
                   repeat: Infinity, 

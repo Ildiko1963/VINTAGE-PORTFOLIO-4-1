@@ -161,23 +161,26 @@ export function useNativeAudio(): AudioControls {
   // Toggle mute for both sounds
   const toggleMute = () => {
     const newMuteState = !state.isMuted;
+    console.log('Mute toggled:', state.isMuted, '->', newMuteState);
     setState(prev => ({ ...prev, isMuted: newMuteState }));
     
     if (projectorSoundRef.current) {
-      projectorSoundRef.current.volume = newMuteState ? 0 : state.volume;
       if (newMuteState) {
-        projectorSoundRef.current.pause();
-      } else if (state.isProjectorPlaying) {
-        projectorSoundRef.current.play().catch(console.error);
+        projectorSoundRef.current.muted = true;
+        projectorSoundRef.current.volume = 0;
+      } else {
+        projectorSoundRef.current.muted = false;
+        projectorSoundRef.current.volume = state.volume;
       }
     }
     
     if (backgroundMusicRef.current) {
-      backgroundMusicRef.current.volume = newMuteState ? 0 : state.volume * 0.8;
       if (newMuteState) {
-        backgroundMusicRef.current.pause();
-      } else if (state.isMusicPlaying) {
-        backgroundMusicRef.current.play().catch(console.error);
+        backgroundMusicRef.current.muted = true;
+        backgroundMusicRef.current.volume = 0;
+      } else {
+        backgroundMusicRef.current.muted = false;
+        backgroundMusicRef.current.volume = state.volume * 0.8;
       }
     }
   };
