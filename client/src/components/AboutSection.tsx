@@ -130,9 +130,10 @@ export default function AboutSection() {
                           {t('about.philosophy6')}
                         </p>
                         
-                        <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
-                          {t('about.philosophy7')}
-                        </p>
+                        <div 
+                          className="text-[#D9BF77] text-base mb-3 font-typewriter leading-relaxed p-3 bg-[#2A1A16] bg-opacity-30 rounded-lg border-l-4 border-[#D9BF77]"
+                          dangerouslySetInnerHTML={{ __html: t('about.philosophy7_highlighted') }}
+                        />
                         
                         <p className="text-[#D9BF77] text-base mb-3 font-typewriter">
                           {t('about.philosophy8')}
