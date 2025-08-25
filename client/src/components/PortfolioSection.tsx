@@ -41,12 +41,12 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
         height: 'auto'
       }}
     >
-      <div className="relative flex items-center justify-center vintage-frame" style={{ aspectRatio: 'auto' }}>
+      <div className="relative overflow-hidden vintage-frame" style={{ width: '100%', height: 'auto', minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
-          className="max-w-full max-h-full object-contain transition-all duration-500 filter grayscale group-hover:grayscale-0"
-          style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '280px' }}
+          className="w-full h-full object-cover transition-all duration-500 filter grayscale group-hover:grayscale-0"
+          style={{ maxWidth: '100%', maxHeight: '300px', objectFit: 'cover' }}
         />
         
         {hasAdditionalImages && (
