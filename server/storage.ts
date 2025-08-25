@@ -116,40 +116,69 @@ export class MemStorage implements IStorage {
   // Initialize data
   private initializePortfolioItems() {
     const items: InsertPortfolioItem[] = [
+      {title: "Publications",
+          description: "Publications",
+          imageUrl: "/static/big_otthon2.jpg",
+          additionalImages: [
+            "/static/big_otthonnap2.jpg",
+            "/static/big_otthonnap.jpg",
+            "/static/big_otthonfurdo.jpg"
+          ],
+          category: "publikációk",
+          projectLink: "#"
+
+      },
       {
-        title: "Publications",
-        description: "Publications",
-        imageUrl: "/static/big_otthon2.jpg",
-        additionalImages: [
-          "/static/big_otthonnap2.jpg",
-          "/static/big_otthonnap.jpg",
-          "/static/big_otthonfurdo.jpg"
-        ],
-        category: "publikációk",
+        title: "Commercial building with attic and apartment design",
+        description: "Contemporary interior design with warm family atmosphere",
+        imageUrl: "/static/big_haz.jpg",
+        additionalImages: null,
+        category: "Residential",
         projectLink: "#"
       },
       {
-        title: "Plans",
-        description: "Architectural plans and design concepts",
-        imageUrl: "/static/big_nappali_falnezet2.jpg",
+        title: "Ancient design",
+        description: "Classic interior design with sophisticated touches",
+        imageUrl: "/static/big_zebra.jpg",
+        additionalImages: null,
+        category: "Classic",
+        projectLink: "#"
+      },
+      {
+        title: "Historic Renovation",
+        description: "Transforming historic spaces with modern functionality",
+        imageUrl: "/static/big_laktanya.jpg",
         additionalImages: [
-          "/static/big_emeletalaprajz.jpg",
-          "/static/big_emelethalo_falnezet.jpg",
-          "/static/big_fodszintialaprajz.jpg",
-          "/static/big_furdo.jpg",
-          "/static/big_halo_falnezet.jpg",
-          "/static/big_halo.jpg",
-          "/static/big_konyha.jpg",
-          "/static/big_nappali_falnezet.jpg",
-          "/static/big_nappali_falnezet2.jpg",
-          "/static/big_nappali_falnezet3.jpg",
-          "/static/big_nappali.jpg",
-          "/static/big_furdo_montazs.jpg",
-          "/static/big_halo_montazs.jpg.jpg",
-          "/static/big_konyhamontazs.jpg.jpg",
-          "/static/big_nappali_montazs.jpg"
+          "/static/big_furdo2.jpg"
         ],
-        category: "Tervek",
+        category: "Renovation",
+        projectLink: "#"
+      },
+      {
+        title: "Provence Style",
+        description: "French countryside charm with rustic elegance",
+        imageUrl: "/static/big_myaraloterasz.jpg.jpg",
+        additionalImages: [
+          "/static/big_nyaralo2.jpg",
+          "/static/big_nyaralokert.jpg",
+          "/static/big_nyaralonappali.jpg"
+        ],
+        category: "Rustic",
+        projectLink: "#"
+      },
+      {
+        title: "Bold Design",
+        description: "Daring interior concepts with unique character",
+        imageUrl: "/static/big_nappali2.jpg",
+        additionalImages: [
+          "/static/big_nappali3.jpg", 
+          "/static/big_nappali4.jpg",
+          "/static/big_nappali6.jpg",
+          "/static/big_napteto.jpg",
+          "/static/big_rfurdo.jpg",
+          "/static/big_rkonyha.jpg"
+        ],
+        category: "Contemporary",
         projectLink: "#"
       },
       {
@@ -181,10 +210,9 @@ export class MemStorage implements IStorage {
       {
         title: "Indusztrális legénylakás",
         description: "Retro, ipari stilus a funkcionalitás jegyében",
-        imageUrl: "/static/indusztrial.JPEG",
-        additionalImages: [
-          "/static/indusztrial1.JPEG",
-          "/static/indusztrial2.JPG",
+        imageUrl: "/static/indusztrial1.JPEG",
+        additionalImages: [        
+"/static/indusztrial2.JPG",
           "/static/indusztrial3.JPG",
           "/static/indusztrial4.JPG",
           "/static/indusztrial5.JPG",
@@ -207,53 +235,9 @@ export class MemStorage implements IStorage {
           "/static/indusztrial19.JPG",
           "/static/indusztrial20.JPG",
           "/static/indusztrial21.JPG"
+"/static/indusztrial.JPEG"
         ],
         category: "Industrial",
-        projectLink: "#"
-      },
-      {
-        title: "Historic Renovation",
-        description: "Transforming historic spaces with modern functionality",
-        imageUrl: "/static/big_laktanya.jpg",
-        additionalImages: [
-          "/static/big_furdo2.jpg"
-        ],
-        category: "Renovation",
-        projectLink: "#"
-      },
-      {
-        title: "Bold Design",
-        description: "Daring interior concepts with unique character",
-        imageUrl: "/static/big_nappali2.jpg",
-        additionalImages: [
-          "/static/big_nappali3.jpg", 
-          "/static/big_nappali4.jpg",
-          "/static/big_nappali6.jpg",
-          "/static/big_napteto.jpg",
-          "/static/big_rfurdo.jpg",
-          "/static/big_rkonyha.jpg"
-        ],
-        category: "Contemporary",
-        projectLink: "#"
-      },
-      {
-        title: "Provence Style",
-        description: "French countryside charm with rustic elegance",
-        imageUrl: "/static/big_myaraloterasz.jpg.jpg",
-        additionalImages: [
-          "/static/big_nyaralo2.jpg",
-          "/static/big_nyaralokert.jpg",
-          "/static/big_nyaralonappali.jpg"
-        ],
-        category: "Rustic",
-        projectLink: "#"
-      },
-      {
-        title: "Commercial building with attic and apartment design",
-        description: "Contemporary interior design with warm family atmosphere",
-        imageUrl: "/static/big_haz.jpg",
-        additionalImages: null,
-        category: "Residential",
         projectLink: "#"
       }
     ];
