@@ -83,12 +83,21 @@ export function useNativeAudio(): AudioControls {
     
     try {
       if (newState) {
+        // Stop background music first
+        if (backgroundMusicRef.current && state.isMusicPlaying) {
+          backgroundMusicRef.current.pause();
+          setState(prev => ({ ...prev, isMusicPlaying: false }));
+          console.log('Background music stopped for projector');
+        }
+        
+        // Start projector sound
         projectorSoundRef.current.volume = state.isMuted ? 0 : state.volume;
+        projectorSoundRef.current.currentTime = 0; // Reset to beginning
         const playPromise = projectorSoundRef.current.play();
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
-              console.log('Projector sound started successfully');
+              console.log('Projector sound (zenegép) started successfully');
               setState(prev => ({ ...prev, isProjectorPlaying: true }));
             })
             .catch(err => {
@@ -99,6 +108,7 @@ export function useNativeAudio(): AudioControls {
       } else {
         projectorSoundRef.current.pause();
         setState(prev => ({ ...prev, isProjectorPlaying: false }));
+        console.log('Projector sound stopped');
       }
       
     } catch (error) {
@@ -164,24 +174,15 @@ export function useNativeAudio(): AudioControls {
     console.log('Mute toggled:', state.isMuted, '->', newMuteState);
     setState(prev => ({ ...prev, isMuted: newMuteState }));
     
+    // Simple volume-based mute that works on all devices
     if (projectorSoundRef.current) {
-      if (newMuteState) {
-        projectorSoundRef.current.muted = true;
-        projectorSoundRef.current.volume = 0;
-      } else {
-        projectorSoundRef.current.muted = false;
-        projectorSoundRef.current.volume = state.volume;
-      }
+      projectorSoundRef.current.volume = newMuteState ? 0 : state.volume;
+      console.log('Projector volume set to:', projectorSoundRef.current.volume);
     }
     
     if (backgroundMusicRef.current) {
-      if (newMuteState) {
-        backgroundMusicRef.current.muted = true;
-        backgroundMusicRef.current.volume = 0;
-      } else {
-        backgroundMusicRef.current.muted = false;
-        backgroundMusicRef.current.volume = state.volume * 0.8;
-      }
+      backgroundMusicRef.current.volume = newMuteState ? 0 : (state.volume * 0.8);
+      console.log('Background music volume set to:', backgroundMusicRef.current.volume);
     }
   };
 
