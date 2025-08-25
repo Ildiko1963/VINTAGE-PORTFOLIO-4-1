@@ -32,16 +32,16 @@ function PortfolioItemCard({ item, index, t, totalItems }: PortfolioItemCardProp
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: 0.1 * index }}
       onClick={handleCardClick}
-      className={`group relative overflow-visible mt-8 cursor-pointer`}
+      className={`group relative overflow-visible mt-8 cursor-pointer w-full sm:w-auto`}
       style={{ 
         zIndex: 10,
         width: '100%',
         maxWidth: '280px',
-        minWidth: '280px',
+        minWidth: '240px',
         height: 'auto'
       }}
     >
-      <div className="relative h-48 flex items-center justify-center vintage-frame">
+      <div className="relative aspect-[4/3] flex items-center justify-center vintage-frame">
         <img 
           src={allImages[selectedImage]} 
           alt={item.title} 
@@ -106,13 +106,13 @@ export default function PortfolioSection() {
         <div className="py-8 flex justify-center">
           <div className="w-full max-w-4xl">
             {isLoading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 mb-12 justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14 mb-12 justify-items-center px-2 sm:px-0">
                 {[...Array(6)].map((_, index) => (
-                  <div key={index} className="bg-[#2A1A16] bg-opacity-30 rounded-md h-48 animate-pulse"></div>
+                  <div key={index} className="bg-[#2A1A16] bg-opacity-30 rounded-md aspect-[4/3] animate-pulse w-full max-w-[280px]"></div>
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 mb-12 justify-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14 mb-12 justify-items-center px-2 sm:px-0">
                 {(portfolioItems || []).map((item: PortfolioItem, index: number) => (
                   <PortfolioItemCard key={item.id} item={item} index={index} t={t} totalItems={(portfolioItems || []).length} />
                 ))}

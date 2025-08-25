@@ -59,6 +59,10 @@
     50% { transform: translateY(-5px) translateX(2px); }
     75% { transform: translateY(-2px) translateX(-1px); }
   }
+
+  .animate-subtle-float {
+    animation: subtle-float 4s ease-in-out infinite;
+  }
 }
 
 /* Typewriter animation for text */
