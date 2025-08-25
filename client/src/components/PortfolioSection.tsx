@@ -89,7 +89,7 @@ export default function PortfolioSection() {
   });
   
   return (
-    <section id="portfolio" className="py-8 bg-transparent text-[#D9BF77] relative">
+    <section id="portfolio" className="pt-4 pb-8 bg-transparent text-[#D9BF77] relative">
       
       <div className="container mx-auto px-4">
         <motion.h2 
