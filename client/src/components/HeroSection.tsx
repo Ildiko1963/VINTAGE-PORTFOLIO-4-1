@@ -35,14 +35,18 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           >
             <motion.img 
               animate={{ 
+                scale: [1, 1.05, 1], 
                 opacity: [0.8, 1, 0.8],
-                y: [0, -3, 0, 3, 0],
-                x: [0, 2, 0, -2, 0]
+                rotate: [0, 2, -2, 0],
+                x: [0, 2, -2, 0],
+                y: [0, -1, 1, 0]
               }}
               transition={{ 
-                repeat: Infinity, 
-                duration: 3,
-                ease: "easeInOut"
+                scale: { delay: 0.2, duration: 0.5 },
+                opacity: { delay: 0.8, repeat: Infinity, duration: 3, ease: "easeInOut" },
+                rotate: { delay: 1, repeat: Infinity, duration: 5, ease: "easeInOut" },
+                x: { delay: 1.5, repeat: Infinity, duration: 4, ease: "easeInOut" },
+                y: { delay: 2, repeat: Infinity, duration: 6, ease: "easeInOut" }
               }}
               src="/static/23358_ildiko.jpg" 
               alt="Portrait of interior designer" 
