@@ -98,7 +98,7 @@ export default function PortfolioDetail() {
                 <img
                   src={allImages[selectedImage]}
                   alt={portfolioItem.title}
-                  className="w-full h-96 object-cover mx-auto block cursor-pointer transition-all duration-500"
+                  className="w-full h-auto object-contain mx-auto block cursor-pointer transition-all duration-500"
                   onClick={() => setIsFullscreen(true)}
                 />
                 <button
@@ -150,7 +150,7 @@ export default function PortfolioDetail() {
                         <img
                           src={image}
                           alt={`Image ${index + 1}`}
-                          className="w-full h-full object-cover transition-all duration-300"
+                          className="w-full h-full object-contain transition-all duration-300"
                         />
                       </button>
                     ))}
