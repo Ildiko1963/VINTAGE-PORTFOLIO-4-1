@@ -1,0 +1,9 @@
+run = "npm run dev"
+
+[deployment]
+build = ["sh", "-c", "vite build --config vite.deploy.config.ts && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist"]
+run = ["sh", "-c", "cd dist && node index.js"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
