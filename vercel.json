@@ -1,7 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cp package.vercel.json package.json && cp vite.config.vercel.ts vite.config.ts && npm install && npm run build",
   "outputDirectory": "dist/public",
-  "devCommand": "npm run dev",
   "installCommand": "npm install",
   "rewrites": [
     {
