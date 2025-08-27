@@ -52,7 +52,7 @@
     "drizzle-orm": "^0.44.5",
     "drizzle-zod": "^0.8.3",
     "esbuild": "^0.25.0",
-    "express": "^5.1.0",
+    "express": "^4.19.2",
     "framer-motion": "^11.13.1",
     "lucide-react": "^0.542.0",
     "postcss": "^8.4.47",
