@@ -1,0 +1,35 @@
+
+C:\Users\ASUS>git init
+Initialized empty Git repository in C:/Users/ASUS/.git/
+
+C:\Users\ASUS>git add .
+warning: could not open directory 'AppData/Local/Application Data/': Permission denied
+warning: could not open directory 'AppData/Local/ElevatedDiagnostics/': Permission denied
+warning: could not open directory 'AppData/Local/History/': Permission denied
+warning: could not open directory 'AppData/Local/Microsoft/Windows/INetCache/Content.IE5/': Permission denied
+warning: could not open directory 'AppData/Local/Microsoft/Windows/INetCache/Low/Content.IE5/': Permission denied
+warning: could not open directory 'AppData/Local/Microsoft/Windows/Temporary Internet Files/': Permission denied
+warning: could not open directory 'AppData/Local/Temporary Internet Files/': Permission denied
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Documents/Képek/': Permission denied
+warning: could not open directory 'Documents/Videók/': Permission denied
+warning: could not open directory 'Documents/Zene/': Permission denied
+warning: could not open directory 'Dokumentumok/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'Sablonok/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: in the working copy of '.gnutls/known_hosts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'AppData/Local/AMD/CN/cmdb.blb', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'AppData/Local/AMD/CN/gallery.blb', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'AppData/Local/AMD/CN/gmdb.blb', LF will be replaced by CRLF the next time Git touches it
+error: open("AppData/Local/AMD/DxCache/0013e8e53e4a4fccdae384e17a1727d1cbfa4e881fa3a647.bin"): Permission denied
+error: unable to index file 'AppData/Local/AMD/DxCache/0013e8e53e4a4fccdae384e17a1727d1cbfa4e881fa3a647.bin'
+fatal: adding files failed
+
+C:\Users\ASUS>git commit -m "Initial commit"
+Author identity unknown
