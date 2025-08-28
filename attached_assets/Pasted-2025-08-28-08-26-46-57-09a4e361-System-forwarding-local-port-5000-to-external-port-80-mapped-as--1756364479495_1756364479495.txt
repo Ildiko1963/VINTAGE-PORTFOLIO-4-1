@@ -1,0 +1,120 @@
+2025-08-28 08:26:46.57
+09a4e361
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:26:47.89
+09a4e361
+User
+> rest-express@1.0.0 start
+2025-08-28 08:26:47.89
+09a4e361
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:26:48.87
+09a4e361
+User
+6:26:48 AM [express] serving on port 5000
+2025-08-28 08:27:02.28
+657cb9d8
+System
+system: received signal terminated
+2025-08-28 08:28:41.55
+3c35fa15
+System
+starting up user application
+2025-08-28 08:28:41.77
+3c35fa15
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:28:43.23
+3c35fa15
+User
+> rest-express@1.0.0 start
+2025-08-28 08:28:43.23
+3c35fa15
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:28:44.12
+3c35fa15
+User
+6:28:44 AM [express] serving on port 5000
+2025-08-28 08:31:59.10
+09a4e361
+System
+system: received signal terminated
+2025-08-28 08:35:09.71
+cd4eb86d
+System
+starting up user application
+2025-08-28 08:35:09.92
+cd4eb86d
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:35:11.56
+cd4eb86d
+User
+> rest-express@1.0.0 start
+2025-08-28 08:35:11.56
+cd4eb86d
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:35:12.61
+cd4eb86d
+User
+6:35:12 AM [express] serving on port 5000
+2025-08-28 08:36:20.10
+3c35fa15
+System
+system: received signal terminated
+2025-08-28 08:41:45.53
+aa4b64e1
+System
+starting up user application
+2025-08-28 08:41:45.93
+aa4b64e1
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:41:48.90
+aa4b64e1
+User
+> rest-express@1.0.0 start
+2025-08-28 08:41:48.90
+aa4b64e1
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:41:50.23
+aa4b64e1
+User
+6:41:50 AM [express] serving on port 5000
+2025-08-28 08:42:59.86
+cd4eb86d
+System
+system: received signal terminated
+2025-08-28 08:57:00.35
+aa4b64e1
+System
+system: received signal terminated
+2025-08-28 08:58:03.84
+05cb0ffd
+System
+starting up user application
+2025-08-28 08:58:04.07
+05cb0ffd
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:58:05.80
+05cb0ffd
+User
+> rest-express@1.0.0 start
+2025-08-28 08:58:05.80
+05cb0ffd
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:58:06.94
+05cb0ffd
+User
+6:58:06 AM [express] serving on port 5000
+
+Wrap
+
+Colors
