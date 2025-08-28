@@ -1,0 +1,120 @@
+2025-08-27 21:34:06.87
+521345ac
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-27 21:34:08.34
+521345ac
+User
+> rest-express@1.0.0 start
+2025-08-27 21:34:08.34
+521345ac
+User
+> NODE_ENV=production node dist/index.js
+2025-08-27 21:34:09.41
+521345ac
+User
+7:34:09 PM [express] serving on port 5000
+2025-08-27 21:55:27.85
+521345ac
+System
+system: received signal terminated
+2025-08-27 22:12:07.14
+521345ac
+System
+starting up user application
+2025-08-27 22:12:07.27
+521345ac
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-27 22:12:08.17
+521345ac
+User
+> rest-express@1.0.0 start
+2025-08-27 22:12:08.17
+521345ac
+User
+> NODE_ENV=production node dist/index.js
+2025-08-27 22:12:08.98
+521345ac
+User
+8:12:08 PM [express] serving on port 5000
+2025-08-27 22:27:17.85
+521345ac
+System
+system: received signal terminated
+2025-08-28 08:26:46.38
+09a4e361
+System
+starting up user application
+2025-08-28 08:26:46.57
+09a4e361
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:26:47.89
+09a4e361
+User
+> rest-express@1.0.0 start
+2025-08-28 08:26:47.89
+09a4e361
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:26:48.87
+09a4e361
+User
+6:26:48 AM [express] serving on port 5000
+2025-08-28 08:27:02.28
+657cb9d8
+System
+system: received signal terminated
+2025-08-28 08:28:41.55
+3c35fa15
+System
+starting up user application
+2025-08-28 08:28:41.77
+3c35fa15
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:28:43.23
+3c35fa15
+User
+> rest-express@1.0.0 start
+2025-08-28 08:28:43.23
+3c35fa15
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:28:44.12
+3c35fa15
+User
+6:28:44 AM [express] serving on port 5000
+2025-08-28 08:31:59.10
+09a4e361
+System
+system: received signal terminated
+2025-08-28 08:35:09.71
+cd4eb86d
+System
+starting up user application
+2025-08-28 08:35:09.92
+cd4eb86d
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-08-28 08:35:11.56
+cd4eb86d
+User
+> rest-express@1.0.0 start
+2025-08-28 08:35:11.56
+cd4eb86d
+User
+> NODE_ENV=production node dist/index.js
+2025-08-28 08:35:12.61
+cd4eb86d
+User
+6:35:12 AM [express] serving on port 5000
+2025-08-28 08:36:20.10
+3c35fa15
+System
+system: received signal terminated
+
+Wrap
+
+Colors
