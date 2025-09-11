@@ -1,0 +1,32 @@
+GitHub-ra feltöltendő fájlok listája - Ildikostyle Portfolio
+
+KÖTELEZŐ FÁJLOK:
+=================
+
+📁 dist/public/ mappából MINDEN fájl:
+- index.html (Google Analytics-szal)
+- assets/ mappa (CSS, JS fájlok)
+
+📁 static/ mappából MINDEN fájl:
+- Összes kép fájl (.jpg, .png)
+- Font fájlok (.ttf)
+
+TOVÁBBI FONTOSAK:
+=================
+- package.json (ha kell)
+- README.md (opcionális)
+
+FONTOS:
+- A dist/public/index.html tartalmazza a helyes Google Analytics kódot
+- Az összes statikus asset (képek, fontok) benne van
+- A meta tag-ek helyesen vannak beállítva
+
+GITHUB PAGES BEÁLLÍTÁS:
+======================
+1. Repository Settings → Pages
+2. Source: Deploy from a branch
+3. Branch: main
+4. Folder: / (root)
+5. Save
+
+URL LESZ: https://[felhasznalonev].github.io/ildikostyle-portfolio
