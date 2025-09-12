@@ -3,62 +3,77 @@ import { Section } from '@/lib/types';
 
 interface FooterProps {
   sections: Section[];
-  onNavigate: (id: string) => void;
+  onNavigate: (sectionId: string) => void;
 }
 
 export default function Footer({ sections, onNavigate }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-  
   return (
-    <footer className="bg-transparent text-[#D9BF77] py-8">
-      <div>
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-6 md:mb-0 text-center md:text-left"
-            >
-              
-            </motion.div>
-            
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-6 md:mb-0"
-            >
-              <ul className="flex space-x-6">
-                {sections.map((section) => (
-                  <li key={section.id}>
-                    <button 
-                      onClick={() => onNavigate(section.id)} 
-                      className="hover:text-[#D9BF77] transition-colors font-typewriter"
-                    >
-                      {section.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-          
-          <hr className="my-6 border-transparent" />
-          
-          <motion.div 
-            initial={{ y: 20, opacity: 0 }}
+    <footer className="bg-[#463730] text-[#F2E8D5] py-12 relative">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
           >
-            <p className="font-typewriter">&copy; {currentYear} All rights reserved.</p>
-            <p className="text-sm mt-2 text-[#C8B28E] font-typewriter">Crafting beautiful interior spaces with timeless elegance.</p>
+            <h3 
+              className="text-2xl font-bold text-[#D9BF77] mb-4"
+              style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif' }}
+            >
+              Ildikostyle
+            </h3>
+            <p className="text-[#C8B28E] leading-relaxed font-typewriter">
+              Kreatív megoldások vintage stílusban. 
+              Minden projekt egyedi történetet mesél el.
+            </p>
+          </motion.div>
+          
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h4 className="text-lg font-medium mb-4 text-[#D9BF77] font-typewriter">Navigáció</h4>
+            <ul className="space-y-2 text-[#C8B28E]">
+              {sections.map((section) => (
+                <li key={section.id}>
+                  <button
+                    onClick={() => onNavigate(section.id)}
+                    className="hover:text-[#D9BF77] transition-colors duration-300 font-typewriter"
+                  >
+                    {section.title}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h4 className="text-lg font-medium mb-4 text-[#D9BF77] font-typewriter">Kapcsolat</h4>
+            <ul className="space-y-2 text-[#C8B28E] font-typewriter">
+              <li>info@ildikostyle.hu</li>
+              <li>+36 1 234 5678</li>
+              <li>1052 Budapest, Váci utca 123.</li>
+            </ul>
           </motion.div>
         </div>
+        
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="border-t border-[#D9BF77]/30 mt-8 pt-8 text-center text-[#C8B28E]"
+        >
+          <p className="font-typewriter">&copy; 2025 Ildikostyle Portfolio. Minden jog fenntartva.</p>
+        </motion.div>
       </div>
     </footer>
   );

@@ -1,11 +1,15 @@
-import { pgTable, text, serial, integer, boolean } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+import { sql } from "drizzle-orm";
+import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
-export const users = pgTable("users", {
+export const services = pgTable("services", {
   id: serial("id").primaryKey(),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  features: jsonb("features").$type<string[]>().default(sql`'[]'::jsonb`),
+  icon: text("icon").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const portfolioItems = pgTable("portfolio_items", {
@@ -13,46 +17,42 @@ export const portfolioItems = pgTable("portfolio_items", {
   title: text("title").notNull(),
   description: text("description").notNull(),
   imageUrl: text("image_url").notNull(),
-  additionalImages: text("additional_images").array(),
+  additionalImages: jsonb("additional_images").$type<string[]>().default(sql`'[]'::jsonb`),
   category: text("category").notNull(),
-  projectLink: text("project_link"),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const services = pgTable("services", {
+export const contactForms = pgTable("contact_forms", {
   id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  icon: text("icon").notNull(),
-  features: text("features").array().notNull(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  subject: text("subject").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+// Zod schemas for validation
+export const insertServiceSchema = createInsertSchema(services).omit({
+  id: true,
+  createdAt: true,
 });
 
 export const insertPortfolioItemSchema = createInsertSchema(portfolioItems).omit({
   id: true,
+  createdAt: true,
 });
 
-export const insertServiceSchema = createInsertSchema(services).omit({
+export const insertContactFormSchema = createInsertSchema(contactForms).omit({
   id: true,
+  createdAt: true,
 });
 
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
-
-export type InsertPortfolioItem = z.infer<typeof insertPortfolioItemSchema>;
-export type PortfolioItem = typeof portfolioItems.$inferSelect;
-
-export type InsertService = z.infer<typeof insertServiceSchema>;
+// Types
 export type Service = typeof services.$inferSelect;
+export type InsertService = z.infer<typeof insertServiceSchema>;
 
-export const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(1, "Please select a subject"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+export type PortfolioItem = typeof portfolioItems.$inferSelect;
+export type InsertPortfolioItem = z.infer<typeof insertPortfolioItemSchema>;
 
-export type ContactForm = z.infer<typeof contactFormSchema>;
+export type ContactForm = typeof contactForms.$inferSelect;
+export type InsertContactForm = z.infer<typeof insertContactFormSchema>;

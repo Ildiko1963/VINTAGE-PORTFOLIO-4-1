@@ -1,127 +1,104 @@
-import type { Express, Request, Response } from "express";
-import { createServer, type Server } from "http";
+import { Router } from "express";
+import { z } from "zod";
 import { storage } from "./storage";
-import { contactFormSchema, insertPortfolioItemSchema, insertServiceSchema } from "@shared/schema";
-import { fromZodError } from "zod-validation-error";
-import express from "express";
-import path from "path";
+import { insertServiceSchema, insertPortfolioItemSchema, insertContactFormSchema } from "@shared/schema";
 
-export async function registerRoutes(app: Express): Promise<Server> {
-  // Serve static files from public directory
-  app.use('/static', express.static(path.join(process.cwd(), 'public/static')));
-  app.use('/images', express.static(path.join(process.cwd(), 'public/images')));
-  app.use('/audio', express.static(path.join(process.cwd(), 'public/audio')));
-  // prefix all routes with /api
-  
-  // GET portfolio items
-  app.get("/api/portfolio", async (req: Request, res: Response) => {
-    try {
-      const portfolioItems = await storage.getPortfolioItems();
-      res.json(portfolioItems);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch portfolio items" });
-    }
-  });
-  
-  // GET single portfolio item
-  app.get("/api/portfolio/:id", async (req: Request, res: Response) => {
-    try {
-      const id = parseInt(req.params.id);
-      if (isNaN(id)) {
-        return res.status(400).json({ message: "Invalid ID format" });
-      }
-      
-      const portfolioItem = await storage.getPortfolioItem(id);
-      if (!portfolioItem) {
-        return res.status(404).json({ message: "Portfolio item not found" });
-      }
-      
-      res.json(portfolioItem);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch portfolio item" });
-    }
-  });
-  
-  // POST new portfolio item
-  app.post("/api/portfolio", async (req: Request, res: Response) => {
-    try {
-      const result = insertPortfolioItemSchema.safeParse(req.body);
-      
-      if (!result.success) {
-        const validationError = fromZodError(result.error);
-        return res.status(400).json({ message: validationError.message });
-      }
-      
-      const newItem = await storage.createPortfolioItem(result.data);
-      res.status(201).json(newItem);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to create portfolio item" });
-    }
-  });
-  
-  // GET services
-  app.get("/api/services", async (req: Request, res: Response) => {
-    try {
-      const services = await storage.getServices();
-      res.json(services);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch services" });
-    }
-  });
-  
-  // GET single service
-  app.get("/api/services/:id", async (req: Request, res: Response) => {
-    try {
-      const id = parseInt(req.params.id);
-      if (isNaN(id)) {
-        return res.status(400).json({ message: "Invalid ID format" });
-      }
-      
-      const service = await storage.getService(id);
-      if (!service) {
-        return res.status(404).json({ message: "Service not found" });
-      }
-      
-      res.json(service);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch service" });
-    }
-  });
-  
-  // POST new service
-  app.post("/api/services", async (req: Request, res: Response) => {
-    try {
-      const result = insertServiceSchema.safeParse(req.body);
-      
-      if (!result.success) {
-        const validationError = fromZodError(result.error);
-        return res.status(400).json({ message: validationError.message });
-      }
-      
-      const newService = await storage.createService(result.data);
-      res.status(201).json(newService);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to create service" });
-    }
-  });
-  
-  // POST contact form submission
-  app.post("/api/contact", async (req: Request, res: Response) => {
-    try {
-      const result = contactFormSchema.safeParse(req.body);
-      
-      if (!result.success) {
-        const validationError = fromZodError(result.error);
-        return res.status(400).json({ message: validationError.message });
-      }
-      
-      await storage.submitContactForm(result.data);
-      res.status(200).json({ message: "Contact form submitted successfully" });
-    } catch (error) {
-      res.status(500).json({ message: "Failed to submit contact form" });
-    }
-  });
+const router = Router();
 
-  const httpServer = createServer(app);
-  return httpServer;
-}
+// Services routes
+router.get("/api/services", async (req, res) => {
+  try {
+    const services = await storage.getServices();
+    res.json(services);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch services" });
+  }
+});
+
+router.get("/api/services/:id", async (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+      return res.status(400).json({ error: "Invalid service ID" });
+    }
+
+    const service = await storage.getService(id);
+    if (!service) {
+      return res.status(404).json({ error: "Service not found" });
+    }
+
+    res.json(service);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch service" });
+  }
+});
+
+router.post("/api/services", async (req, res) => {
+  try {
+    const validatedData = insertServiceSchema.parse(req.body);
+    const newService = await storage.createService(validatedData);
+    res.status(201).json(newService);
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: "Validation error", details: error.errors });
+    }
+    res.status(500).json({ error: "Failed to create service" });
+  }
+});
+
+// Portfolio routes
+router.get("/api/portfolio", async (req, res) => {
+  try {
+    const portfolioItems = await storage.getPortfolioItems();
+    res.json(portfolioItems);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch portfolio items" });
+  }
+});
+
+router.get("/api/portfolio/:id", async (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) {
+      return res.status(400).json({ error: "Invalid portfolio item ID" });
+    }
+
+    const item = await storage.getPortfolioItem(id);
+    if (!item) {
+      return res.status(404).json({ error: "Portfolio item not found" });
+    }
+
+    res.json(item);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch portfolio item" });
+  }
+});
+
+router.post("/api/portfolio", async (req, res) => {
+  try {
+    const validatedData = insertPortfolioItemSchema.parse(req.body);
+    const newItem = await storage.createPortfolioItem(validatedData);
+    res.status(201).json(newItem);
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: "Validation error", details: error.errors });
+    }
+    res.status(500).json({ error: "Failed to create portfolio item" });
+  }
+});
+
+// Contact form routes
+router.post("/api/contact", async (req, res) => {
+  try {
+    const validatedData = insertContactFormSchema.parse(req.body);
+    const newForm = await storage.createContactForm(validatedData);
+    res.status(201).json({ message: "Message sent successfully", id: newForm.id });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: "Validation error", details: error.errors });
+    }
+    res.status(500).json({ error: "Failed to send message" });
+  }
+});
+
+export default router;

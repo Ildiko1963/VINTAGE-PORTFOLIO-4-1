@@ -1,24 +1,37 @@
-import React from 'react';
-import { useLocation } from 'wouter';
+import { useEffect } from 'react';
 
-/**
- * Dynamic background component that shows different backgrounds 
- * based on the current route
- */
 export default function Background() {
-  const [location] = useLocation();
-  
-  return (
-    <div 
-      className="absolute top-0 left-0 w-full h-full z-[-1]"
-      style={{
-        minHeight: '200vh',
-        backgroundImage: "url('/static/clean_filmstrip_hatter.png')",
-        backgroundSize: 'auto',
-        backgroundPosition: 'center top',
-        backgroundRepeat: 'repeat',
-        backgroundAttachment: 'scroll'
-      }}
-    />
-  );
+  useEffect(() => {
+    // Add background styles to body
+    const style = document.createElement('style');
+    style.textContent = `
+      body {
+        background-image: url('/filmszalag_hatter.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+      }
+      
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(42, 26, 22, 0.7);
+        z-index: -1;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
+  return null;
 }
