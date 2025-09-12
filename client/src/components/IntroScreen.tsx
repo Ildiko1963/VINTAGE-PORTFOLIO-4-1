@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AudioControls } from '@/lib/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface IntroScreenProps {
   audioControls: AudioControls;
@@ -8,76 +9,210 @@ interface IntroScreenProps {
 }
 
 export default function IntroScreen({ audioControls, onComplete }: IntroScreenProps) {
-  const [showButton, setShowButton] = useState(false);
-
+  const [progress, setProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const [audioPreloaded, setAudioPreloaded] = useState(false);
+  const instrumentalRef = useRef<HTMLAudioElement | null>(null);
+  const { t } = useLanguage();
+  
+  // Pre-initialize audio when component mounts to ensure proper loading
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    console.log('Preparing audio resources...');
+    
+    // Initialize instrumental music for loading screen
+    const instrumental = new Audio('/audio/instrumental.mp3.mp3');
+    instrumental.loop = true;
+    instrumental.volume = 0.7;
+    instrumentalRef.current = instrumental;
+    
+    // Try to play instrumental music immediately (some browsers allow it)
+    const playInstrumental = async () => {
+      try {
+        await instrumental.play();
+        console.log('Instrumental music started during loading');
+      } catch (error) {
+        console.log('Instrumental music will start after user interaction');
+      }
+    };
+    
+    playInstrumental();
+    
+    return () => {
+      if (instrumentalRef.current) {
+        instrumentalRef.current.pause();
+        instrumentalRef.current.src = '';
+      }
+    };
   }, []);
-
-  const handleStart = () => {
+  
+  // Simulate loading progress
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        const newProgress = prev + 5;
+        if (newProgress >= 100) {
+          clearInterval(interval);
+          // Mark audio as ready to be initialized
+          setAudioPreloaded(true);
+        }
+        return newProgress;
+      });
+    }, 200);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  const handleEnterSite = useCallback(() => {
+    // Stop instrumental music
+    if (instrumentalRef.current) {
+      instrumentalRef.current.pause();
+      console.log('Instrumental music stopped');
+      audioControls.initializeAudio();
+    }
+    
+    // Mark site as entering
+    setIsVisible(false);
+    
+    // Play a test sound to break audio restrictions
+    const unlockAudio = () => {
+      // Create a silent audio element
+      const unlockElement = new Audio();
+      unlockElement.play().then(() => {
+        console.log('Audio playback unlocked successfully');
+      }).catch(err => {
+        console.log('Audio unlock attempted');
+      });
+      
+      // Also create AudioContext to unlock audio on iOS/Safari
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioContext) {
+        const audioContext = new AudioContext();
+        // Resume the audio context (required by some browsers like Chrome)
+        if (audioContext.state === 'suspended') {
+          audioContext.resume();
+        }
+        
+        // Create and play a silent buffer to unlock the audio
+        const buffer = audioContext.createBuffer(1, 1, 22050);
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+        
+        console.log('Audio context unlocked');
+      }
+    };
+    
+    // Unlock audio on all browsers
+    unlockAudio();
+    
+    // Initialize main audio system (browser requires user interaction)
+    console.log('Starting audio initialization...');
     audioControls.initializeAudio();
-    onComplete();
-  };
-
+    
+    // Auto-start the background music (zenegép.mp3) after site loads
+    setTimeout(() => {
+      console.log('Starting background music...');
+      audioControls.toggleMusic();
+    }, 500);
+    
+    // Try again if first attempt fails
+    setTimeout(() => {
+      if (!audioControls.state.isMusicPlaying) {
+        console.log('Retrying background music...');
+        audioControls.toggleMusic();
+      }
+    }, 2000);
+    
+    // Notify parent that intro is complete
+    setTimeout(() => {
+      onComplete();
+    }, 1000);
+  }, [audioControls, onComplete]);
+  
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-[#2A1A16] text-[#F2E8D5]"
-        style={{
-          backgroundImage: 'url(/filmszalag_hatter.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="text-center relative z-10">
-          <motion.h1
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-4xl md:text-6xl font-bold text-[#D9BF77] mb-4"
-            style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', letterSpacing: '0.1em' }}
-          >
-            Vintage Film Portfolio
-          </motion.h1>
-          
-          <motion.p
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-xl md:text-2xl text-[#C8B28E] mb-8 font-typewriter"
-          >
-            Loading the projector...
-          </motion.p>
-          
-          <AnimatePresence>
-            {showButton && (
-              <motion.button
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -50, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                onClick={handleStart}
-                className="px-8 py-4 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#C8B28E] transition-colors shadow-lg border-2 border-[#D9BF77]"
-              >
-                Initialize Audio
-              </motion.button>
-            )}
-          </AnimatePresence>
-        </div>
-        
-        <div 
-          className="absolute inset-0 bg-[#2A1A16] opacity-60"
-          style={{ zIndex: 1 }}
-        />
-      </motion.div>
+      {isVisible && (
+        <motion.div 
+          className="fixed inset-0 z-50 flex items-center justify-center film-frame"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            backgroundImage: "url('/static/clean_filmstrip_hatter.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="text-center">
+            <div className="mb-8">
+              <motion.img 
+                src="/static/23358_ildiko.jpg" 
+                alt="Portrait of interior designer" 
+                className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ 
+                  scale: [1, 1.05, 1], 
+                  opacity: [0.8, 1, 0.8],
+                  rotate: [0, 2, -2, 0],
+                  x: [0, 2, -2, 0],
+                  y: [0, -1, 1, 0]
+                }}
+                transition={{ 
+                  scale: { delay: 0.2, duration: 0.5 },
+                  opacity: { delay: 0.8, repeat: Infinity, duration: 3, ease: "easeInOut" },
+                  rotate: { delay: 1, repeat: Infinity, duration: 5, ease: "easeInOut" },
+                  x: { delay: 1.5, repeat: Infinity, duration: 4, ease: "easeInOut" },
+                  y: { delay: 2, repeat: Infinity, duration: 6, ease: "easeInOut" }
+                }}
+              />
+            </div>
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="mb-4 relative"
+            >
+              <h1 className="text-3xl md:text-5xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>
+                Ildikó Style
+              </h1>
+              <p className="text-2xl md:text-3xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-20px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
+            </motion.div>
+            <motion.p 
+              className="text-[#D9BF77] text-lg mb-8 font-typewriter"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
+              Loading the projector...
+            </motion.p>
+            <motion.div 
+              className="w-64 h-4 mx-auto bg-[#2A1A16] rounded-full overflow-hidden"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: "16rem", opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
+              <motion.div 
+                className="h-full bg-[#D9BF77] rounded-full"
+                initial={{ width: "0%" }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.2 }}
+              />
+            </motion.div>
+            <motion.button
+              id="enter-site"
+              className="mt-8 px-6 py-3 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] transition-colors"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: progress >= 100 ? 1 : 0 }}
+              transition={{ duration: 0.5 }}
+              onClick={handleEnterSite}
+              disabled={progress < 100}
+            >
+{t('intro.startProjection')}
+            </motion.button>
+          </div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 }

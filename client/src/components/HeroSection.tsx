@@ -1,55 +1,162 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeroSectionProps {
-  onNavigate: (sectionId: string) => void;
+  onNavigate: (id: string) => void;
 }
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
+  const controls = useAnimation();
+  const textRef = useRef<HTMLParagraphElement>(null);
   const { t } = useLanguage();
-
+  
+  // Typing effect
+  useEffect(() => {
+    const startTypingAnimation = async () => {
+      if (textRef.current) {
+        await controls.start({ width: '100%', transition: { duration: 3.5, ease: "easeInOut" } });
+      }
+    };
+    
+    startTypingAnimation();
+  }, [controls]);
+  
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-transparent">
-      <div className="container mx-auto px-4 text-center relative z-20">
-        <motion.h1
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-5xl md:text-7xl font-bold text-[#D9BF77] mb-6"
-          style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', letterSpacing: '0.1em' }}
-        >
-          {t('hero.title')}
-        </motion.h1>
-        
-        <motion.p
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-xl md:text-2xl text-[#C8B28E] mb-12 max-w-3xl mx-auto font-typewriter"
-        >
-          {t('hero.subtitle')}
-        </motion.p>
-        
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center"
-        >
-          <button
-            onClick={() => onNavigate('portfolio')}
-            className="px-8 py-4 bg-[#D9BF77] text-[#463730] font-typewriter rounded-md hover:bg-[#2A1A16] hover:text-[#F2E8D5] transition-colors shadow-lg"
+    <section id="home" className="relative min-h-screen py-8 overflow-hidden">
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
+          <motion.div 
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="inline-block mb-8"
           >
-            {t('hero.cta')}
-          </button>
-          <button
-            onClick={() => onNavigate('contact')}
-            className="px-8 py-4 border border-[#D9BF77] text-[#D9BF77] font-typewriter rounded-md hover:bg-[#D9BF77] hover:text-[#463730] transition-colors"
+            <motion.img 
+              animate={{ 
+                scale: [1, 1.05, 1], 
+                opacity: [0.8, 1, 0.8],
+                rotate: [0, 2, -2, 0],
+                x: [0, 2, -2, 0],
+                y: [0, -1, 1, 0]
+              }}
+              transition={{ 
+                scale: { delay: 0.2, duration: 0.5 },
+                opacity: { delay: 0.8, repeat: Infinity, duration: 3, ease: "easeInOut" },
+                rotate: { delay: 1, repeat: Infinity, duration: 5, ease: "easeInOut" },
+                x: { delay: 1.5, repeat: Infinity, duration: 4, ease: "easeInOut" },
+                y: { delay: 2, repeat: Infinity, duration: 6, ease: "easeInOut" }
+              }}
+              src="/static/23358_ildiko.jpg" 
+              alt="Portrait of interior designer" 
+              className="w-40 h-40 mx-auto object-cover rounded-full border-4 border-[#D9BF77]"
+            />
+          </motion.div>
+          
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="mb-6 relative"
           >
-            {t('hero.contact')}
-          </button>
-        </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold text-[#D9BF77]" style={{ fontFamily: 'Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif', fontWeight: 'bold', letterSpacing: '0.2em' }}>
+              Ildikó Style
+            </h1>
+            <p className="text-3xl md:text-4xl text-black font-bold" style={{ fontFamily: 'Great Vibes, cursive', position: 'relative', top: '-5px', filter: 'drop-shadow(4px 4px 6px rgba(0,0,0,0.5))' }}>Interior Design</p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 2, duration: 0.5 }}
+            className="mt-8 mb-24 max-w-2xl mx-auto p-6 bg-[#463730] bg-opacity-30 rounded-lg border border-[#2A1A16] border-opacity-60"
+          >
+            <blockquote className="text-[#D9BF77] font-lora italic text-lg leading-relaxed text-center">
+              "{t('about.armani')}"
+            </blockquote>
+            <p className="text-[#D9BF77] font-typewriter text-right mt-4">— Giorgio Armani</p>
+          </motion.div>
+        </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 right-0">
+        <div className="relative">
+          {/* Film strip background */}
+          <div className="bg-[#2A1A16] bg-opacity-10 h-24 relative overflow-hidden">
+            {/* Top perforations */}
+            <div className="absolute top-0 left-0 right-0 h-3 bg-transparent z-10"
+                 style={{
+                   backgroundImage: `repeating-linear-gradient(to right, transparent, transparent 8px, rgba(42, 26, 22, 0.6) 8px, rgba(42, 26, 22, 0.6) 18px)`
+                 }}></div>
+            {/* Bottom perforations */}
+            <div className="absolute bottom-0 left-0 right-0 h-3 bg-transparent z-10"
+                 style={{
+                   backgroundImage: `repeating-linear-gradient(to right, transparent, transparent 8px, rgba(42, 26, 22, 0.6) 8px, rgba(42, 26, 22, 0.6) 18px)`
+                 }}></div>
+            
+            {/* Film strip images */}
+            <div className="flex overflow-hidden h-full">
+              <div className="flex min-w-full animate-[filmReel_15s_linear_infinite]">
+                {[
+                  "/static/big_laktanya.jpg",
+                  "/static/big_nappali_falnezet2.jpg",
+                  "/static/big_nappali2.jpg",
+                  "/static/big_nappali3.jpg",
+                  "/static/big_nappali4.jpg",
+                  "/static/big_nappali6.jpg"
+                ].flatMap((src, index, array) => {
+                  const elements = [
+                    <img key={`film-1-${index}`} src={src} alt={`Interior design ${index + 1}`} className="h-full object-cover" />
+                  ];
+                  if (index < array.length - 1) {
+                    elements.push(
+                      <div key={`sep-1-${index}`} className="w-1 h-full bg-[#2A1A16] bg-opacity-60 flex-shrink-0"></div>
+                    );
+                  }
+                  return elements;
+                })}
+                
+                {/* Separator between sets */}
+                <div className="w-1 h-full bg-[#2A1A16] bg-opacity-60 flex-shrink-0"></div>
+                
+                {/* Duplicate for seamless loop */}
+                {[
+                  "/static/big_laktanya.jpg",
+                  "/static/big_nappali_falnezet2.jpg",
+                  "/static/big_nappali2.jpg",
+                  "/static/big_nappali3.jpg",
+                  "/static/big_nappali4.jpg",
+                  "/static/big_nappali6.jpg"
+                ].flatMap((src, index, array) => {
+                  const elements = [
+                    <img key={`film-2-${index}`} src={src} alt={`Interior design ${index + 7}`} className="h-full object-cover" />
+                  ];
+                  if (index < array.length - 1) {
+                    elements.push(
+                      <div key={`sep-2-${index}`} className="w-1 h-full bg-[#2A1A16] bg-opacity-60 flex-shrink-0"></div>
+                    );
+                  }
+                  return elements;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Add keyframe animations */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes filmReel {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        
+        @keyframes projector-rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}} />
     </section>
   );
 }

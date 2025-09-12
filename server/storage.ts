@@ -1,187 +1,310 @@
-import { Service, PortfolioItem, ContactForm, InsertService, InsertPortfolioItem, InsertContactForm } from "@shared/schema";
+import { 
+  users, type User, type InsertUser,
+  portfolioItems, type PortfolioItem, type InsertPortfolioItem,
+  services, type Service, type InsertService,
+  contactFormSchema, type ContactForm
+} from "@shared/schema";
+
+// modify the interface with any CRUD methods
+// you might need
 
 export interface IStorage {
-  // Services
-  getServices(): Promise<Service[]>;
-  getService(id: number): Promise<Service | undefined>;
-  createService(service: InsertService): Promise<Service>;
-
-  // Portfolio Items
+  getUser(id: number): Promise<User | undefined>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
+  
+  // Portfolio methods
   getPortfolioItems(): Promise<PortfolioItem[]>;
   getPortfolioItem(id: number): Promise<PortfolioItem | undefined>;
   createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem>;
-
-  // Contact Forms
-  createContactForm(form: InsertContactForm): Promise<ContactForm>;
+  
+  // Service methods
+  getServices(): Promise<Service[]>;
+  getService(id: number): Promise<Service | undefined>;
+  createService(service: InsertService): Promise<Service>;
+  
+  // Contact form method
+  submitContactForm(form: ContactForm): Promise<boolean>;
 }
 
 export class MemStorage implements IStorage {
-  private services: Service[] = [
-    {
-      id: 1,
-      title: "Design",
-      description: "Kreatív tervezési szolgáltatások vintage stílusban",
-      features: ["Logó tervezés", "Grafikai arculat", "Print design"],
-      icon: "palette",
-      createdAt: new Date()
-    },
-    {
-      id: 2,
-      title: "Construction",
-      description: "Belső terek vintage átalakítása és kivitelezése",
-      features: ["Tér tervezés", "Bútor készítés", "Dekoráció"],
-      icon: "hammer",
-      createdAt: new Date()
-    },
-    {
-      id: 3,
-      title: "Consulting",
-      description: "Szakértői tanácsadás vintage projektekhez",
-      features: ["Stílus tanácsadás", "Projekt menedzsment", "Költségvetés tervezés"],
-      icon: "comments",
-      createdAt: new Date()
-    }
-  ];
+  private users: Map<number, User>;
+  private portfolioItemsMap: Map<number, PortfolioItem>;
+  private servicesMap: Map<number, Service>;
+  private contactForms: ContactForm[];
+  
+  private userCurrentId: number;
+  private portfolioCurrentId: number;
+  private serviceCurrentId: number;
 
-  private portfolioItems: PortfolioItem[] = [
-    // Industrial projects - CORRECTED ORDER: indusztrial2 first, indusztrial last
-    {
-      id: 1,
-      title: "Indusztriális Tervezés II",
-      description: "Modern gyártósor vintage esztétikával",
-      imageUrl: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800",
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800"
-      ],
-      category: "industrial",
-      createdAt: new Date()
-    },
-    {
-      id: 2,
-      title: "Vintage Gépészet",
-      description: "Klasszikus ipari berendezések restaurálása",
-      imageUrl: "https://pixabay.com/get/g8ef6961b7a250ff11e50bd621f4daafd07772dc586c7cb7ce78fb21e6bb95f3df647bd69787a52036f6673a8273729d8bcf5b12ac79f5f3edf25f032093967d6_1280.jpg",
-      additionalImages: [],
-      category: "industrial",
-      createdAt: new Date()
-    },
-    {
-      id: 3,
-      title: "Indusztriális Projekt",
-      description: "Klasszikus ipari design elemek",
-      imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800",
-        "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800"
-      ],
-      category: "industrial",
-      createdAt: new Date()
-    },
-    // Creative projects
-    {
-      id: 4,
-      title: "Vintage Plakát Design",
-      description: "Retro stílusú grafikai tervezés",
-      imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [],
-      category: "creative",
-      createdAt: new Date()
-    },
-    {
-      id: 5,
-      title: "Brand Identitás",
-      description: "Teljes arculattervezés vintage elemekkel",
-      imageUrl: "https://pixabay.com/get/gb432c7f54447f303731807d1c2af6a03fc42e77c4b61ef34759bf208b589a3c585165b48b92dd43e9ceaab92b1bcfbb1c9b89049aeb0ec6742bb724872aeb653_1280.jpg",
-      additionalImages: [],
-      category: "creative",
-      createdAt: new Date()
-    },
-    {
-      id: 6,
-      title: "Tipográfia Művészet",
-      description: "Kézzel készített betűtípusok",
-      imageUrl: "https://pixabay.com/get/gb36e871e37d595d2386ce22ac3e2d1de96f3ed3807c5b87f375166f7e7b49d17c1089dbb92172b99f9e399de74f368053e3b4e212e4ebe59070580e12dcf9994_1280.jpg",
-      additionalImages: [],
-      category: "creative",
-      createdAt: new Date()
-    },
-    // Photography projects
-    {
-      id: 7,
-      title: "Vintage Portré",
-      description: "Klasszikus fotózási technikák",
-      imageUrl: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [],
-      category: "photography",
-      createdAt: new Date()
-    },
-    {
-      id: 8,
-      title: "Táj Fotográfia",
-      description: "Természet vintage szemmel",
-      imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [],
-      category: "photography",
-      createdAt: new Date()
-    },
-    {
-      id: 9,
-      title: "Utcai Fotográfia",
-      description: "Városi élet dokumentálása",
-      imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-      additionalImages: [],
-      category: "photography",
-      createdAt: new Date()
-    }
-  ];
-
-  private contactForms: ContactForm[] = [];
-
-  async getServices(): Promise<Service[]> {
-    return this.services;
+  constructor() {
+    this.users = new Map();
+    this.portfolioItemsMap = new Map();
+    this.servicesMap = new Map();
+    this.contactForms = [];
+    
+    this.userCurrentId = 1;
+    this.portfolioCurrentId = 1;
+    this.serviceCurrentId = 1;
+    
+    // Initialize with sample portfolio data
+    this.initializePortfolioItems();
+    this.initializeServices();
   }
 
-  async getService(id: number): Promise<Service | undefined> {
-    return this.services.find(service => service.id === id);
+  // User methods
+  async getUser(id: number): Promise<User | undefined> {
+    return this.users.get(id);
   }
 
-  async createService(service: InsertService): Promise<Service> {
-    const newService: Service = {
-      id: this.services.length + 1,
-      ...service,
-      createdAt: new Date()
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    return Array.from(this.users.values()).find(
+      (user) => user.username === username,
+    );
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const id = this.userCurrentId++;
+    const user: User = { ...insertUser, id };
+    this.users.set(id, user);
+    return user;
+  }
+  
+  // Portfolio methods
+  async getPortfolioItems(): Promise<PortfolioItem[]> {
+    return Array.from(this.portfolioItemsMap.values());
+  }
+  
+  async getPortfolioItem(id: number): Promise<PortfolioItem | undefined> {
+    return this.portfolioItemsMap.get(id);
+  }
+  
+  async createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem> {
+    const id = this.portfolioCurrentId++;
+    const portfolioItem: PortfolioItem = { 
+      ...item, 
+      id,
+      additionalImages: item.additionalImages || null,
+      projectLink: item.projectLink || null
     };
-    this.services.push(newService);
+    this.portfolioItemsMap.set(id, portfolioItem);
+    return portfolioItem;
+  }
+  
+  // Service methods
+  async getServices(): Promise<Service[]> {
+    return Array.from(this.servicesMap.values());
+  }
+  
+  async getService(id: number): Promise<Service | undefined> {
+    return this.servicesMap.get(id);
+  }
+  
+  async createService(service: InsertService): Promise<Service> {
+    const id = this.serviceCurrentId++;
+    const newService: Service = { ...service, id };
+    this.servicesMap.set(id, newService);
     return newService;
   }
-
-  async getPortfolioItems(): Promise<PortfolioItem[]> {
-    return this.portfolioItems;
+  
+  // Contact form method
+  async submitContactForm(form: ContactForm): Promise<boolean> {
+    this.contactForms.push(form);
+    return true;
   }
-
-  async getPortfolioItem(id: number): Promise<PortfolioItem | undefined> {
-    return this.portfolioItems.find(item => item.id === id);
+  
+  // Initialize data
+  private initializePortfolioItems() {
+    const items: InsertPortfolioItem[] = [
+      {
+        title: "Publications",
+        description: "Publications",
+        imageUrl: "/static/big_otthon2.jpg",
+        additionalImages: [
+          "/static/big_otthonnap2.jpg",
+          "/static/big_otthonnap.jpg",
+          "/static/big_otthonfurdo.jpg"
+        ],
+        category: "publikációk",
+        projectLink: "#"
+      },
+      {
+        title: "Tervek",
+        description: "Építészeti tervek és tervezési koncepciók",
+        imageUrl: "/static/big_nappali_falnezet2.jpg",
+        additionalImages: [
+          "/static/big_emelet_falnezet.jpg",
+          "/static/big_emeletalaprajz.jpg",
+          "/static/big_emelethalo_falnezet.jpg",
+          "/static/big_fodszintialaprajz.jpg",
+          "/static/big_furdo.jpg",
+          "/static/big_halo_falnezet.jpg",
+          "/static/big_halo.jpg",
+          "/static/big_konyha.jpg",
+          "/static/big_nappali_falnezet.jpg",
+          "/static/big_nappali_falnezet3.jpg",
+          "/static/big_nappali.jpg",
+          "/static/big_furdo_montazs.jpg",
+          "/static/big_halo_montazs.jpg.jpg",
+          "/static/big_konyhamontazs.jpg.jpg",
+          "/static/big_nappali_montazs.jpg"
+        ],
+        category: "Plans",
+        projectLink: "#"
+      },
+      {
+        title: "Studió lakás",
+        description: "luxus és kényelem 27m2-en",
+        imageUrl: "/static/studio2.jpg",
+        additionalImages: [
+          "/static/studio1.jpg",
+          "/static/studio3.jpg",
+          "/static/studio4.jpg",
+          "/static/studio5.jpg",
+          "/static/studio6.jpg",
+          "/static/studio7.jpg",
+          "/static/studio8.jpg",
+          "/static/studio9.jpg",
+          "/static/studio10.jpg",
+          "/static/studio11.jpg",
+          "/static/studio12.jpg",
+          "/static/studio13.jpg",
+          "/static/studio14.jpg",
+          "/static/studio15.jpg",
+          "/static/studio16.jpg",
+          "/static/studio17.jpg",
+          "/static/studio18.jpg"
+        ],
+        category: "Residential",
+        projectLink: "#"
+      },
+      {
+        title: "Indusztrális legénylakás",
+        description: "Retro, ipari stilus a funkcionalitás jegyében",
+        imageUrl: "/static/indusztrial10.JPG",
+        additionalImages: [        
+          "/static/indusztrial1.JPEG",
+          "/static/indusztrial2.JPG",
+          "/static/indusztrial3.JPG",
+          "/static/indusztrial4.JPG",
+          "/static/indusztrial5.JPG",
+          "/static/indusztrial6.JPG",
+          "/static/indusztrial7.JPG",
+          "/static/indusztrial8.JPG",
+          "/static/indusztrial9.jpg",
+          "/static/indusztrial11.JPG",
+          "/static/indusztrial12.JPG",
+          "/static/indusztrial14.JPG",
+          "/static/indusztrial15.JPG",
+          "/static/indusztrial16 (2).JPG",
+          "/static/indusztrial16 (3).jpg",
+          "/static/indusztrial16 (4).JPG",
+          "/static/indusztrial16 (5).JPG",
+          "/static/indusztrial16 (6).JPG",
+          "/static/indusztrial16.jpg",
+          "/static/indusztrial17.JPG",
+          "/static/indusztrial19.JPG",
+          "/static/indusztrial20.JPG",
+          "/static/indusztrial21.JPG",
+          "/static/indusztrial.JPEG"
+        ],
+        category: "Industrial",
+        projectLink: "#"
+      },
+      {
+        title: "Vakmerő színpompa",
+        description: "Daring interior concepts with unique character",
+        imageUrl: "/static/big_nappali2.jpg",
+        additionalImages: [
+          "/static/big_nappali3.jpg", 
+          "/static/big_nappali4.jpg",
+          "/static/big_nappali6.jpg",
+          "/static/big_napteto.jpg",
+          "/static/big_rfurdo.jpg",
+          "/static/big_rkonyha.jpg"
+        ],
+        category: "Contemporary",
+        projectLink: "#"
+      },
+      {
+        title: "A jó öreg laktanya",
+        description: "Transforming historic spaces with modern functionality",
+        imageUrl: "/static/big_laktanya.jpg",
+        additionalImages: [
+          "/static/big_furdo2.jpg"
+        ],
+        category: "Renovation",
+        projectLink: "#"
+      },
+      {
+        title: "Provence Style",
+        description: "French countryside charm with rustic elegance",
+        imageUrl: "/static/big_myaraloterasz.jpg.jpg",
+        additionalImages: [
+          "/static/big_nyaralo2.jpg",
+          "/static/big_nyaralokert.jpg",
+          "/static/big_nyaralonappali.jpg"
+        ],
+        category: "Rustic",
+        projectLink: "#"
+      },
+      {
+        title: "Ókori design",
+        description: "Cipőbolt Vasarelyvel",
+        imageUrl: "/static/big_zebra.jpg",
+        additionalImages: null,
+        category: "Classic",
+        projectLink: "#"
+      },
+      {
+        title: "Commercial building with attic and apartment design",
+        description: "Contemporary interior design with warm family atmosphere",
+        imageUrl: "/static/big_haz.jpg",
+        additionalImages: null,
+        category: "Residential",
+        projectLink: "#"
+      }
+    ];
+    
+    items.forEach(item => {
+      const id = this.portfolioCurrentId++;
+      const portfolioItem: PortfolioItem = { 
+        ...item, 
+        id,
+        additionalImages: item.additionalImages || null,
+        projectLink: item.projectLink || null
+      };
+      this.portfolioItemsMap.set(id, portfolioItem);
+    });
   }
-
-  async createPortfolioItem(item: InsertPortfolioItem): Promise<PortfolioItem> {
-    const newItem: PortfolioItem = {
-      id: this.portfolioItems.length + 1,
-      ...item,
-      createdAt: new Date()
-    };
-    this.portfolioItems.push(newItem);
-    return newItem;
-  }
-
-  async createContactForm(form: InsertContactForm): Promise<ContactForm> {
-    const newForm: ContactForm = {
-      id: this.contactForms.length + 1,
-      ...form,
-      createdAt: new Date()
-    };
-    this.contactForms.push(newForm);
-    return newForm;
+  
+  private initializeServices() {
+    const serviceItems: InsertService[] = [
+      {
+        title: "Design",
+        description: "Professional interior design services with personalized concepts and solutions.",
+        icon: "drafting-compass",
+        features: ["Space Planning", "Color Schemes", "Furniture Selection", "Custom Solutions"]
+      },
+      {
+        title: "Construction",
+        description: "Quality construction and renovation services for residential and commercial spaces.",
+        icon: "hammer",
+        features: ["Home Renovation", "Kitchen Remodeling", "Bathroom Design", "Custom Building"]
+      },
+      {
+        title: "Consulting",
+        description: "Expert consultation for design decisions and project planning.",
+        icon: "lightbulb",
+        features: ["Design Consultation", "Project Planning", "Material Selection", "Budget Planning"]
+      }
+    ];
+    
+    serviceItems.forEach(service => {
+      const id = this.serviceCurrentId++;
+      const newService: Service = { ...service, id };
+      this.servicesMap.set(id, newService);
+    });
   }
 }
 

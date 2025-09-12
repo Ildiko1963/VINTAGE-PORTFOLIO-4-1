@@ -1,202 +1,355 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Special+Elite:wght@400&family=Bodoni+Moda:wght@400;500;600;700&family=Great+Vibes:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,600;1,6..96,700;1,6..96,800;1,6..96,900&family=Great+Vibes&display=swap');
+
+@font-face {
+  font-family: '1942 Report';
+  src: url('/static/1942-report.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: hsl(45, 15%, 97%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(45, 20%, 95%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --popover: hsl(45, 20%, 95%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --primary: hsl(45, 85%, 45%);
-  --primary-foreground: hsl(20, 14.3%, 4.1%);
-  --secondary: hsl(30, 20%, 55%);
-  --secondary-foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(45, 10%, 90%);
-  --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(355, 45%, 35%);
-  --accent-foreground: hsl(0, 0%, 97%);
-  --destructive: hsl(0, 62%, 60%);
-  --destructive-foreground: hsl(0, 0%, 97%);
-  --border: hsl(45, 15%, 85%);
-  --input: hsl(45, 15%, 85%);
-  --ring: hsl(45, 85%, 45%);
-  --chart-1: hsl(203.8863, 88.2845%, 53.1373%);
-  --chart-2: hsl(159.7826, 100%, 36.0784%);
-  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
-  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
-  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
-  --sidebar: hsl(45, 20%, 95%);
-  --sidebar-foreground: hsl(20, 14.3%, 4.1%);
-  --sidebar-primary: hsl(45, 85%, 45%);
-  --sidebar-primary-foreground: hsl(20, 14.3%, 4.1%);
-  --sidebar-accent: hsl(45, 10%, 90%);
-  --sidebar-accent-foreground: hsl(45, 85%, 45%);
-  --sidebar-border: hsl(45, 15%, 85%);
-  --sidebar-ring: hsl(45, 85%, 45%);
-  --font-sans: 'Lora', serif;
-  --font-serif: 'Playfair Display', serif;
-  --font-mono: 'Special Elite', cursive;
-  --radius: 8px;
-}
-
-.dark {
-  --background: hsl(20, 14.3%, 4.1%);
-  --foreground: hsl(45, 15%, 97%);
-  --card: hsl(20, 14.3%, 6%);
-  --card-foreground: hsl(45, 15%, 97%);
-  --popover: hsl(20, 14.3%, 4.1%);
-  --popover-foreground: hsl(45, 15%, 97%);
-  --primary: hsl(45, 85%, 45%);
-  --primary-foreground: hsl(20, 14.3%, 4.1%);
-  --secondary: hsl(30, 20%, 25%);
-  --secondary-foreground: hsl(45, 15%, 97%);
-  --muted: hsl(20, 14.3%, 10%);
-  --muted-foreground: hsl(0, 0%, 55%);
-  --accent: hsl(355, 45%, 35%);
-  --accent-foreground: hsl(0, 0%, 97%);
-  --destructive: hsl(0, 62%, 60%);
-  --destructive-foreground: hsl(0, 0%, 97%);
-  --border: hsl(20, 14.3%, 15%);
-  --input: hsl(20, 14.3%, 15%);
-  --ring: hsl(45, 85%, 45%);
-  --chart-1: hsl(203.8863, 88.2845%, 53.1373%);
-  --chart-2: hsl(159.7826, 100%, 36.0784%);
-  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
-  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
-  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
-  --sidebar: hsl(20, 14.3%, 6%);
-  --sidebar-foreground: hsl(45, 15%, 97%);
-  --sidebar-primary: hsl(45, 85%, 45%);
-  --sidebar-primary-foreground: hsl(20, 14.3%, 4.1%);
-  --sidebar-accent: hsl(20, 14.3%, 10%);
-  --sidebar-accent-foreground: hsl(45, 85%, 45%);
-  --sidebar-border: hsl(20, 14.3%, 15%);
-  --sidebar-ring: hsl(45, 85%, 45%);
+  --color-vintage-brown: #5C4033;  /* Darker vintage brown */
+  --color-cream: #D4B886;         /* Warmer cream color */
+  --color-deep-brown: #3A2820;    /* Deeper brown for text */
+  --color-gold: #D4AF37;         /* Richer gold */
+  --color-gold-dim: #B8860B;     /* Darker gold for secondary */
+  --color-film-strip: #1A1110;   /* Almost black for film strip */
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-sans);
-    background-image: url('/filmszalag_hatter.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    @apply font-sans antialiased text-foreground;
+    position: relative;
     min-height: 100vh;
+    width: 100%;
+    background-image: url('/static/clean_filmstrip_hatter.png');
+    background-size: auto;
+    background-position: center top;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    z-index: -1;
+    overflow-x: hidden;
   }
   
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(42, 26, 22, 0.7);
-    z-index: -1;
-    pointer-events: none;
+  /* Grunge overlay for entire site */
+  /* Film overlay styles moved to specific classes */
+  
+  @keyframes subtle-shift {
+    0% { transform: translateX(-5px) translateY(-3px); }
+    100% { transform: translateX(5px) translateY(3px); }
+  }
+  
+  @keyframes subtle-movement {
+    0% { transform: translateX(0) translateY(-5px); }
+    50% { transform: translateX(-3px) translateY(3px); }
+    100% { transform: translateX(3px) translateY(5px); }
+  }
+  
+  @keyframes subtle-float {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-3px) translateX(-1px); }
+    50% { transform: translateY(-5px) translateX(2px); }
+    75% { transform: translateY(-2px) translateX(-1px); }
+  }
+
+  .animate-subtle-float {
+    animation: subtle-float 4s ease-in-out infinite;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #D9BF77;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #D9BF77;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
   }
 }
 
-/* Custom font classes */
-.font-playfair {
-  font-family: 'Playfair Display', serif;
+/* Typewriter animation for text */
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid currentColor;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s ease-in-out,
+    blink-caret .75s step-end infinite;
 }
 
-.font-lora {
-  font-family: 'Lora', serif;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.font-typewriter {
-  font-family: 'Special Elite', cursive;
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: currentColor; }
 }
 
-.font-bodoni {
-  font-family: 'Bodoni Moda', serif;
-}
-
-.font-great-vibes {
-  font-family: 'Great Vibes', cursive;
-}
-
-/* Vintage texture and effects */
-.vintage-texture {
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(0,0,0,0.1) 0%, transparent 50%);
-}
-
-.image-hover-effect {
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.image-hover-effect:hover {
-  transform: scale(1.05) rotate(1deg);
-}
-
-.vintage-border {
-  border: 3px solid var(--primary);
-  border-image: linear-gradient(45deg, var(--primary), var(--secondary)) 1;
-}
-
-/* Film frame effect */
+/* Vintage film-strip frames - ORIGINAL SIMPLE VERSION */
 .film-frame {
   position: relative;
-  border: 2px solid #D9BF77;
-  border-radius: 4px;
+  border: 9px solid rgba(42, 26, 22, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  overflow: visible;
+}
+
+
+/* Vintage portfolio frames - same style as About photo */
+.vintage-frame {
+  border: 9px solid rgba(42, 26, 22, 0.7);
+  border-radius: 15px 8px 20px 12px;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.4),
+    inset -3px -3px 8px rgba(0,0,0,0.3),
+    inset 3px 3px 8px rgba(255,255,255,0.1),
+    0 0 0 3px rgba(101, 67, 33, 0.3);
+  overflow: visible;
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  transform: rotate(-1.2deg) skew(0.5deg, -0.3deg);
+  transition: all 0.4s ease-in-out !important;
+}
+
+/* Hover state - EXACT same effect as About section photo */
+.vintage-frame:hover,
+.group:hover .vintage-frame,
+.group:hover > div.vintage-frame {
+  transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
+  filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
+  border: 10px solid rgba(42, 26, 22, 0.8) !important;
+  z-index: 10 !important;
+  overflow: visible !important;
+}
+
+/* Remove extra effects for cleaner look matching About photo */
+
+
+/* Vintage torn photo frame for About section only */
+.vintage-photo-frame {
+  border: 9px solid rgba(42, 26, 22, 0.7);
+  border-radius: 15px 8px 20px 12px;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.4),
+    inset -3px -3px 8px rgba(0,0,0,0.3),
+    inset 3px 3px 8px rgba(255,255,255,0.1),
+    0 0 0 3px rgba(101, 67, 33, 0.3);
+  overflow: visible;
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.4));
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 50%, 
+    rgba(0,0,0,0.1) 100%);
+  clip-path: polygon(
+    1% 2%, 97% 0%, 99% 3%, 98% 12%, 99% 28%, 
+    97% 45%, 99% 62%, 98% 78%, 96% 88%, 99% 97%, 
+    88% 99%, 75% 97%, 58% 99%, 42% 98%, 28% 99%, 
+    15% 97%, 5% 98%, 2% 88%, 0% 75%, 2% 58%, 
+    0% 42%, 1% 28%, 0% 15%, 2% 5%
+  );
+  min-width: 320px !important;
+  width: 320px !important;
+}
+
+.vintage-photo-frame::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed rgba(42, 26, 22, 0.3);
+  border-radius: 18px 12px 25px 15px;
+  pointer-events: none;
+}
+
+.vintage-photo-frame::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  background: rgba(42, 26, 22, 0.4);
+  border-radius: 50% 20% 50% 20%;
+  transform: rotate(45deg);
+  box-shadow: -20px 10px 0 -5px rgba(42, 26, 22, 0.2);
+}
+
+/* Hover effects for vintage photo frame */
+.vintage-photo-frame:hover {
+  transform: rotate(2deg) skew(0.5deg, -0.2deg) scale(1.05) !important;
+  filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.6)) !important;
+  border: 10px solid rgba(42, 26, 22, 0.8) !important;
+  z-index: 10 !important;
+}
+
+/* Film grain texture overlay */
+.film-grain {
+  position: relative;
+}
+
+.film-grain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.07;
+  z-index: 1;
+}
+
+/* Worn paper texture for vintage feel */
+.worn-paper {
+  position: relative;
   overflow: hidden;
 }
 
-.film-frame::before {
+.worn-paper::before {
   content: '';
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #D9BF77, #C8B28E);
-  z-index: -1;
-  border-radius: 6px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paperFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paperFilter)' opacity='0.15'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.15;
+  z-index: 1;
 }
 
-/* Animation keyframes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Old projector flickering effect */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  3%, 8% { opacity: 0.8; }
+  5% { opacity: 0.9; }
+  10%, 20%, 80% { opacity: 1; }
+  15%, 17% { opacity: 0.4; }
+  25% { opacity: 0.9; }
+  40%, 45% { opacity: 0.8; }
+  50%, 55% { opacity: 1; }
+  60%, 65% { opacity: 0.9; }
+  70%, 75% { opacity: 0.8; }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
+@keyframes projector-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Scrollbar styling for vintage feel */
-::-webkit-scrollbar {
-  width: 8px;
+.projector-flicker {
+  animation: flicker 8s infinite, subtle-movement 15s ease-in-out infinite alternate;
+  transition: transform 0.3s ease-in-out;
 }
 
-::-webkit-scrollbar-track {
-  background: hsl(20, 14.3%, 4.1%);
+.projector-flicker:hover {
+  animation-play-state: paused;
+  transform: scale(1.08) rotate(3deg);
 }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(45, 85%, 45%);
-  border-radius: 4px;
+.image-hover-container:hover .film-frame {
+  transform: scale(1.1) rotate(4deg) !important;
+  transition: transform 0.4s ease-in-out !important;
+  animation: none !important;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(30, 20%, 55%);
+/* Background styles for different pages */
+.film-overlay {
+  background-image: url('/src/assets/film-scratches.svg'), url('/src/assets/old-film-texture.svg');
+  background-size: cover;
+  opacity: 0.7;
+  animation: subtle-shift 30s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.simple-bg-overlay {
+  background-image: url('/src/assets/old-film-texture.svg');
+  background-size: cover;
+  opacity: 0.5;
+  animation: subtle-movement 20s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+/* Film perforations */
+.perforations-left,
+.perforations-right {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 12px,
+      #000 12px,
+      #000 28px
+    );
+  opacity: 0.9;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.perforations-left {
+  left: 0;
+}
+
+.perforations-right {
+  right: 0;
+}
+
+/* Rotating shadow/projector light effect */
+.rotating-shadow {
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  animation: projector-rotate 10s infinite linear;
+  pointer-events: none;
+}
+
+/* Background overrides for specific pages */
+.home-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/filmszalag_hatter.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  opacity: 0.35;
+}
+
+.default-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/sima_hatter.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  opacity: 0.35;
 }
